@@ -260,17 +260,17 @@ done
 if [ $FAIL_COUNTER \> 0 ] && [ $MISSING_JSON_COUNTER \> 0 ] ; then
 	echo "Repository has some fails and also is missing some jsons"
 	printf "Send Warning message to slack \n"
-	curl -X POST --data-urlencode "payload={\"channel\": \"#hardware\", \"username\": \"Circle CI\", \"text\": \" Something gets wrong. Last push to HW-LIBS failed. \n Push author: ${AUTHOR} \n Number of fails: $FAIL_COUNTER \n \n Failed programs: ${FAILED_PROGRAMS} \n \n Some examples are also missing readme.json files: ${MISSING_JSONS}.\"}" https://hooks.slack.com/services/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 &>/dev/null
+	#curl -X POST --data-urlencode "payload={\"channel\": \"#hardware\", \"username\": \"Circle CI\", \"text\": \" Something gets wrong. Last push to HW-LIBS failed. \n Push author: ${AUTHOR} \n Number of fails: $FAIL_COUNTER \n \n Failed programs: ${FAILED_PROGRAMS} \n \n Some examples are also missing readme.json files: ${MISSING_JSONS}.\"}" https://hooks.slack.com/services/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 &>/dev/null
 
 elif [ $FAIL_COUNTER \> 0 ] ; then 
 	echo "Repository has some fails"
 	printf "Send Warning message to slack \n"
-	curl -X POST --data-urlencode "payload={\"channel\": \"#hardware\", \"username\": \"Circle CI\", \"text\": \" Something gets wrong. Last push to HW-LIBS failed. \n Push author: ${AUTHOR} \n Number of fails: $FAIL_COUNTER \n \n Failed programs: ${FAILED_PROGRAMS}.\"}" https://hooks.slack.com/services/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 &>/dev/null
+	#curl -X POST --data-urlencode "payload={\"channel\": \"#hardware\", \"username\": \"Circle CI\", \"text\": \" Something gets wrong. Last push to HW-LIBS failed. \n Push author: ${AUTHOR} \n Number of fails: $FAIL_COUNTER \n \n Failed programs: ${FAILED_PROGRAMS}.\"}" https://hooks.slack.com/services/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 &>/dev/null
 
 elif [ $MISSING_JSON_COUNTER \> 0 ] ; then 
 	echo "Repository is missing some jsons"
 	printf "Send Warning message to slack \n"
-	curl -X POST --data-urlencode "payload={\"channel\": \"#hardware\", \"username\": \"Circle CI\", \"text\": \" Some examples are missing readme.json files \n Push author: ${AUTHOR} \n \n Missing jsons in: ${MISSING_JSONS}.\"}" https://hooks.slack.com/services/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 &>/dev/null
+	#curl -X POST --data-urlencode "payload={\"channel\": \"#hardware\", \"username\": \"Circle CI\", \"text\": \" Some examples are missing readme.json files \n Push author: ${AUTHOR} \n \n Missing jsons in: ${MISSING_JSONS}.\"}" https://hooks.slack.com/services/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 &>/dev/null
 
 
 fi
