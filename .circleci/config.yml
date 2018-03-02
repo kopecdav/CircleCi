@@ -19,6 +19,6 @@ jobs:
           command:  bash test_script.sh 
       - run:
           name: FAILED LOG
-          command: 
+          command: cat _logs_/BUILD_FAILED.log 
           when: on_fail
                 
