@@ -1,0 +1,359 @@
+# Byzance makefile
+
+# commands:
+# find all .o   :: find . -maxdepth 15 -iname "*.o" -exec echo {} \;
+# find all dirs :: find . -maxdepth 15 -type d -exec echo {} \;
+# rm all temps  :: find . -name ".temp" -depth -exec rm -rf {} \;
+# rm all builded  :: find . -name "*.BYZANCE_IODAG2.*" -depth -exec rm -rf {} \;
+
+# fix error on Windows
+# make: Interrupt/Exception caught (code = 0xc00000fd, addr = 0x4227d3)
+# ifeq ($(OS),Windows_NT)
+#  SHELL=C:/Windows/System32/cmd.exe
+# endif
+
+ifndef BUILD_ID
+  $(error BUILD_ID is not set)
+endif
+
+ifndef BUILD_TARGET
+  $(error BUILD_TARGET is not set)
+endif
+
+PROJECT = $(BUILD_ID)
+OBJECTS = ./$(BUILD_ID).o
+
+ifeq ($(USING_FOLDER_MAIN), 1)
+  PROJECT = $(BUILD_ID)/main
+  OBJECTS = ./$(BUILD_ID)/main.o
+endif
+
+#LIBRARIES = -lmbed-os
+SYS_OBJECTS = 
+INCLUDE_PATHS = -I.
+# -I./_libs_/mbed
+
+
+## MBED begin
+
+ETH_SUPPORT = 0
+ 
+include _BYZANCE_IODAG3E_
+include _BYZANCE_IODAG3E_BOOTLOADER_
+
+ifndef CORTEX
+  $(error BUILD_TARGET not exist)
+endif
+
+ifdef CUSTOM_BUILD_ID
+  TARGET_CC_SYMBOLS += -D__BUILD_ID__=$(CUSTOM_BUILD_ID)
+else
+  TARGET_CC_SYMBOLS += -D__BUILD_ID__=$(BUILD_ID)
+endif
+
+## MBED end
+
+## Include definitions begin
+#ADD_ETH = 0
+#ADD_RTOS = 0
+#ADD_BYZANCE = 0
+#ADD_MQTT = 0
+#ADD_BYZANCE_DRIVERS = 1
+
+ifeq ($(INCLUDE_RTOS), 1)
+  ADD_RTOS = 1
+endif
+
+ifeq ($(INCLUDE_BYZANCE), 1)
+  ADD_ETH = 1
+  ADD_RTOS = 1
+  ADD_MQTT = 1
+  ADD_BYZANCE = 1
+  ADD_BYZANCE_DRIVERS = 1
+  ADD_LOWPAN_DRIVERS = 1
+  ADD_LIBRARIES = 1
+  ADD_FONTS = 1
+endif
+
+ifeq ($(INCLUDE_EXTMEM), 1)
+  ADD_BYZANCE_DRIVERS = 1
+endif
+
+ifeq ($(INCLUDE_INTMEM), 1)
+  ADD_BYZANCE_DRIVERS = 1
+endif
+
+# remove ADD_ETH if eth is not supported by target
+ifeq ($(ETH_SUPPORT), 0)
+  ADD_ETH = 0
+endif
+
+#ADD_ETH = 1
+#ADD_RTOS = 0
+#ADD_BYZANCE = 1
+#ADD_MQTT = 1
+#ADD_BYZANCE_DRIVERS = 1
+#ADD_LOWPAN_DRIVERS = 1
+
+## Include definitions begin'
+
+# MQTT begin
+ifeq ($(ADD_MQTT), 1)
+  
+  SYS_OBJECTS += ./_libs_/mqtt/MQTTPacket/MQTTConnectClient.$(BUILD_TARGET).o
+  SYS_OBJECTS += ./_libs_/mqtt/MQTTPacket/MQTTConnectServer.$(BUILD_TARGET).o
+  SYS_OBJECTS += ./_libs_/mqtt/MQTTPacket/MQTTDeserializePublish.$(BUILD_TARGET).o
+  SYS_OBJECTS += ./_libs_/mqtt/MQTTPacket/MQTTFormat.$(BUILD_TARGET).o
+  SYS_OBJECTS += ./_libs_/mqtt/MQTTPacket/MQTTPacket.$(BUILD_TARGET).o
+  SYS_OBJECTS += ./_libs_/mqtt/MQTTPacket/MQTTSerializePublish.$(BUILD_TARGET).o
+  SYS_OBJECTS += ./_libs_/mqtt/MQTTPacket/MQTTSubscribeClient.$(BUILD_TARGET).o
+  SYS_OBJECTS += ./_libs_/mqtt/MQTTPacket/MQTTSubscribeServer.$(BUILD_TARGET).o
+  SYS_OBJECTS += ./_libs_/mqtt/MQTTPacket/MQTTUnsubscribeClient.$(BUILD_TARGET).o
+  SYS_OBJECTS += ./_libs_/mqtt/MQTTPacket/MQTTUnsubscribeServer.$(BUILD_TARGET).o
+  
+  SYS_OBJECTS += ./_libs_/mqtt/MQTTClient.$(BUILD_TARGET).o
+  SYS_OBJECTS += ./_libs_/mqtt/MQTTSocket.$(BUILD_TARGET).o
+  
+  INCLUDE_PATHS += -I./_libs_/mqtt  
+  INCLUDE_PATHS += -I./_libs_/mqtt/FP  
+  INCLUDE_PATHS += -I./_libs_/mqtt/MQTTPacket
+  
+endif
+# MQTT end 
+
+## USB begin
+ifeq ($(ADD_USB), 1)
+
+  TARGET_CC_SYMBOLS += -DBYZANCE_SUPPORTS_USB=1
+  
+  SYS_OBJECTS += ./_libs_/usb/targets/TARGET_STM/USBHAL_STM32.$(BUILD_TARGET).o
+  SYS_OBJECTS += ./_libs_/usb/targets/TARGET_STM/USBHAL_STM32F4.$(BUILD_TARGET).o   
+  SYS_OBJECTS += ./_libs_/usb/USBDevice/USBDevice.$(BUILD_TARGET).o  
+  SYS_OBJECTS += ./_libs_/usb/USBSerial/USBCDC.$(BUILD_TARGET).o
+  SYS_OBJECTS += ./_libs_/usb/USBSerial/USBSerial.$(BUILD_TARGET).o
+  SYS_OBJECTS += ./_libs_/usb/USBMSD/USBMSD.$(BUILD_TARGET).o
+  SYS_OBJECTS += ./_libs_/usb/mass/ByzMass.$(BUILD_TARGET).o
+
+  INCLUDE_PATHS += -I./_libs_/usb
+  INCLUDE_PATHS += -I./_libs_/usb/targets/TARGET_STM
+  INCLUDE_PATHS += -I./_libs_/usb/USBDevice
+  INCLUDE_PATHS += -I./_libs_/usb/USBSerial
+  INCLUDE_PATHS += -I./_libs_/usb/USBMSD
+  INCLUDE_PATHS += -I./_libs_/usb/mass
+endif
+# USB end 
+   
+# BYZANCE begin
+ifeq ($(ADD_BYZANCE), 1)
+  # SYS_OBJECTS
+  SYS_OBJECTS += ./_libs_/byzance/MsgIdBuffer.$(BUILD_TARGET).o
+  SYS_OBJECTS += ./_libs_/byzance/ByzanceSerializer.$(BUILD_TARGET).o
+  SYS_OBJECTS += ./_libs_/byzance/ByzanceParser.$(BUILD_TARGET).o
+  SYS_OBJECTS += ./_libs_/byzance/ByzanceCore.$(BUILD_TARGET).o
+  SYS_OBJECTS += ./_libs_/byzance/ByzanceDigitalInputRegistration.$(BUILD_TARGET).o
+  SYS_OBJECTS += ./_libs_/byzance/ByzanceAnalogInputRegistration.$(BUILD_TARGET).o
+  SYS_OBJECTS += ./_libs_/byzance/ByzanceMessageInputRegistration.$(BUILD_TARGET).o
+  SYS_OBJECTS += ./_libs_/byzance/IODA_general.$(BUILD_TARGET).o
+  SYS_OBJECTS += ./_libs_/byzance/MQTTCommands.$(BUILD_TARGET).o
+  SYS_OBJECTS += ./_libs_/byzance/MQTTSettings.$(BUILD_TARGET).o
+  SYS_OBJECTS += ./_libs_/byzance/MQTTInfo.$(BUILD_TARGET).o
+  SYS_OBJECTS += ./_libs_/byzance/HttpServer.$(BUILD_TARGET).o
+  SYS_OBJECTS += ./_libs_/byzance/HTMLParser.$(BUILD_TARGET).o
+  SYS_OBJECTS += ./_libs_/byzance/MqttBuffer.$(BUILD_TARGET).o
+  SYS_OBJECTS += ./_libs_/byzance/ByzanceClient.$(BUILD_TARGET).o
+  SYS_OBJECTS += ./_libs_/byzance/ByzanceWorker.$(BUILD_TARGET).o
+  SYS_OBJECTS += ./_libs_/byzance/ByzanceJson.$(BUILD_TARGET).o
+  SYS_OBJECTS += ./_libs_/byzance/LedModule.$(BUILD_TARGET).o
+  SYS_OBJECTS += ./_libs_/byzance/ByzanceClientRoutines.$(BUILD_TARGET).o
+  SYS_OBJECTS += ./_libs_/byzance/Console.$(BUILD_TARGET).o
+  SYS_OBJECTS += ./_libs_/byzance/Countdown.$(BUILD_TARGET).o
+  SYS_OBJECTS += ./_libs_/byzance/byzance_main.$(BUILD_TARGET).o
+  SYS_OBJECTS += ./_libs_/byzance/Flash.$(BUILD_TARGET).o
+  SYS_OBJECTS += ./_libs_/byzance/ByzanceReporter.$(BUILD_TARGET).o
+  SYS_OBJECTS += ./_libs_/byzance/Connector.$(BUILD_TARGET).o  
+  SYS_OBJECTS += ./_libs_/byzance/TLSSocket.$(BUILD_TARGET).o
+  SYS_OBJECTS += ./_libs_/byzance/ErrorResolver.$(BUILD_TARGET).o                     
+  
+  # INCLUDE_PATHS   
+  INCLUDE_PATHS += -I./_libs_/byzance
+  
+  
+endif
+# BYZANCE end
+
+# BYZANCE_DRIVERS begin
+ifeq ($(ADD_BYZANCE_DRIVERS), 1)
+  # SYS_OBJECTS
+  SYS_OBJECTS += ./_libs_/byzance_drivers/SpiFlash.$(BUILD_TARGET).o
+  SYS_OBJECTS += ./_libs_/byzance_drivers/ExtMem.$(BUILD_TARGET).o
+  SYS_OBJECTS += ./_libs_/byzance_drivers/IntMem.$(BUILD_TARGET).o
+  SYS_OBJECTS += ./_libs_/byzance_drivers/support_functions.$(BUILD_TARGET).o
+  SYS_OBJECTS += ./_libs_/byzance_drivers/Watchdog.$(BUILD_TARGET).o
+  SYS_OBJECTS += ./_libs_/byzance_drivers/ByzanceSpi.$(BUILD_TARGET).o
+  SYS_OBJECTS += ./_libs_/byzance_drivers/StructRoutines.$(BUILD_TARGET).o 
+  SYS_OBJECTS += ./_libs_/byzance_drivers/ByzanceLogger.$(BUILD_TARGET).o
+  SYS_OBJECTS += ./_libs_/byzance_drivers/memory_map.$(BUILD_TARGET).o
+  SYS_OBJECTS += ./_libs_/byzance_drivers/BootloaderCommander.$(BUILD_TARGET).o
+  SYS_OBJECTS += ./_libs_/byzance_drivers/BinManager.$(BUILD_TARGET).o
+  SYS_OBJECTS += ./_libs_/byzance_drivers/MqttManager.$(BUILD_TARGET).o
+  SYS_OBJECTS += ./_libs_/byzance_drivers/Configurator.$(BUILD_TARGET).o
+  
+  # INCLUDE_PATHS 
+  INCLUDE_PATHS += -I./_libs_/byzance_drivers
+endif
+# BYZANCE_DRIVERS end
+
+# LOWPAN_DRIVERS begin
+ifeq ($(ADD_LOWPAN_DRIVERS), 1)
+  # SYS_OBJECTS
+  SYS_OBJECTS += ./_libs_/byzance/at24mac.$(BUILD_TARGET).o
+  SYS_OBJECTS += ./_libs_/byzance/LowpanBR.$(BUILD_TARGET).o
+  SYS_OBJECTS += ./_libs_/byzance/DNS64.$(BUILD_TARGET).o
+  SYS_OBJECTS += ./_libs_/byzance/NanostackRfPhyAtmel.$(BUILD_TARGET).o
+
+endif
+# LOWPAN_DRIVERS end
+
+# LIBRARIES begin
+ifeq ($(ADD_LIBRARIES), 1)
+  # SYS_OBJECTS
+  SYS_OBJECTS += ./_libs_/libraries/WS2812.$(BUILD_TARGET).o
+	SYS_OBJECTS += ./_libs_/libraries/ms5637.$(BUILD_TARGET).o  
+  SYS_OBJECTS += ./_libs_/libraries/TCA6424A.$(BUILD_TARGET).o
+  SYS_OBJECTS += ./_libs_/libraries/PCA9536.$(BUILD_TARGET).o
+  SYS_OBJECTS += ./_libs_/libraries/MFRC522.$(BUILD_TARGET).o
+  SYS_OBJECTS += ./_libs_/libraries/TLC59116.$(BUILD_TARGET).o
+  SYS_OBJECTS += ./_libs_/libraries/TripleSevenSeg.$(BUILD_TARGET).o
+  SYS_OBJECTS += ./_libs_/libraries/DHT.$(BUILD_TARGET).o
+  SYS_OBJECTS += ./_libs_/libraries/SHT21_ncleee.$(BUILD_TARGET).o
+  SYS_OBJECTS += ./_libs_/libraries/Servo.$(BUILD_TARGET).o
+  SYS_OBJECTS += ./_libs_/libraries/RollerDrive.$(BUILD_TARGET).o
+  SYS_OBJECTS += ./_libs_/libraries/I2CWrapper.$(BUILD_TARGET).o   
+  SYS_OBJECTS += ./_libs_/libraries/DS1820.$(BUILD_TARGET).o
+  SYS_OBJECTS += ./_libs_/libraries/OneWire.$(BUILD_TARGET).o
+  SYS_OBJECTS += ./_libs_/libraries/Dali.$(BUILD_TARGET).o
+  SYS_OBJECTS += ./_libs_/libraries/RGB_matrix.$(BUILD_TARGET).o              
+    
+  # INCLUDE_PATHS 
+  INCLUDE_PATHS += -I./_libs_/libraries
+endif
+# LIBRARIES end
+
+# FONTS begin
+ifeq ($(ADD_FONTS), 1)          
+    
+  # INCLUDE_PATHS 
+  INCLUDE_PATHS += -I./_libs_/fonts
+endif
+# FONTS end
+
+OBJECTS += $(addprefix ./$(BUILD_ID)/,$(addsuffix .include.o,$(BUILD_INCLUDES)))
+INCLUDE_PATHS += -I./$(BUILD_ID)
+
+GCC_BIN =
+
+###############################################################################
+AS      = $(GCC_BIN)arm-none-eabi-as
+CC      = $(GCC_BIN)arm-none-eabi-gcc
+CPP     = $(GCC_BIN)arm-none-eabi-g++
+LD      = $(GCC_BIN)arm-none-eabi-gcc
+OBJCOPY = $(GCC_BIN)arm-none-eabi-objcopy
+OBJDUMP = $(GCC_BIN)arm-none-eabi-objdump
+SIZE    = $(GCC_BIN)arm-none-eabi-size
+
+# CORTEX SELECT
+ifeq ($(CORTEX), M0P)
+  CPU = -mcpu=cortex-m0plus -mthumb
+  CC_FLAGS += $(CPU) -c -g -fno-common -fmessage-length=0 -Wall -Wextra -fno-exceptions -ffunction-sections -fdata-sections -fomit-frame-pointer -MMD -MP
+  CC_SYMBOLS = $(TARGET_CC_SYMBOLS) -DTARGET_FF_ARDUINO -DTOOLCHAIN_GCC_ARM -DTOOLCHAIN_GCC -DTARGET_CORTEX_M -DTARGET_LIKE_MBED -DTARGET_M0P -D__MBED__=1 -DTARGET_FF_MORPHO -D__CORTEX_M0PLUS -DTARGET_LIKE_CORTEX_M0 -DARM_MATH_CM0PLUS
+
+  LD_FLAGS += $(CPU) -Wl,--gc-sections --specs=nano.specs -Wl,--wrap,main -Wl,-Map=$(PROJECT).map,--cref
+  LD_SYS_LIBS = -lstdc++ -lsupc++ -lm -lc -lgcc -lnosys
+endif
+
+ifeq ($(CORTEX), M4)
+  CPU = -mcpu=cortex-m4 -mthumb -mfpu=fpv4-sp-d16 -mfloat-abi=softfp 
+  CC_FLAGS += $(CPU) -c -g -fno-common -fmessage-length=0 -Wall -Wextra -fno-exceptions -ffunction-sections -fdata-sections -fomit-frame-pointer -MMD -MP
+  CC_SYMBOLS = $(TARGET_CC_SYMBOLS) -DTARGET_FF_ARDUINO -DTOOLCHAIN_GCC_ARM -D__CORTEX_M4 -DTARGET_LIKE_MBED -DTARGET_CORTEX_M -D__FPU_PRESENT=1 -DTARGET_LIKE_CORTEX_M4 -DTARGET_M4 -D__MBED__=1 -DTARGET_FF_MORPHO -DTOOLCHAIN_GCC -DARM_MATH_CM4 
+
+  LD_FLAGS = $(CPU) -Wl,--gc-sections --specs=nano.specs -Wl,--wrap,main -Wl,-Map=$(PROJECT).map,--cref
+  LD_SYS_LIBS = -lstdc++ -lsupc++ -lm -lc -lgcc -lnosys
+endif
+
+ifeq ($(ADD_PRINTF_SCANF_FLOAT), 1)
+  LD_FLAGS += -u _printf_float -u _scanf_float
+endif
+
+CC_SYMBOLS += -D__BUILD_TARGET__=$(BUILD_TARGET)
+
+.PHONY: all clean lst size
+
+all: $(PROJECT).bin $(PROJECT).hex size done
+
+
+clean:
+	rm -f $(PROJECT).bin $(PROJECT).elf $(PROJECT).hex $(PROJECT).map $(PROJECT).lst $(OBJECTS) $(DEPS)
+
+
+$(PROJECT).o: $(PROJECT).cpp
+	$(CPP) $(CC_FLAGS) $(CC_SYMBOLS) -std=gnu++11 -fno-rtti $(INCLUDE_PATHS) -o $@ $<
+
+%.$(BUILD_TARGET).o: %.asm
+	$(CC) $(CPU) -c -x assembler-with-cpp -o $@ $<
+%.$(BUILD_TARGET).o: %.s
+	$(CC) $(CPU) -c -x assembler-with-cpp -o $@ $<
+%.$(BUILD_TARGET).o: %.S
+	$(CC) $(CPU) -c -x assembler-with-cpp -o $@ $<
+
+%.$(BUILD_TARGET).o: %.c
+	$(CC)  $(CC_FLAGS) $(CC_SYMBOLS) -std=gnu11 $(INCLUDE_PATHS) -o $@ $<
+
+%.$(BUILD_TARGET).o: %.cpp
+	$(CPP) $(CC_FLAGS) $(CC_SYMBOLS) -std=gnu++11 -fno-rtti $(INCLUDE_PATHS) -o $@ $<
+
+%.include.o: %.c
+	$(CC)  $(CC_FLAGS) $(CC_SYMBOLS) -std=gnu11 $(INCLUDE_PATHS) -o $@ $<
+
+%.include.o: %.cpp
+	$(CPP) $(CC_FLAGS) $(CC_SYMBOLS) -std=gnu++11 -fno-rtti $(INCLUDE_PATHS) -o $@ $<
+
+# There is 32k chars limit on Windows for command line argument and SYS_OBJECT variable might be bigger, because there are hundreads of *.o file paths.
+# So linker arguments are saved to file on Windows and that file is used as cmd line param to bypass 32k limit. 
+# But on code server there is Unix-based OS and multiple simultaneous compilations could be running.
+# Those compilations cannot share one args file (which is always different) so args are passed as parameter on Unix.
+ 
+ifeq ($(OS), Windows_NT)
+$(PROJECT).elf: $(OBJECTS) $(SYS_OBJECTS)
+	@echo $(LD_FLAGS) -T$(LINKER_SCRIPT) > .args.txt
+	@echo $(LIBRARY_PATHS) -o  $@ >> .args.txt
+	@echo -n $^ >> .args.txt
+	@echo -n \ >> .args.txt
+	@echo $(SYS_OBJECTS2) >> .args.txt
+	@echo $(LIBRARIES) $(LD_SYS_LIBS) $(LIBRARIES) $(LD_SYS_LIBS) >> .args.txt
+	$(LD) @./.args.txt
+else
+$(PROJECT).elf: $(OBJECTS) $(SYS_OBJECTS)
+	$(LD) $(LD_FLAGS) -T$(LINKER_SCRIPT) $(LIBRARY_PATHS) -o $@ $^ $(SYS_OBJECTS2) $(LIBRARIES) $(LD_SYS_LIBS) $(LIBRARIES) $(LD_SYS_LIBS)
+endif
+
+$(PROJECT).bin: $(PROJECT).elf
+	$(OBJCOPY) -O binary $< $@
+
+$(PROJECT).hex: $(PROJECT).elf
+	@$(OBJCOPY) -O ihex $< $@
+
+$(PROJECT).lst: $(PROJECT).elf
+	@$(OBJDUMP) -Sdh $< > $@
+
+lst: $(PROJECT).lst
+
+size: $(PROJECT).elf
+	$(SIZE) $(PROJECT).elf
+
+done:
+	@echo "Build done"
+
+DEPS = $(OBJECTS:.o=.d) $(SYS_OBJECTS:.o=.d)
+-include $(DEPS)
+
+
