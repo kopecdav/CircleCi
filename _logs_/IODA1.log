@@ -1,0 +1,103 @@
+MAKE COMMAND: make -f _makefile_ BUILD_ID=IODA1 BUILD_TARGET=BYZANCE_IODAG3E GCC_BIN="" USING_FOLDER_MAIN=1 CUSTOM_BUILD_ID=RND_BUILD_ID_397 INCLUDE_BYZANCE=1
+arm-none-eabi-g++ -O1 -mcpu=cortex-m4 -mthumb -mfpu=fpv4-sp-d16 -mfloat-abi=softfp  -c -g -fno-common -fmessage-length=0 -Wall -Wextra -fno-exceptions -ffunction-sections -fdata-sections -fomit-frame-pointer -MMD -MP -DTARGET_STM -DTARGET_BYZANCE_IODAG3E -DTARGET_STM32F4 -DTARGET_STM32F437II -DDEVICE_ANALOGIN=1 -DDEVICE_ANALOGOUT=1 -DDEVICE_ERROR_RED=1 -DDEVICE_I2C=1 -DDEVICE_I2CSLAVE=1 -DDEVICE_INTERRUPTIN=1 -DDEVICE_PORTIN=1 -DDEVICE_PORTINOUT=1 -DDEVICE_PORTOUT=1 -DDEVICE_PWMOUT=1 -DDEVICE_RTC=1 -DDEVICE_SERIAL=1 -DDEVICE_SERIAL_ASYNCH=1 -DDEVICE_SERIAL_FC=1 -DDEVICE_SLEEP=1 -DDEVICE_SPI=1 -DDEVICE_SPISLAVE=1 -DDEVICE_SPI_ASYNCH=1 -DDEVICE_STDIO_MESSAGES=1 -DMBEDTLS_USER_CONFIG_FILE=\"mbedtls_entropy_config.h\" -DMBEDTLS_ENTROPY_HARDWARE_ALT -DUSB_STM_HAL=1 -DBYZANCE_SUPPORTS_6LOWPAN=1 -DBYZANCE_SUPPORTS_WIFI=0 -DBYZANCE_SUPPORTS_ETHERNET=1 -DBYZANCE_SUPPORTS_PROTOCOL=0 -DMBED_CONF_LWIP_TCP_SERVER_MAX=4 -DMBED_CONF_LWIP_UDP_SOCKET_MAX=4 -DMBED_CONF_NSAPI_PRESENT=1 -DMBED_CONF_LWIP_ADDR_TIMEOUT=5 -DMBED_CONF_LWIP_IP_VER_PREF=4 -DMBED_CONF_LWIP_IPV4_ENABLED=1 -DMBED_CONF_PLATFORM_STDIO_CONVERT_NEWLINES=0 -DMBED_CONF_LWIP_TCP_SOCKET_MAX=4 -DMBED_CONF_EVENTS_PRESENT=1 -DMBED_CONF_RTOS_PRESENT=1 -DMBED_CONF_PLATFORM_STDIO_FLUSH_AT_EXIT=1 -DMBED_CONF_PLATFORM_STDIO_BAUD_RATE=9600 -DMBED_CONF_LWIP_SOCKET_MAX=4 -DMBED_CONF_PLATFORM_DEFAULT_SERIAL_BAUD_RATE=9600 -DMBED_CONF_LWIP_IPV6_ENABLED=0 -D__BUILD_ID__=RND_BUILD_ID_397 -DBYZANCE_SUPPORTS_USB=1 -DTARGET_FF_ARDUINO -DTOOLCHAIN_GCC_ARM -D__CORTEX_M4 -DTARGET_LIKE_MBED -DTARGET_CORTEX_M -D__FPU_PRESENT=1 -DTARGET_LIKE_CORTEX_M4 -DTARGET_M4 -D__MBED__=1 -DTARGET_FF_MORPHO -DTOOLCHAIN_GCC -DARM_MATH_CM4  -D__BUILD_TARGET__=BYZANCE_IODAG3E -std=gnu++11 -fno-rtti -I. -I./_libs_/mbed-os_BYZANCE_IODAG3E -I./_libs_/mbed-os_BYZANCE_IODAG3E/cmsis -I./_libs_/mbed-os_BYZANCE_IODAG3E/cmsis/TARGET_CORTEX_M -I./_libs_/mbed-os_BYZANCE_IODAG3E/cmsis/TARGET_CORTEX_M/TOOLCHAIN_GCC -I./_libs_/mbed-os_BYZANCE_IODAG3E/drivers -I./_libs_/mbed-os_BYZANCE_IODAG3E/events -I./_libs_/mbed-os_BYZANCE_IODAG3E/events/equeue -I./_libs_/mbed-os_BYZANCE_IODAG3E/features -I./_libs_/mbed-os_BYZANCE_IODAG3E/features/FEATURE_COMMON_PAL -I./_libs_/mbed-os_BYZANCE_IODAG3E/features/FEATURE_COMMON_PAL/mbed-client-randlib -I./_libs_/mbed-os_BYZANCE_IODAG3E/features/FEATURE_COMMON_PAL/mbed-client-randlib/mbed-client-randlib -I./_libs_/mbed-os_BYZANCE_IODAG3E/features/FEATURE_COMMON_PAL/mbed-client-randlib/mbed-client-randlib/platform -I./_libs_/mbed-os_BYZANCE_IODAG3E/features/FEATURE_COMMON_PAL/mbed-client-randlib/source -I./_libs_/mbed-os_BYZANCE_IODAG3E/features/FEATURE_COMMON_PAL/mbed-coap -I./_libs_/mbed-os_BYZANCE_IODAG3E/features/FEATURE_COMMON_PAL/mbed-coap/mbed-coap -I./_libs_/mbed-os_BYZANCE_IODAG3E/features/FEATURE_COMMON_PAL/mbed-coap/source -I./_libs_/mbed-os_BYZANCE_IODAG3E/features/FEATURE_COMMON_PAL/mbed-coap/source/include -I./_libs_/mbed-os_BYZANCE_IODAG3E/features/FEATURE_COMMON_PAL/mbed-trace -I./_libs_/mbed-os_BYZANCE_IODAG3E/features/FEATURE_COMMON_PAL/mbed-trace/mbed-trace -I./_libs_/mbed-os_BYZANCE_IODAG3E/features/FEATURE_COMMON_PAL/mbed-trace/source -I./_libs_/mbed-os_BYZANCE_IODAG3E/features/FEATURE_COMMON_PAL/nanostack-hal-mbed-cmsis-rtos -I./_libs_/mbed-os_BYZANCE_IODAG3E/features/FEATURE_COMMON_PAL/nanostack-hal-mbed-cmsis-rtos/cs_nvm -I./_libs_/mbed-os_BYZANCE_IODAG3E/features/FEATURE_COMMON_PAL/nanostack-hal-mbed-cmsis-rtos/nvm -I./_libs_/mbed-os_BYZANCE_IODAG3E/features/FEATURE_COMMON_PAL/nanostack-libservice -I./_libs_/mbed-os_BYZANCE_IODAG3E/features/FEATURE_COMMON_PAL/nanostack-libservice/mbed-client-libservice -I./_libs_/mbed-os_BYZANCE_IODAG3E/features/FEATURE_COMMON_PAL/nanostack-libservice/mbed-client-libservice/platform -I./_libs_/mbed-os_BYZANCE_IODAG3E/features/FEATURE_COMMON_PAL/nanostack-libservice/source -I./_libs_/mbed-os_BYZANCE_IODAG3E/features/FEATURE_COMMON_PAL/nanostack-libservice/source/IPv6_fcf_lib -I./_libs_/mbed-os_BYZANCE_IODAG3E/features/FEATURE_COMMON_PAL/nanostack-libservice/source/libBits -I./_libs_/mbed-os_BYZANCE_IODAG3E/features/FEATURE_COMMON_PAL/nanostack-libservice/source/libip6string -I./_libs_/mbed-os_BYZANCE_IODAG3E/features/FEATURE_COMMON_PAL/nanostack-libservice/source/libList -I./_libs_/mbed-os_BYZANCE_IODAG3E/features/FEATURE_COMMON_PAL/nanostack-libservice/source/nsdynmemLIB -I./_libs_/mbed-os_BYZANCE_IODAG3E/features/FEATURE_COMMON_PAL/nanostack-libservice/source/nvmHelper -I./_libs_/mbed-os_BYZANCE_IODAG3E/features/FEATURE_COMMON_PAL/sal-stack-nanostack-eventloop -I./_libs_/mbed-os_BYZANCE_IODAG3E/features/FEATURE_COMMON_PAL/sal-stack-nanostack-eventloop/nanostack-event-loop -I./_libs_/mbed-os_BYZANCE_IODAG3E/features/FEATURE_COMMON_PAL/sal-stack-nanostack-eventloop/nanostack-event-loop/platform -I./_libs_/mbed-os_BYZANCE_IODAG3E/features/FEATURE_COMMON_PAL/sal-stack-nanostack-eventloop/source -I./_libs_/mbed-os_BYZANCE_IODAG3E/features/FEATURE_LWIP -I./_libs_/mbed-os_BYZANCE_IODAG3E/features/FEATURE_LWIP/lwip-interface -I./_libs_/mbed-os_BYZANCE_IODAG3E/features/FEATURE_LWIP/lwip-interface/lwip -I./_libs_/mbed-os_BYZANCE_IODAG3E/features/FEATURE_LWIP/lwip-interface/lwip/src -I./_libs_/mbed-os_BYZANCE_IODAG3E/features/FEATURE_LWIP/lwip-interface/lwip/src/api -I./_libs_/mbed-os_BYZANCE_IODAG3E/features/FEATURE_LWIP/lwip-interface/lwip/src/core -I./_libs_/mbed-os_BYZANCE_IODAG3E/features/FEATURE_LWIP/lwip-interface/lwip/src/core/ipv4 -I./_libs_/mbed-os_BYZANCE_IODAG3E/features/FEATURE_LWIP/lwip-interface/lwip/src/core/ipv6 -I./_libs_/mbed-os_BYZANCE_IODAG3E/features/FEATURE_LWIP/lwip-interface/lwip/src/include -I./_libs_/mbed-os_BYZANCE_IODAG3E/features/FEATURE_LWIP/lwip-interface/lwip/src/include/lwip -I./_libs_/mbed-os_BYZANCE_IODAG3E/features/FEATURE_LWIP/lwip-interface/lwip/src/include/lwip/priv -I./_libs_/mbed-os_BYZANCE_IODAG3E/features/FEATURE_LWIP/lwip-interface/lwip/src/include/lwip/prot -I./_libs_/mbed-os_BYZANCE_IODAG3E/features/FEATURE_LWIP/lwip-interface/lwip/src/include/netif -I./_libs_/mbed-os_BYZANCE_IODAG3E/features/FEATURE_LWIP/lwip-interface/lwip/src/include/netif/ppp -I./_libs_/mbed-os_BYZANCE_IODAG3E/features/FEATURE_LWIP/lwip-interface/lwip/src/include/netif/ppp/polarssl -I./_libs_/mbed-os_BYZANCE_IODAG3E/features/FEATURE_LWIP/lwip-interface/lwip/src/netif -I./_libs_/mbed-os_BYZANCE_IODAG3E/features/FEATURE_LWIP/lwip-interface/lwip/src/netif/ppp -I./_libs_/mbed-os_BYZANCE_IODAG3E/features/FEATURE_LWIP/lwip-interface/lwip/src/netif/ppp/polarssl -I./_libs_/mbed-os_BYZANCE_IODAG3E/features/FEATURE_LWIP/lwip-interface/lwip-eth -I./_libs_/mbed-os_BYZANCE_IODAG3E/features/FEATURE_LWIP/lwip-interface/lwip-eth/arch -I./_libs_/mbed-os_BYZANCE_IODAG3E/features/FEATURE_LWIP/lwip-interface/lwip-eth/arch/TARGET_STM -I./_libs_/mbed-os_BYZANCE_IODAG3E/features/FEATURE_LWIP/lwip-interface/lwip-eth/arch/TARGET_STM/TARGET_STM32F4 -I./_libs_/mbed-os_BYZANCE_IODAG3E/features/FEATURE_LWIP/lwip-interface/lwip-eth/arch/TARGET_STM/TARGET_STM32F4/TARGET_BYZANCE_IODAG3E -I./_libs_/mbed-os_BYZANCE_IODAG3E/features/FEATURE_LWIP/lwip-interface/lwip-sys -I./_libs_/mbed-os_BYZANCE_IODAG3E/features/FEATURE_LWIP/lwip-interface/lwip-sys/arch -I./_libs_/mbed-os_BYZANCE_IODAG3E/features/filesystem -I./_libs_/mbed-os_BYZANCE_IODAG3E/features/filesystem/bd -I./_libs_/mbed-os_BYZANCE_IODAG3E/features/filesystem/fat -I./_libs_/mbed-os_BYZANCE_IODAG3E/features/filesystem/fat/ChaN -I./_libs_/mbed-os_BYZANCE_IODAG3E/features/frameworks -I./_libs_/mbed-os_BYZANCE_IODAG3E/features/frameworks/greentea-client -I./_libs_/mbed-os_BYZANCE_IODAG3E/features/frameworks/greentea-client/greentea-client -I./_libs_/mbed-os_BYZANCE_IODAG3E/features/frameworks/greentea-client/source -I./_libs_/mbed-os_BYZANCE_IODAG3E/features/frameworks/unity -I./_libs_/mbed-os_BYZANCE_IODAG3E/features/frameworks/unity/source -I./_libs_/mbed-os_BYZANCE_IODAG3E/features/frameworks/unity/unity -I./_libs_/mbed-os_BYZANCE_IODAG3E/features/frameworks/utest -I./_libs_/mbed-os_BYZANCE_IODAG3E/features/frameworks/utest/source -I./_libs_/mbed-os_BYZANCE_IODAG3E/features/frameworks/utest/utest -I./_libs_/mbed-os_BYZANCE_IODAG3E/features/mbedtls -I./_libs_/mbed-os_BYZANCE_IODAG3E/features/mbedtls/inc -I./_libs_/mbed-os_BYZANCE_IODAG3E/features/mbedtls/inc/mbedtls -I./_libs_/mbed-os_BYZANCE_IODAG3E/features/mbedtls/platform -I./_libs_/mbed-os_BYZANCE_IODAG3E/features/mbedtls/platform/inc -I./_libs_/mbed-os_BYZANCE_IODAG3E/features/mbedtls/platform/src -I./_libs_/mbed-os_BYZANCE_IODAG3E/features/mbedtls/src -I./_libs_/mbed-os_BYZANCE_IODAG3E/features/mbedtls/targets -I./_libs_/mbed-os_BYZANCE_IODAG3E/features/mbedtls/targets/TARGET_STM -I./_libs_/mbed-os_BYZANCE_IODAG3E/features/nanostack -I./_libs_/mbed-os_BYZANCE_IODAG3E/features/nanostack/FEATURE_LOWPAN_BORDER_ROUTER -I./_libs_/mbed-os_BYZANCE_IODAG3E/features/nanostack/FEATURE_LOWPAN_BORDER_ROUTER/TOOLCHAIN_GCC -I./_libs_/mbed-os_BYZANCE_IODAG3E/features/nanostack/FEATURE_LOWPAN_BORDER_ROUTER/TOOLCHAIN_GCC/TARGET_RTOS_M4_M7 -I./_libs_/mbed-os_BYZANCE_IODAG3E/features/nanostack/FEATURE_LOWPAN_ROUTER -I./_libs_/mbed-os_BYZANCE_IODAG3E/features/nanostack/FEATURE_LOWPAN_ROUTER/TOOLCHAIN_GCC -I./_libs_/mbed-os_BYZANCE_IODAG3E/features/nanostack/FEATURE_LOWPAN_ROUTER/TOOLCHAIN_GCC/TARGET_RTOS_M4_M7 -I./_libs_/mbed-os_BYZANCE_IODAG3E/features/nanostack/FEATURE_NANOSTACK -I./_libs_/mbed-os_BYZANCE_IODAG3E/features/nanostack/FEATURE_NANOSTACK/coap-service -I./_libs_/mbed-os_BYZANCE_IODAG3E/features/nanostack/FEATURE_NANOSTACK/coap-service/coap-service -I./_libs_/mbed-os_BYZANCE_IODAG3E/features/nanostack/FEATURE_NANOSTACK/coap-service/source -I./_libs_/mbed-os_BYZANCE_IODAG3E/features/nanostack/FEATURE_NANOSTACK/coap-service/source/include -I./_libs_/mbed-os_BYZANCE_IODAG3E/features/nanostack/FEATURE_NANOSTACK/mbed-mesh-api -I./_libs_/mbed-os_BYZANCE_IODAG3E/features/nanostack/FEATURE_NANOSTACK/mbed-mesh-api/mbed-mesh-api -I./_libs_/mbed-os_BYZANCE_IODAG3E/features/nanostack/FEATURE_NANOSTACK/mbed-mesh-api/source -I./_libs_/mbed-os_BYZANCE_IODAG3E/features/nanostack/FEATURE_NANOSTACK/mbed-mesh-api/source/include -I./_libs_/mbed-os_BYZANCE_IODAG3E/features/nanostack/FEATURE_NANOSTACK/nanostack-interface -I./_libs_/mbed-os_BYZANCE_IODAG3E/features/nanostack/FEATURE_NANOSTACK/sal-stack-nanostack -I./_libs_/mbed-os_BYZANCE_IODAG3E/features/nanostack/FEATURE_NANOSTACK/sal-stack-nanostack/nanostack -I./_libs_/mbed-os_BYZANCE_IODAG3E/features/nanostack/FEATURE_NANOSTACK/sal-stack-nanostack/nanostack/platform -I./_libs_/mbed-os_BYZANCE_IODAG3E/features/netsocket -I./_libs_/mbed-os_BYZANCE_IODAG3E/features/netsocket/cellular -I./_libs_/mbed-os_BYZANCE_IODAG3E/features/netsocket/cellular/generic_modem_driver -I./_libs_/mbed-os_BYZANCE_IODAG3E/features/netsocket/cellular/utils -I./_libs_/mbed-os_BYZANCE_IODAG3E/hal -I./_libs_/mbed-os_BYZANCE_IODAG3E/hal/storage_abstraction -I./_libs_/mbed-os_BYZANCE_IODAG3E/platform -I./_libs_/mbed-os_BYZANCE_IODAG3E/rtos -I./_libs_/mbed-os_BYZANCE_IODAG3E/rtos/TARGET_CORTEX -I./_libs_/mbed-os_BYZANCE_IODAG3E/rtos/TARGET_CORTEX/rtx4 -I./_libs_/mbed-os_BYZANCE_IODAG3E/rtos/TARGET_CORTEX/rtx5 -I./_libs_/mbed-os_BYZANCE_IODAG3E/rtos/TARGET_CORTEX/rtx5/TARGET_RTOS_M4_M7 -I./_libs_/mbed-os_BYZANCE_IODAG3E/rtos/TARGET_CORTEX/rtx5/TARGET_RTOS_M4_M7/TOOLCHAIN_GCC -I./_libs_/mbed-os_BYZANCE_IODAG3E/targets -I./_libs_/mbed-os_BYZANCE_IODAG3E/targets/TARGET_STM -I./_libs_/mbed-os_BYZANCE_IODAG3E/targets/TARGET_STM/TARGET_STM32F4 -I./_libs_/mbed-os_BYZANCE_IODAG3E/targets/TARGET_STM/TARGET_STM32F4/device -I./_libs_/mbed-os_BYZANCE_IODAG3E/targets/TARGET_STM/TARGET_STM32F4/TARGET_STM32F437xI -I./_libs_/mbed-os_BYZANCE_IODAG3E/targets/TARGET_STM/TARGET_STM32F4/TARGET_STM32F437xI/device -I./_libs_/mbed-os_BYZANCE_IODAG3E/targets/TARGET_STM/TARGET_STM32F4/TARGET_STM32F437xI/device/TOOLCHAIN_GCC_ARM -I./_libs_/mbed-os_BYZANCE_IODAG3E/targets/TARGET_STM/TARGET_STM32F4/TARGET_STM32F437xI/TARGET_BYZANCE_IODAG3E -I./_libs_/mqtt   -I./_libs_/mqtt/FP   -I./_libs_/mqtt/MQTTPacket -I./_libs_/usb -I./_libs_/usb/targets/TARGET_STM -I./_libs_/usb/USBDevice -I./_libs_/usb/USBSerial -I./_libs_/usb/USBMSD -I./_libs_/usb/mass -I./_libs_/byzance -I./_libs_/byzance_drivers -I./_libs_/libraries -I./_libs_/fonts -I./IODA1 -o IODA1/main.o IODA1/main.cpp
+In file included from ./_libs_/mbed-os_BYZANCE_IODAG3E/features/netsocket/nsapi_ppp.h:21:0,
+                 from ./_libs_/mbed-os_BYZANCE_IODAG3E/mbed.h:43,
+                 from ./_libs_/byzance/byzance.h:8,
+                 from IODA1/main.cpp:1:
+./_libs_/mbed-os_BYZANCE_IODAG3E/platform/FileHandle.h: In member function 'virtual int mbed::FileHandle::set_blocking(bool)':
+./_libs_/mbed-os_BYZANCE_IODAG3E/platform/FileHandle.h:179:35: warning: unused parameter 'blocking' [-Wunused-parameter]
+     virtual int set_blocking(bool blocking)
+                                   ^~~~~~~~
+./_libs_/mbed-os_BYZANCE_IODAG3E/platform/FileHandle.h: In member function 'virtual short int mbed::FileHandle::poll(short int) const':
+./_libs_/mbed-os_BYZANCE_IODAG3E/platform/FileHandle.h:194:30: warning: unused parameter 'events' [-Wunused-parameter]
+     virtual short poll(short events) const
+                              ^~~~~~
+./_libs_/mbed-os_BYZANCE_IODAG3E/platform/FileHandle.h: In member function 'virtual void mbed::FileHandle::sigio(mbed::Callback<void()>)':
+./_libs_/mbed-os_BYZANCE_IODAG3E/platform/FileHandle.h:239:41: warning: unused parameter 'func' [-Wunused-parameter]
+     virtual void sigio(Callback<void()> func)
+                                         ^~~~
+In file included from ./_libs_/usb/USBDevice/USBDevice.h:24:0,
+                 from ./_libs_/usb/USBSerial/USBCDC.h:27,
+                 from ./_libs_/usb/USBSerial/USBSerial.h:22,
+                 from ./_libs_/byzance_drivers/ByzanceLogger.h:7,
+                 from ./_libs_/byzance/byzance.h:11,
+                 from IODA1/main.cpp:1:
+./_libs_/usb/USBDevice/USBHAL.h: In member function 'virtual void USBHAL::connectStateChanged(unsigned int)':
+./_libs_/usb/USBDevice/USBHAL.h:67:51: warning: unused parameter 'connected' [-Wunused-parameter]
+     virtual void connectStateChanged(unsigned int connected){};
+                                                   ^~~~~~~~~
+./_libs_/usb/USBDevice/USBHAL.h: In member function 'virtual void USBHAL::suspendStateChanged(unsigned int)':
+./_libs_/usb/USBDevice/USBHAL.h:68:51: warning: unused parameter 'suspended' [-Wunused-parameter]
+     virtual void suspendStateChanged(unsigned int suspended){};
+                                                   ^~~~~~~~~
+./_libs_/usb/USBDevice/USBHAL.h: In member function 'virtual void USBHAL::SOF(int)':
+./_libs_/usb/USBDevice/USBHAL.h:69:26: warning: unused parameter 'frameNumber' [-Wunused-parameter]
+     virtual void SOF(int frameNumber){};
+                          ^~~~~~~~~~~
+In file included from ./_libs_/usb/USBSerial/USBCDC.h:27:0,
+                 from ./_libs_/usb/USBSerial/USBSerial.h:22,
+                 from ./_libs_/byzance_drivers/ByzanceLogger.h:7,
+                 from ./_libs_/byzance/byzance.h:11,
+                 from IODA1/main.cpp:1:
+./_libs_/usb/USBDevice/USBDevice.h: In member function 'virtual void USBDevice::USBCallback_requestCompleted(uint8_t*, uint32_t)':
+./_libs_/usb/USBDevice/USBDevice.h:148:57: warning: unused parameter 'buf' [-Wunused-parameter]
+     virtual void USBCallback_requestCompleted(uint8_t * buf, uint32_t length) {};
+                                                         ^~~
+./_libs_/usb/USBDevice/USBDevice.h:148:71: warning: unused parameter 'length' [-Wunused-parameter]
+     virtual void USBCallback_requestCompleted(uint8_t * buf, uint32_t length) {};
+                                                                       ^~~~~~
+./_libs_/usb/USBDevice/USBDevice.h: In member function 'virtual bool USBDevice::USBCallback_setConfiguration(uint8_t)':
+./_libs_/usb/USBDevice/USBDevice.h:156:55: warning: unused parameter 'configuration' [-Wunused-parameter]
+     virtual bool USBCallback_setConfiguration(uint8_t configuration) { return false; };
+                                                       ^~~~~~~~~~~~~
+./_libs_/usb/USBDevice/USBDevice.h: In member function 'virtual bool USBDevice::USBCallback_setInterface(uint16_t, uint8_t)':
+./_libs_/usb/USBDevice/USBDevice.h:165:52: warning: unused parameter 'interface' [-Wunused-parameter]
+     virtual bool USBCallback_setInterface(uint16_t interface, uint8_t alternate) { return false; };
+                                                    ^~~~~~~~~
+./_libs_/usb/USBDevice/USBDevice.h:165:71: warning: unused parameter 'alternate' [-Wunused-parameter]
+     virtual bool USBCallback_setInterface(uint16_t interface, uint8_t alternate) { return false; };
+                                                                       ^~~~~~~~~
+In file included from ./_libs_/usb/USBSerial/USBSerial.h:22:0,
+                 from ./_libs_/byzance_drivers/ByzanceLogger.h:7,
+                 from ./_libs_/byzance/byzance.h:11,
+                 from IODA1/main.cpp:1:
+./_libs_/usb/USBSerial/USBCDC.h: In member function 'virtual void USBCDC::lineCodingChanged(int, int, int, int)':
+./_libs_/usb/USBSerial/USBCDC.h:113:40: warning: unused parameter 'baud' [-Wunused-parameter]
+     virtual void lineCodingChanged(int baud, int bits, int parity, int stop) {};
+                                        ^~~~
+./_libs_/usb/USBSerial/USBCDC.h:113:50: warning: unused parameter 'bits' [-Wunused-parameter]
+     virtual void lineCodingChanged(int baud, int bits, int parity, int stop) {};
+                                                  ^~~~
+./_libs_/usb/USBSerial/USBCDC.h:113:60: warning: unused parameter 'parity' [-Wunused-parameter]
+     virtual void lineCodingChanged(int baud, int bits, int parity, int stop) {};
+                                                            ^~~~~~
+./_libs_/usb/USBSerial/USBCDC.h:113:72: warning: unused parameter 'stop' [-Wunused-parameter]
+     virtual void lineCodingChanged(int baud, int bits, int parity, int stop) {};
+                                                                        ^~~~
+In file included from ./_libs_/byzance_drivers/ByzanceLogger.h:7:0,
+                 from ./_libs_/byzance/byzance.h:11,
+                 from IODA1/main.cpp:1:
+./_libs_/usb/USBSerial/USBSerial.h: In member function 'void USBSerial::attach(void (*)())':
+./_libs_/usb/USBSerial/USBSerial.h:141:27: warning: 'void mbed::Callback<R()>::attach(R (*)()) [with R = void]' is deprecated: Replaced by simple assignment 'Callback cb = func [since mbed-os-5.4] [-Wdeprecated-declarations]
+             rx.attach(fptr);
+                           ^
+In file included from ./_libs_/mbed-os_BYZANCE_IODAG3E/rtos/Thread.h:29:0,
+                 from ./_libs_/mbed-os_BYZANCE_IODAG3E/rtos/rtos.h:29,
+                 from ./_libs_/mbed-os_BYZANCE_IODAG3E/mbed.h:38,
+                 from ./_libs_/byzance/byzance.h:8,
+                 from IODA1/main.cpp:1:
+./_libs_/mbed-os_BYZANCE_IODAG3E/platform/Callback.h:271:10: note: declared here
+     void attach(R (*func)()) {
+          ^~~~~~
+IODA1/main.cpp: In function 'int report_state()':
+IODA1/main.cpp:130:2: error: 'report_state_msg' was not declared in this scope
+  report_state_msg(ip_add, up_t, connected, voltage, temp);
+  ^~~~~~~~~~~~~~~~
+IODA1/main.cpp:130:2: note: suggested alternative: 'report_state'
+  report_state_msg(ip_add, up_t, connected, voltage, temp);
+  ^~~~~~~~~~~~~~~~
+  report_state
+_makefile_:299: recipe for target 'IODA1/main.o' failed
+make: *** [IODA1/main.o] Error 1
+
+Compile process exited with code 2

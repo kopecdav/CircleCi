@@ -96,12 +96,7 @@ function build_section(){
 		CURRENT_SECTION=""
 	fi
 	
-	# Inti log file if does not exist
-	if ! [ -d "${MAKE_DIR}_logs_" ]; then
-		mkdir _logs_
-	fi	
-
-	echo "ERROR LOG " > ${MAKE_DIR}_logs_/BUILD_FAILED.log 
+	
 
 	# Get list of all directories
 	dirs=(`ls -d */`)
@@ -198,17 +193,17 @@ function build_section(){
 							let "FAIL_COUNTER++"
 							printf "\t\t${RED}%s${NC}" "BUILD FAILED"
 
+							# Add Failed program name to failed programs list 
 							FAILED_PROGRAMS=$(printf "$FAILED_PROGRAMS\n $DIR_NAME")
 							
 							# printHeader $DIR_NAME ${MAKE_DIR} # Function printHeader not used at the moment .. need to add argument for ${MAKE_DIR}
-
-							echo "" >> ${MAKE_DIR}_logs_/BUILD_FAILED.log 
-							echo "-----------------------------------------------" >> ${MAKE_DIR}_logs_/BUILD_FAILED.log 
+							printf "\n" >> ${MAKE_DIR}_logs_/BUILD_FAILED.log 
+							printf '*************************************************** \n' >> ${MAKE_DIR}_logs_/BUILD_FAILED.log 
 							printf "PROJECT %s BUILD LOG \n" "$DIR_NAME" >> ${MAKE_DIR}_logs_/BUILD_FAILED.log
-							echo "-----------------------------------------------" >> ${MAKE_DIR}_logs_/BUILD_FAILED.log
-							echo "" >> ${MAKE_DIR}_logs_/BUILD_FAILED.log 
-
+							printf '*************************************************** \n' >> ${MAKE_DIR}_logs_/BUILD_FAILED.log
+							printf "\n" >> ${MAKE_DIR}_logs_/BUILD_FAILED.log 
 							cat ${MAKE_DIR}_logs_/$DIR_NAME.log >> ${MAKE_DIR}_logs_/BUILD_FAILED.log 
+			
 						fi		
 						
 						node ${MAKE_DIR}_makescript_.js ${CURRENT_SECTION}${DIR_NAME} BYZANCE_IODAG3E clean &>/dev/null
@@ -240,7 +235,12 @@ function build_section(){
 
 
 
+# Inti log file if does not exist
+if ! [ -d "_logs_" ]; then
+	mkdir _logs_
+fi	
 
+echo "ERROR LOG " > ${MAKE_DIR}_logs_/BUILD_FAILED.log 
 
 # Search in HW libs for projects not located in any section
 build_section 
@@ -271,7 +271,6 @@ elif [ $MISSING_JSON_COUNTER \> 0 ] ; then
 	echo "Repository is missing some jsons"
 	printf "Send Warning message to slack \n"
 	#curl -X POST --data-urlencode "payload={\"channel\": \"#hardware\", \"username\": \"Circle CI\", \"text\": \" Some examples are missing readme.json files \n Push author: ${AUTHOR} \n \n Missing jsons in: ${MISSING_JSONS}.\"}" https://hooks.slack.com/services/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 &>/dev/null
-
 
 fi
 

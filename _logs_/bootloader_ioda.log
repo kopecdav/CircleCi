@@ -1,0 +1,1602 @@
+MAKE COMMAND: make -f _makefile_ BUILD_ID=bootloaders/bootloader_ioda BUILD_TARGET=BYZANCE_IODAG3E_BOOTLOADER GCC_BIN="" USING_FOLDER_MAIN=1 CUSTOM_BUILD_ID=RND_BUILD_ID_288 INCLUDE_MBED=1 INCLUDE_BYZANCESPI=1 INCLUDE_EXTMEM=1 INCLUDE_INTMEM=1 INCLUDE_EXTMEM_CONFIG=1 INCLUDE_INTMEM_CONFIG=1 INCLUDE_BUILD_DATETIME=1 INCLUDE_SUPPORT_FUNCTIONS=1 INCLUDE_IODA_BOOTLOADER_VERSION=1 INCLUDE_WATCHDOG=1 INCLUDE_STRUCT_BINARY=1 INCLUDE_STRUCT_CONFIG_IODA=1 INCLUDE_BYZANCELOGGER=1 INCLUDE_BOOTLOADERCOMMANDER=1 INCLUDE_MACROS_BOOTLOADER=1 INCLUDE_CONFIGURATOR=1 INCLUDE_USBSERIAL=1
+arm-none-eabi-g++ -Os -mcpu=cortex-m4 -mthumb -mfpu=fpv4-sp-d16 -mfloat-abi=softfp  -c -g -fno-common -fmessage-length=0 -Wall -Wextra -fno-exceptions -ffunction-sections -fdata-sections -fomit-frame-pointer -MMD -MP -DTARGET_STM -DTARGET_BYZANCE_IODAG3E -DTARGET_STM32F4 -DTARGET_STM32F437II -DDEVICE_ERROR_RED=1 -DDEVICE_INTERRUPTIN=1 -DDEVICE_RTC=1 -DDEVICE_SERIAL=1 -DDEVICE_SERIAL_ASYNCH=1 -DDEVICE_SERIAL_FC=1 -DDEVICE_SPI=1 -DDEVICE_SPI_ASYNCH=1 -DDEVICE_STDIO_MESSAGES=1 -DBYZANCE_BOOTLOADER=1 -DMBED_CONF_PLATFORM_STDIO_CONVERT_NEWLINES=0 -DMBED_CONF_PLATFORM_STDIO_FLUSH_AT_EXIT=1 -DMBED_CONF_PLATFORM_STDIO_BAUD_RATE=9600 -DMBED_CONF_PLATFORM_DEFAULT_SERIAL_BAUD_RATE=9600 -DBYZANCE_SUPPORTS_6LOWPAN=0 -DBYZANCE_SUPPORTS_WIFI=0 -DBYZANCE_SUPPORTS_ETHERNET=0 -D__BUILD_ID__=RND_BUILD_ID_288 -DBYZANCE_SUPPORTS_USB=1 -DTARGET_FF_ARDUINO -DTOOLCHAIN_GCC_ARM -D__CORTEX_M4 -DTARGET_LIKE_MBED -DTARGET_CORTEX_M -D__FPU_PRESENT=1 -DTARGET_LIKE_CORTEX_M4 -DTARGET_M4 -D__MBED__=1 -DTARGET_FF_MORPHO -DTOOLCHAIN_GCC -DARM_MATH_CM4  -D__BUILD_TARGET__=BYZANCE_IODAG3E_BOOTLOADER -std=gnu++11 -fno-rtti -I. -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/cmsis -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/cmsis/TARGET_CORTEX_M -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/cmsis/TARGET_CORTEX_M/TOOLCHAIN_GCC -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/drivers -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/hal -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/hal/storage_abstraction -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/platform -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/targets -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/targets/TARGET_STM -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/targets/TARGET_STM/TARGET_STM32F4 -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/targets/TARGET_STM/TARGET_STM32F4/device -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/targets/TARGET_STM/TARGET_STM32F4/TARGET_STM32F437xI -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/targets/TARGET_STM/TARGET_STM32F4/TARGET_STM32F437xI/device -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/targets/TARGET_STM/TARGET_STM32F4/TARGET_STM32F437xI/device/TOOLCHAIN_GCC_ARM -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/targets/TARGET_STM/TARGET_STM32F4/TARGET_STM32F437xI/TARGET_BYZANCE_IODAG3E_BOOTLOADER -I./_libs_/usb -I./_libs_/usb/targets/TARGET_STM -I./_libs_/usb/USBDevice -I./_libs_/usb/USBSerial -I./_libs_/usb/USBMSD -I./_libs_/usb/mass -I./_libs_/byzance_drivers -I./bootloaders/bootloader_ioda -o bootloaders/bootloader_ioda/main.o bootloaders/bootloader_ioda/main.cpp
+In file included from ./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/platform/FileLike.h:21:0,
+                 from ./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/platform/Stream.h:20,
+                 from ./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/drivers/Serial.h:23,
+                 from ./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/mbed.h:81,
+                 from bootloaders/bootloader_ioda/main.cpp:1:
+./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/platform/FileHandle.h: In member function 'virtual int mbed::FileHandle::set_blocking(bool)':
+./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/platform/FileHandle.h:179:35: warning: unused parameter 'blocking' [-Wunused-parameter]
+     virtual int set_blocking(bool blocking)
+                                   ^~~~~~~~
+./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/platform/FileHandle.h: In member function 'virtual short int mbed::FileHandle::poll(short int) const':
+./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/platform/FileHandle.h:194:30: warning: unused parameter 'events' [-Wunused-parameter]
+     virtual short poll(short events) const
+                              ^~~~~~
+./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/platform/FileHandle.h: In member function 'virtual void mbed::FileHandle::sigio(mbed::Callback<void()>)':
+./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/platform/FileHandle.h:239:41: warning: unused parameter 'func' [-Wunused-parameter]
+     virtual void sigio(Callback<void()> func)
+                                         ^~~~
+In file included from ./_libs_/usb/USBDevice/USBDevice.h:24:0,
+                 from ./_libs_/usb/USBSerial/USBCDC.h:27,
+                 from ./_libs_/usb/USBSerial/USBSerial.h:22,
+                 from ./_libs_/byzance_drivers/ByzanceLogger.h:7,
+                 from ./_libs_/byzance_drivers/byzance_debug.h:4,
+                 from ./_libs_/byzance_drivers/SpiFlash.h:7,
+                 from ./_libs_/byzance_drivers/ExtMem.h:5,
+                 from bootloaders/bootloader_ioda/main.cpp:3:
+./_libs_/usb/USBDevice/USBHAL.h: In member function 'virtual void USBHAL::connectStateChanged(unsigned int)':
+./_libs_/usb/USBDevice/USBHAL.h:67:51: warning: unused parameter 'connected' [-Wunused-parameter]
+     virtual void connectStateChanged(unsigned int connected){};
+                                                   ^~~~~~~~~
+./_libs_/usb/USBDevice/USBHAL.h: In member function 'virtual void USBHAL::suspendStateChanged(unsigned int)':
+./_libs_/usb/USBDevice/USBHAL.h:68:51: warning: unused parameter 'suspended' [-Wunused-parameter]
+     virtual void suspendStateChanged(unsigned int suspended){};
+                                                   ^~~~~~~~~
+./_libs_/usb/USBDevice/USBHAL.h: In member function 'virtual void USBHAL::SOF(int)':
+./_libs_/usb/USBDevice/USBHAL.h:69:26: warning: unused parameter 'frameNumber' [-Wunused-parameter]
+     virtual void SOF(int frameNumber){};
+                          ^~~~~~~~~~~
+In file included from ./_libs_/usb/USBSerial/USBCDC.h:27:0,
+                 from ./_libs_/usb/USBSerial/USBSerial.h:22,
+                 from ./_libs_/byzance_drivers/ByzanceLogger.h:7,
+                 from ./_libs_/byzance_drivers/byzance_debug.h:4,
+                 from ./_libs_/byzance_drivers/SpiFlash.h:7,
+                 from ./_libs_/byzance_drivers/ExtMem.h:5,
+                 from bootloaders/bootloader_ioda/main.cpp:3:
+./_libs_/usb/USBDevice/USBDevice.h: In member function 'virtual void USBDevice::USBCallback_requestCompleted(uint8_t*, uint32_t)':
+./_libs_/usb/USBDevice/USBDevice.h:148:57: warning: unused parameter 'buf' [-Wunused-parameter]
+     virtual void USBCallback_requestCompleted(uint8_t * buf, uint32_t length) {};
+                                                         ^~~
+./_libs_/usb/USBDevice/USBDevice.h:148:71: warning: unused parameter 'length' [-Wunused-parameter]
+     virtual void USBCallback_requestCompleted(uint8_t * buf, uint32_t length) {};
+                                                                       ^~~~~~
+./_libs_/usb/USBDevice/USBDevice.h: In member function 'virtual bool USBDevice::USBCallback_setConfiguration(uint8_t)':
+./_libs_/usb/USBDevice/USBDevice.h:156:55: warning: unused parameter 'configuration' [-Wunused-parameter]
+     virtual bool USBCallback_setConfiguration(uint8_t configuration) { return false; };
+                                                       ^~~~~~~~~~~~~
+./_libs_/usb/USBDevice/USBDevice.h: In member function 'virtual bool USBDevice::USBCallback_setInterface(uint16_t, uint8_t)':
+./_libs_/usb/USBDevice/USBDevice.h:165:52: warning: unused parameter 'interface' [-Wunused-parameter]
+     virtual bool USBCallback_setInterface(uint16_t interface, uint8_t alternate) { return false; };
+                                                    ^~~~~~~~~
+./_libs_/usb/USBDevice/USBDevice.h:165:71: warning: unused parameter 'alternate' [-Wunused-parameter]
+     virtual bool USBCallback_setInterface(uint16_t interface, uint8_t alternate) { return false; };
+                                                                       ^~~~~~~~~
+In file included from ./_libs_/usb/USBSerial/USBSerial.h:22:0,
+                 from ./_libs_/byzance_drivers/ByzanceLogger.h:7,
+                 from ./_libs_/byzance_drivers/byzance_debug.h:4,
+                 from ./_libs_/byzance_drivers/SpiFlash.h:7,
+                 from ./_libs_/byzance_drivers/ExtMem.h:5,
+                 from bootloaders/bootloader_ioda/main.cpp:3:
+./_libs_/usb/USBSerial/USBCDC.h: In member function 'virtual void USBCDC::lineCodingChanged(int, int, int, int)':
+./_libs_/usb/USBSerial/USBCDC.h:113:40: warning: unused parameter 'baud' [-Wunused-parameter]
+     virtual void lineCodingChanged(int baud, int bits, int parity, int stop) {};
+                                        ^~~~
+./_libs_/usb/USBSerial/USBCDC.h:113:50: warning: unused parameter 'bits' [-Wunused-parameter]
+     virtual void lineCodingChanged(int baud, int bits, int parity, int stop) {};
+                                                  ^~~~
+./_libs_/usb/USBSerial/USBCDC.h:113:60: warning: unused parameter 'parity' [-Wunused-parameter]
+     virtual void lineCodingChanged(int baud, int bits, int parity, int stop) {};
+                                                            ^~~~~~
+./_libs_/usb/USBSerial/USBCDC.h:113:72: warning: unused parameter 'stop' [-Wunused-parameter]
+     virtual void lineCodingChanged(int baud, int bits, int parity, int stop) {};
+                                                                        ^~~~
+In file included from ./_libs_/byzance_drivers/ByzanceLogger.h:7:0,
+                 from ./_libs_/byzance_drivers/byzance_debug.h:4,
+                 from ./_libs_/byzance_drivers/SpiFlash.h:7,
+                 from ./_libs_/byzance_drivers/ExtMem.h:5,
+                 from bootloaders/bootloader_ioda/main.cpp:3:
+./_libs_/usb/USBSerial/USBSerial.h: In member function 'void USBSerial::attach(void (*)())':
+./_libs_/usb/USBSerial/USBSerial.h:141:27: warning: 'void mbed::Callback<R()>::attach(R (*)()) [with R = void]' is deprecated: Replaced by simple assignment 'Callback cb = func [since mbed-os-5.4] [-Wdeprecated-declarations]
+             rx.attach(fptr);
+                           ^
+In file included from ./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/platform/FileHandle.h:22:0,
+                 from ./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/platform/FileLike.h:21,
+                 from ./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/platform/Stream.h:20,
+                 from ./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/drivers/Serial.h:23,
+                 from ./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/mbed.h:81,
+                 from bootloaders/bootloader_ioda/main.cpp:1:
+./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/platform/Callback.h:271:10: note: declared here
+     void attach(R (*func)()) {
+          ^~~~~~
+In file included from ./_libs_/byzance_drivers/BootloaderCommander.h:11:0,
+                 from bootloaders/bootloader_ioda/main.cpp:16:
+./_libs_/byzance_drivers/otp.h: In static member function 'static OTPResult_t OTP::blockLock(uint8_t)':
+./_libs_/byzance_drivers/otp.h:72:42: warning: unused parameter 'block' [-Wunused-parameter]
+     static OTPResult_t blockLock(uint8_t block) {
+                                          ^~~~~
+bootloaders/bootloader_ioda/main.cpp: In function 'void settings(int, int, int, int)':
+bootloaders/bootloader_ioda/main.cpp:234:19: warning: unused parameter 'baud' [-Wunused-parameter]
+ void settings(int baud, int bits, int parity, int stop){
+                   ^~~~
+bootloaders/bootloader_ioda/main.cpp:234:29: warning: unused parameter 'bits' [-Wunused-parameter]
+ void settings(int baud, int bits, int parity, int stop){
+                             ^~~~
+bootloaders/bootloader_ioda/main.cpp:234:39: warning: unused parameter 'parity' [-Wunused-parameter]
+ void settings(int baud, int bits, int parity, int stop){
+                                       ^~~~~~
+bootloaders/bootloader_ioda/main.cpp:234:51: warning: unused parameter 'stop' [-Wunused-parameter]
+ void settings(int baud, int bits, int parity, int stop){
+                                                   ^~~~
+bootloaders/bootloader_ioda/main.cpp: In function 'void bootloader_app()':
+bootloaders/bootloader_ioda/main.cpp:603:38: warning: ISO C++ forbids converting a string constant to 'char*' [-Wwrite-strings]
+   if(commander.parse("defaults", resp)){
+                                      ^
+bootloaders/bootloader_ioda/main.cpp: In function 'void command_mode()':
+bootloaders/bootloader_ioda/main.cpp:738:16: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+    for(i = 0; i<strlen(cmd)-white_cnt+1; i++){
+               ~^~~~~~~~~~~~~~~~~~~~~~~~
+bootloaders/bootloader_ioda/main.cpp: In function 'void bootloader_print(const char*, ...)':
+bootloaders/bootloader_ioda/main.cpp:819:10: warning: unused variable 'crc8' [-Wunused-variable]
+  uint8_t crc8;
+          ^~~~
+bootloaders/bootloader_ioda/main.cpp:820:7: warning: unused variable 'tmp' [-Wunused-variable]
+  char tmp[8];
+       ^~~
+arm-none-eabi-g++ -Os -mcpu=cortex-m4 -mthumb -mfpu=fpv4-sp-d16 -mfloat-abi=softfp  -c -g -fno-common -fmessage-length=0 -Wall -Wextra -fno-exceptions -ffunction-sections -fdata-sections -fomit-frame-pointer -MMD -MP -DTARGET_STM -DTARGET_BYZANCE_IODAG3E -DTARGET_STM32F4 -DTARGET_STM32F437II -DDEVICE_ERROR_RED=1 -DDEVICE_INTERRUPTIN=1 -DDEVICE_RTC=1 -DDEVICE_SERIAL=1 -DDEVICE_SERIAL_ASYNCH=1 -DDEVICE_SERIAL_FC=1 -DDEVICE_SPI=1 -DDEVICE_SPI_ASYNCH=1 -DDEVICE_STDIO_MESSAGES=1 -DBYZANCE_BOOTLOADER=1 -DMBED_CONF_PLATFORM_STDIO_CONVERT_NEWLINES=0 -DMBED_CONF_PLATFORM_STDIO_FLUSH_AT_EXIT=1 -DMBED_CONF_PLATFORM_STDIO_BAUD_RATE=9600 -DMBED_CONF_PLATFORM_DEFAULT_SERIAL_BAUD_RATE=9600 -DBYZANCE_SUPPORTS_6LOWPAN=0 -DBYZANCE_SUPPORTS_WIFI=0 -DBYZANCE_SUPPORTS_ETHERNET=0 -D__BUILD_ID__=RND_BUILD_ID_288 -DBYZANCE_SUPPORTS_USB=1 -DTARGET_FF_ARDUINO -DTOOLCHAIN_GCC_ARM -D__CORTEX_M4 -DTARGET_LIKE_MBED -DTARGET_CORTEX_M -D__FPU_PRESENT=1 -DTARGET_LIKE_CORTEX_M4 -DTARGET_M4 -D__MBED__=1 -DTARGET_FF_MORPHO -DTOOLCHAIN_GCC -DARM_MATH_CM4  -D__BUILD_TARGET__=BYZANCE_IODAG3E_BOOTLOADER -std=gnu++11 -fno-rtti -I. -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/cmsis -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/cmsis/TARGET_CORTEX_M -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/cmsis/TARGET_CORTEX_M/TOOLCHAIN_GCC -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/drivers -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/hal -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/hal/storage_abstraction -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/platform -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/targets -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/targets/TARGET_STM -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/targets/TARGET_STM/TARGET_STM32F4 -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/targets/TARGET_STM/TARGET_STM32F4/device -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/targets/TARGET_STM/TARGET_STM32F4/TARGET_STM32F437xI -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/targets/TARGET_STM/TARGET_STM32F4/TARGET_STM32F437xI/device -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/targets/TARGET_STM/TARGET_STM32F4/TARGET_STM32F437xI/device/TOOLCHAIN_GCC_ARM -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/targets/TARGET_STM/TARGET_STM32F4/TARGET_STM32F437xI/TARGET_BYZANCE_IODAG3E_BOOTLOADER -I./_libs_/usb -I./_libs_/usb/targets/TARGET_STM -I./_libs_/usb/USBDevice -I./_libs_/usb/USBSerial -I./_libs_/usb/USBMSD -I./_libs_/usb/mass -I./_libs_/byzance_drivers -I./bootloaders/bootloader_ioda -o _libs_/usb/targets/TARGET_STM/USBHAL_STM32.BYZANCE_IODAG3E_BOOTLOADER.o _libs_/usb/targets/TARGET_STM/USBHAL_STM32.cpp
+arm-none-eabi-g++ -Os -mcpu=cortex-m4 -mthumb -mfpu=fpv4-sp-d16 -mfloat-abi=softfp  -c -g -fno-common -fmessage-length=0 -Wall -Wextra -fno-exceptions -ffunction-sections -fdata-sections -fomit-frame-pointer -MMD -MP -DTARGET_STM -DTARGET_BYZANCE_IODAG3E -DTARGET_STM32F4 -DTARGET_STM32F437II -DDEVICE_ERROR_RED=1 -DDEVICE_INTERRUPTIN=1 -DDEVICE_RTC=1 -DDEVICE_SERIAL=1 -DDEVICE_SERIAL_ASYNCH=1 -DDEVICE_SERIAL_FC=1 -DDEVICE_SPI=1 -DDEVICE_SPI_ASYNCH=1 -DDEVICE_STDIO_MESSAGES=1 -DBYZANCE_BOOTLOADER=1 -DMBED_CONF_PLATFORM_STDIO_CONVERT_NEWLINES=0 -DMBED_CONF_PLATFORM_STDIO_FLUSH_AT_EXIT=1 -DMBED_CONF_PLATFORM_STDIO_BAUD_RATE=9600 -DMBED_CONF_PLATFORM_DEFAULT_SERIAL_BAUD_RATE=9600 -DBYZANCE_SUPPORTS_6LOWPAN=0 -DBYZANCE_SUPPORTS_WIFI=0 -DBYZANCE_SUPPORTS_ETHERNET=0 -D__BUILD_ID__=RND_BUILD_ID_288 -DBYZANCE_SUPPORTS_USB=1 -DTARGET_FF_ARDUINO -DTOOLCHAIN_GCC_ARM -D__CORTEX_M4 -DTARGET_LIKE_MBED -DTARGET_CORTEX_M -D__FPU_PRESENT=1 -DTARGET_LIKE_CORTEX_M4 -DTARGET_M4 -D__MBED__=1 -DTARGET_FF_MORPHO -DTOOLCHAIN_GCC -DARM_MATH_CM4  -D__BUILD_TARGET__=BYZANCE_IODAG3E_BOOTLOADER -std=gnu++11 -fno-rtti -I. -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/cmsis -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/cmsis/TARGET_CORTEX_M -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/cmsis/TARGET_CORTEX_M/TOOLCHAIN_GCC -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/drivers -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/hal -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/hal/storage_abstraction -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/platform -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/targets -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/targets/TARGET_STM -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/targets/TARGET_STM/TARGET_STM32F4 -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/targets/TARGET_STM/TARGET_STM32F4/device -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/targets/TARGET_STM/TARGET_STM32F4/TARGET_STM32F437xI -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/targets/TARGET_STM/TARGET_STM32F4/TARGET_STM32F437xI/device -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/targets/TARGET_STM/TARGET_STM32F4/TARGET_STM32F437xI/device/TOOLCHAIN_GCC_ARM -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/targets/TARGET_STM/TARGET_STM32F4/TARGET_STM32F437xI/TARGET_BYZANCE_IODAG3E_BOOTLOADER -I./_libs_/usb -I./_libs_/usb/targets/TARGET_STM -I./_libs_/usb/USBDevice -I./_libs_/usb/USBSerial -I./_libs_/usb/USBMSD -I./_libs_/usb/mass -I./_libs_/byzance_drivers -I./bootloaders/bootloader_ioda -o _libs_/usb/targets/TARGET_STM/USBHAL_STM32F4.BYZANCE_IODAG3E_BOOTLOADER.o _libs_/usb/targets/TARGET_STM/USBHAL_STM32F4.cpp
+In file included from ./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/platform/FileLike.h:21:0,
+                 from ./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/platform/Stream.h:20,
+                 from ./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/drivers/Serial.h:23,
+                 from ./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/mbed.h:81,
+                 from ./_libs_/usb/USBDevice/USBHAL.h:22,
+                 from _libs_/usb/targets/TARGET_STM/USBHAL_STM32F4.cpp:21:
+./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/platform/FileHandle.h: In member function 'virtual int mbed::FileHandle::set_blocking(bool)':
+./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/platform/FileHandle.h:179:35: warning: unused parameter 'blocking' [-Wunused-parameter]
+     virtual int set_blocking(bool blocking)
+                                   ^~~~~~~~
+./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/platform/FileHandle.h: In member function 'virtual short int mbed::FileHandle::poll(short int) const':
+./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/platform/FileHandle.h:194:30: warning: unused parameter 'events' [-Wunused-parameter]
+     virtual short poll(short events) const
+                              ^~~~~~
+./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/platform/FileHandle.h: In member function 'virtual void mbed::FileHandle::sigio(mbed::Callback<void()>)':
+./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/platform/FileHandle.h:239:41: warning: unused parameter 'func' [-Wunused-parameter]
+     virtual void sigio(Callback<void()> func)
+                                         ^~~~
+In file included from _libs_/usb/targets/TARGET_STM/USBHAL_STM32F4.cpp:21:0:
+./_libs_/usb/USBDevice/USBHAL.h: In member function 'virtual void USBHAL::connectStateChanged(unsigned int)':
+./_libs_/usb/USBDevice/USBHAL.h:67:51: warning: unused parameter 'connected' [-Wunused-parameter]
+     virtual void connectStateChanged(unsigned int connected){};
+                                                   ^~~~~~~~~
+./_libs_/usb/USBDevice/USBHAL.h: In member function 'virtual void USBHAL::suspendStateChanged(unsigned int)':
+./_libs_/usb/USBDevice/USBHAL.h:68:51: warning: unused parameter 'suspended' [-Wunused-parameter]
+     virtual void suspendStateChanged(unsigned int suspended){};
+                                                   ^~~~~~~~~
+./_libs_/usb/USBDevice/USBHAL.h: In member function 'virtual void USBHAL::SOF(int)':
+./_libs_/usb/USBDevice/USBHAL.h:69:26: warning: unused parameter 'frameNumber' [-Wunused-parameter]
+     virtual void SOF(int frameNumber){};
+                          ^~~~~~~~~~~
+_libs_/usb/targets/TARGET_STM/USBHAL_STM32F4.cpp: In member function 'uint32_t USBHAL::endpointReadcore(uint8_t, uint8_t*)':
+_libs_/usb/targets/TARGET_STM/USBHAL_STM32F4.cpp:35:43: warning: unused parameter 'endpoint' [-Wunused-parameter]
+ uint32_t USBHAL::endpointReadcore(uint8_t endpoint, uint8_t *buffer) {
+                                           ^~~~~~~~
+_libs_/usb/targets/TARGET_STM/USBHAL_STM32F4.cpp:35:62: warning: unused parameter 'buffer' [-Wunused-parameter]
+ uint32_t USBHAL::endpointReadcore(uint8_t endpoint, uint8_t *buffer) {
+                                                              ^~~~~~
+_libs_/usb/targets/TARGET_STM/USBHAL_STM32F4.cpp: In member function 'bool USBHAL::realiseEndpoint(uint8_t, uint32_t, uint32_t)':
+_libs_/usb/targets/TARGET_STM/USBHAL_STM32F4.cpp:142:39: warning: unused parameter 'flags' [-Wunused-parameter]
+                              uint32_t flags) {
+                                       ^~~~~
+_libs_/usb/targets/TARGET_STM/USBHAL_STM32F4.cpp: In member function 'void USBHAL::unstallEndpoint(uint8_t)':
+_libs_/usb/targets/TARGET_STM/USBHAL_STM32F4.cpp:312:38: warning: unused parameter 'endpoint' [-Wunused-parameter]
+ void USBHAL::unstallEndpoint(uint8_t endpoint) {
+                                      ^~~~~~~~
+_libs_/usb/targets/TARGET_STM/USBHAL_STM32F4.cpp: In member function 'bool USBHAL::getEndpointStallState(uint8_t)':
+_libs_/usb/targets/TARGET_STM/USBHAL_STM32F4.cpp:316:44: warning: unused parameter 'endpoint' [-Wunused-parameter]
+ bool USBHAL::getEndpointStallState(uint8_t endpoint) {
+                                            ^~~~~~~~
+_libs_/usb/targets/TARGET_STM/USBHAL_STM32F4.cpp: In member function 'bool USBHAL::realiseEndpoint(uint8_t, uint32_t, uint32_t)':
+_libs_/usb/targets/TARGET_STM/USBHAL_STM32F4.cpp:153:18: warning: this statement may fall through [-Wimplicit-fallthrough=]
+             type = 1;
+             ~~~~~^~~
+_libs_/usb/targets/TARGET_STM/USBHAL_STM32F4.cpp:154:9: note: here
+         case EPBULK_IN:
+         ^~~~
+_libs_/usb/targets/TARGET_STM/USBHAL_STM32F4.cpp:167:30: warning: 'type' may be used uninitialized in this function [-Wmaybe-uninitialized]
+                        (type << 18); // Endpoint type
+                        ~~~~~~^~~~~~
+arm-none-eabi-g++ -Os -mcpu=cortex-m4 -mthumb -mfpu=fpv4-sp-d16 -mfloat-abi=softfp  -c -g -fno-common -fmessage-length=0 -Wall -Wextra -fno-exceptions -ffunction-sections -fdata-sections -fomit-frame-pointer -MMD -MP -DTARGET_STM -DTARGET_BYZANCE_IODAG3E -DTARGET_STM32F4 -DTARGET_STM32F437II -DDEVICE_ERROR_RED=1 -DDEVICE_INTERRUPTIN=1 -DDEVICE_RTC=1 -DDEVICE_SERIAL=1 -DDEVICE_SERIAL_ASYNCH=1 -DDEVICE_SERIAL_FC=1 -DDEVICE_SPI=1 -DDEVICE_SPI_ASYNCH=1 -DDEVICE_STDIO_MESSAGES=1 -DBYZANCE_BOOTLOADER=1 -DMBED_CONF_PLATFORM_STDIO_CONVERT_NEWLINES=0 -DMBED_CONF_PLATFORM_STDIO_FLUSH_AT_EXIT=1 -DMBED_CONF_PLATFORM_STDIO_BAUD_RATE=9600 -DMBED_CONF_PLATFORM_DEFAULT_SERIAL_BAUD_RATE=9600 -DBYZANCE_SUPPORTS_6LOWPAN=0 -DBYZANCE_SUPPORTS_WIFI=0 -DBYZANCE_SUPPORTS_ETHERNET=0 -D__BUILD_ID__=RND_BUILD_ID_288 -DBYZANCE_SUPPORTS_USB=1 -DTARGET_FF_ARDUINO -DTOOLCHAIN_GCC_ARM -D__CORTEX_M4 -DTARGET_LIKE_MBED -DTARGET_CORTEX_M -D__FPU_PRESENT=1 -DTARGET_LIKE_CORTEX_M4 -DTARGET_M4 -D__MBED__=1 -DTARGET_FF_MORPHO -DTOOLCHAIN_GCC -DARM_MATH_CM4  -D__BUILD_TARGET__=BYZANCE_IODAG3E_BOOTLOADER -std=gnu++11 -fno-rtti -I. -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/cmsis -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/cmsis/TARGET_CORTEX_M -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/cmsis/TARGET_CORTEX_M/TOOLCHAIN_GCC -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/drivers -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/hal -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/hal/storage_abstraction -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/platform -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/targets -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/targets/TARGET_STM -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/targets/TARGET_STM/TARGET_STM32F4 -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/targets/TARGET_STM/TARGET_STM32F4/device -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/targets/TARGET_STM/TARGET_STM32F4/TARGET_STM32F437xI -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/targets/TARGET_STM/TARGET_STM32F4/TARGET_STM32F437xI/device -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/targets/TARGET_STM/TARGET_STM32F4/TARGET_STM32F437xI/device/TOOLCHAIN_GCC_ARM -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/targets/TARGET_STM/TARGET_STM32F4/TARGET_STM32F437xI/TARGET_BYZANCE_IODAG3E_BOOTLOADER -I./_libs_/usb -I./_libs_/usb/targets/TARGET_STM -I./_libs_/usb/USBDevice -I./_libs_/usb/USBSerial -I./_libs_/usb/USBMSD -I./_libs_/usb/mass -I./_libs_/byzance_drivers -I./bootloaders/bootloader_ioda -o _libs_/usb/USBDevice/USBDevice.BYZANCE_IODAG3E_BOOTLOADER.o _libs_/usb/USBDevice/USBDevice.cpp
+In file included from ./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/platform/FileLike.h:21:0,
+                 from ./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/platform/Stream.h:20,
+                 from ./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/drivers/Serial.h:23,
+                 from ./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/mbed.h:81,
+                 from _libs_/usb/USBDevice/USBDevice.h:22,
+                 from _libs_/usb/USBDevice/USBDevice.cpp:22:
+./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/platform/FileHandle.h: In member function 'virtual int mbed::FileHandle::set_blocking(bool)':
+./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/platform/FileHandle.h:179:35: warning: unused parameter 'blocking' [-Wunused-parameter]
+     virtual int set_blocking(bool blocking)
+                                   ^~~~~~~~
+./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/platform/FileHandle.h: In member function 'virtual short int mbed::FileHandle::poll(short int) const':
+./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/platform/FileHandle.h:194:30: warning: unused parameter 'events' [-Wunused-parameter]
+     virtual short poll(short events) const
+                              ^~~~~~
+./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/platform/FileHandle.h: In member function 'virtual void mbed::FileHandle::sigio(mbed::Callback<void()>)':
+./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/platform/FileHandle.h:239:41: warning: unused parameter 'func' [-Wunused-parameter]
+     virtual void sigio(Callback<void()> func)
+                                         ^~~~
+In file included from _libs_/usb/USBDevice/USBDevice.h:24:0,
+                 from _libs_/usb/USBDevice/USBDevice.cpp:22:
+_libs_/usb/USBDevice/USBHAL.h: In member function 'virtual void USBHAL::connectStateChanged(unsigned int)':
+_libs_/usb/USBDevice/USBHAL.h:67:51: warning: unused parameter 'connected' [-Wunused-parameter]
+     virtual void connectStateChanged(unsigned int connected){};
+                                                   ^~~~~~~~~
+_libs_/usb/USBDevice/USBHAL.h: In member function 'virtual void USBHAL::suspendStateChanged(unsigned int)':
+_libs_/usb/USBDevice/USBHAL.h:68:51: warning: unused parameter 'suspended' [-Wunused-parameter]
+     virtual void suspendStateChanged(unsigned int suspended){};
+                                                   ^~~~~~~~~
+_libs_/usb/USBDevice/USBHAL.h: In member function 'virtual void USBHAL::SOF(int)':
+_libs_/usb/USBDevice/USBHAL.h:69:26: warning: unused parameter 'frameNumber' [-Wunused-parameter]
+     virtual void SOF(int frameNumber){};
+                          ^~~~~~~~~~~
+In file included from _libs_/usb/USBDevice/USBDevice.cpp:22:0:
+_libs_/usb/USBDevice/USBDevice.h: In member function 'virtual void USBDevice::USBCallback_requestCompleted(uint8_t*, uint32_t)':
+_libs_/usb/USBDevice/USBDevice.h:148:57: warning: unused parameter 'buf' [-Wunused-parameter]
+     virtual void USBCallback_requestCompleted(uint8_t * buf, uint32_t length) {};
+                                                         ^~~
+_libs_/usb/USBDevice/USBDevice.h:148:71: warning: unused parameter 'length' [-Wunused-parameter]
+     virtual void USBCallback_requestCompleted(uint8_t * buf, uint32_t length) {};
+                                                                       ^~~~~~
+_libs_/usb/USBDevice/USBDevice.h: In member function 'virtual bool USBDevice::USBCallback_setConfiguration(uint8_t)':
+_libs_/usb/USBDevice/USBDevice.h:156:55: warning: unused parameter 'configuration' [-Wunused-parameter]
+     virtual bool USBCallback_setConfiguration(uint8_t configuration) { return false; };
+                                                       ^~~~~~~~~~~~~
+_libs_/usb/USBDevice/USBDevice.h: In member function 'virtual bool USBDevice::USBCallback_setInterface(uint16_t, uint8_t)':
+_libs_/usb/USBDevice/USBDevice.h:165:52: warning: unused parameter 'interface' [-Wunused-parameter]
+     virtual bool USBCallback_setInterface(uint16_t interface, uint8_t alternate) { return false; };
+                                                    ^~~~~~~~~
+_libs_/usb/USBDevice/USBDevice.h:165:71: warning: unused parameter 'alternate' [-Wunused-parameter]
+     virtual bool USBCallback_setInterface(uint16_t interface, uint8_t alternate) { return false; };
+                                                                       ^~~~~~~~~
+_libs_/usb/USBDevice/USBDevice.cpp: In member function 'virtual void USBDevice::connectStateChanged(unsigned int)':
+_libs_/usb/USBDevice/USBDevice.cpp:811:50: warning: unused parameter 'connected' [-Wunused-parameter]
+ void USBDevice::connectStateChanged(unsigned int connected)
+                                                  ^~~~~~~~~
+_libs_/usb/USBDevice/USBDevice.cpp: In member function 'virtual void USBDevice::suspendStateChanged(unsigned int)':
+_libs_/usb/USBDevice/USBDevice.cpp:815:50: warning: unused parameter 'suspended' [-Wunused-parameter]
+ void USBDevice::suspendStateChanged(unsigned int suspended)
+                                                  ^~~~~~~~~
+_libs_/usb/USBDevice/USBDevice.cpp: In member function 'bool USBDevice::readEP(uint8_t, uint8_t*, uint32_t*, uint32_t)':
+_libs_/usb/USBDevice/USBDevice.cpp:922:86: warning: unused parameter 'maxSize' [-Wunused-parameter]
+ bool USBDevice::readEP(uint8_t endpoint, uint8_t * buffer, uint32_t * size, uint32_t maxSize)
+                                                                                      ^~~~~~~
+_libs_/usb/USBDevice/USBDevice.cpp: In member function 'bool USBDevice::readEP_NB(uint8_t, uint8_t*, uint32_t*, uint32_t)':
+_libs_/usb/USBDevice/USBDevice.cpp:939:89: warning: unused parameter 'maxSize' [-Wunused-parameter]
+ bool USBDevice::readEP_NB(uint8_t endpoint, uint8_t * buffer, uint32_t * size, uint32_t maxSize)
+                                                                                         ^~~~~~~
+arm-none-eabi-g++ -Os -mcpu=cortex-m4 -mthumb -mfpu=fpv4-sp-d16 -mfloat-abi=softfp  -c -g -fno-common -fmessage-length=0 -Wall -Wextra -fno-exceptions -ffunction-sections -fdata-sections -fomit-frame-pointer -MMD -MP -DTARGET_STM -DTARGET_BYZANCE_IODAG3E -DTARGET_STM32F4 -DTARGET_STM32F437II -DDEVICE_ERROR_RED=1 -DDEVICE_INTERRUPTIN=1 -DDEVICE_RTC=1 -DDEVICE_SERIAL=1 -DDEVICE_SERIAL_ASYNCH=1 -DDEVICE_SERIAL_FC=1 -DDEVICE_SPI=1 -DDEVICE_SPI_ASYNCH=1 -DDEVICE_STDIO_MESSAGES=1 -DBYZANCE_BOOTLOADER=1 -DMBED_CONF_PLATFORM_STDIO_CONVERT_NEWLINES=0 -DMBED_CONF_PLATFORM_STDIO_FLUSH_AT_EXIT=1 -DMBED_CONF_PLATFORM_STDIO_BAUD_RATE=9600 -DMBED_CONF_PLATFORM_DEFAULT_SERIAL_BAUD_RATE=9600 -DBYZANCE_SUPPORTS_6LOWPAN=0 -DBYZANCE_SUPPORTS_WIFI=0 -DBYZANCE_SUPPORTS_ETHERNET=0 -D__BUILD_ID__=RND_BUILD_ID_288 -DBYZANCE_SUPPORTS_USB=1 -DTARGET_FF_ARDUINO -DTOOLCHAIN_GCC_ARM -D__CORTEX_M4 -DTARGET_LIKE_MBED -DTARGET_CORTEX_M -D__FPU_PRESENT=1 -DTARGET_LIKE_CORTEX_M4 -DTARGET_M4 -D__MBED__=1 -DTARGET_FF_MORPHO -DTOOLCHAIN_GCC -DARM_MATH_CM4  -D__BUILD_TARGET__=BYZANCE_IODAG3E_BOOTLOADER -std=gnu++11 -fno-rtti -I. -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/cmsis -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/cmsis/TARGET_CORTEX_M -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/cmsis/TARGET_CORTEX_M/TOOLCHAIN_GCC -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/drivers -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/hal -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/hal/storage_abstraction -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/platform -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/targets -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/targets/TARGET_STM -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/targets/TARGET_STM/TARGET_STM32F4 -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/targets/TARGET_STM/TARGET_STM32F4/device -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/targets/TARGET_STM/TARGET_STM32F4/TARGET_STM32F437xI -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/targets/TARGET_STM/TARGET_STM32F4/TARGET_STM32F437xI/device -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/targets/TARGET_STM/TARGET_STM32F4/TARGET_STM32F437xI/device/TOOLCHAIN_GCC_ARM -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/targets/TARGET_STM/TARGET_STM32F4/TARGET_STM32F437xI/TARGET_BYZANCE_IODAG3E_BOOTLOADER -I./_libs_/usb -I./_libs_/usb/targets/TARGET_STM -I./_libs_/usb/USBDevice -I./_libs_/usb/USBSerial -I./_libs_/usb/USBMSD -I./_libs_/usb/mass -I./_libs_/byzance_drivers -I./bootloaders/bootloader_ioda -o _libs_/usb/USBSerial/USBCDC.BYZANCE_IODAG3E_BOOTLOADER.o _libs_/usb/USBSerial/USBCDC.cpp
+In file included from ./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/platform/FileLike.h:21:0,
+                 from ./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/platform/Stream.h:20,
+                 from ./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/drivers/Serial.h:23,
+                 from ./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/mbed.h:81,
+                 from ./_libs_/usb/USBDevice/USBDevice.h:22,
+                 from _libs_/usb/USBSerial/USBCDC.h:27,
+                 from _libs_/usb/USBSerial/USBCDC.cpp:20:
+./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/platform/FileHandle.h: In member function 'virtual int mbed::FileHandle::set_blocking(bool)':
+./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/platform/FileHandle.h:179:35: warning: unused parameter 'blocking' [-Wunused-parameter]
+     virtual int set_blocking(bool blocking)
+                                   ^~~~~~~~
+./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/platform/FileHandle.h: In member function 'virtual short int mbed::FileHandle::poll(short int) const':
+./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/platform/FileHandle.h:194:30: warning: unused parameter 'events' [-Wunused-parameter]
+     virtual short poll(short events) const
+                              ^~~~~~
+./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/platform/FileHandle.h: In member function 'virtual void mbed::FileHandle::sigio(mbed::Callback<void()>)':
+./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/platform/FileHandle.h:239:41: warning: unused parameter 'func' [-Wunused-parameter]
+     virtual void sigio(Callback<void()> func)
+                                         ^~~~
+In file included from ./_libs_/usb/USBDevice/USBDevice.h:24:0,
+                 from _libs_/usb/USBSerial/USBCDC.h:27,
+                 from _libs_/usb/USBSerial/USBCDC.cpp:20:
+./_libs_/usb/USBDevice/USBHAL.h: In member function 'virtual void USBHAL::connectStateChanged(unsigned int)':
+./_libs_/usb/USBDevice/USBHAL.h:67:51: warning: unused parameter 'connected' [-Wunused-parameter]
+     virtual void connectStateChanged(unsigned int connected){};
+                                                   ^~~~~~~~~
+./_libs_/usb/USBDevice/USBHAL.h: In member function 'virtual void USBHAL::suspendStateChanged(unsigned int)':
+./_libs_/usb/USBDevice/USBHAL.h:68:51: warning: unused parameter 'suspended' [-Wunused-parameter]
+     virtual void suspendStateChanged(unsigned int suspended){};
+                                                   ^~~~~~~~~
+./_libs_/usb/USBDevice/USBHAL.h: In member function 'virtual void USBHAL::SOF(int)':
+./_libs_/usb/USBDevice/USBHAL.h:69:26: warning: unused parameter 'frameNumber' [-Wunused-parameter]
+     virtual void SOF(int frameNumber){};
+                          ^~~~~~~~~~~
+In file included from _libs_/usb/USBSerial/USBCDC.h:27:0,
+                 from _libs_/usb/USBSerial/USBCDC.cpp:20:
+./_libs_/usb/USBDevice/USBDevice.h: In member function 'virtual void USBDevice::USBCallback_requestCompleted(uint8_t*, uint32_t)':
+./_libs_/usb/USBDevice/USBDevice.h:148:57: warning: unused parameter 'buf' [-Wunused-parameter]
+     virtual void USBCallback_requestCompleted(uint8_t * buf, uint32_t length) {};
+                                                         ^~~
+./_libs_/usb/USBDevice/USBDevice.h:148:71: warning: unused parameter 'length' [-Wunused-parameter]
+     virtual void USBCallback_requestCompleted(uint8_t * buf, uint32_t length) {};
+                                                                       ^~~~~~
+./_libs_/usb/USBDevice/USBDevice.h: In member function 'virtual bool USBDevice::USBCallback_setConfiguration(uint8_t)':
+./_libs_/usb/USBDevice/USBDevice.h:156:55: warning: unused parameter 'configuration' [-Wunused-parameter]
+     virtual bool USBCallback_setConfiguration(uint8_t configuration) { return false; };
+                                                       ^~~~~~~~~~~~~
+./_libs_/usb/USBDevice/USBDevice.h: In member function 'virtual bool USBDevice::USBCallback_setInterface(uint16_t, uint8_t)':
+./_libs_/usb/USBDevice/USBDevice.h:165:52: warning: unused parameter 'interface' [-Wunused-parameter]
+     virtual bool USBCallback_setInterface(uint16_t interface, uint8_t alternate) { return false; };
+                                                    ^~~~~~~~~
+./_libs_/usb/USBDevice/USBDevice.h:165:71: warning: unused parameter 'alternate' [-Wunused-parameter]
+     virtual bool USBCallback_setInterface(uint16_t interface, uint8_t alternate) { return false; };
+                                                                       ^~~~~~~~~
+In file included from _libs_/usb/USBSerial/USBCDC.cpp:20:0:
+_libs_/usb/USBSerial/USBCDC.h: In member function 'virtual void USBCDC::lineCodingChanged(int, int, int, int)':
+_libs_/usb/USBSerial/USBCDC.h:113:40: warning: unused parameter 'baud' [-Wunused-parameter]
+     virtual void lineCodingChanged(int baud, int bits, int parity, int stop) {};
+                                        ^~~~
+_libs_/usb/USBSerial/USBCDC.h:113:50: warning: unused parameter 'bits' [-Wunused-parameter]
+     virtual void lineCodingChanged(int baud, int bits, int parity, int stop) {};
+                                                  ^~~~
+_libs_/usb/USBSerial/USBCDC.h:113:60: warning: unused parameter 'parity' [-Wunused-parameter]
+     virtual void lineCodingChanged(int baud, int bits, int parity, int stop) {};
+                                                            ^~~~~~
+_libs_/usb/USBSerial/USBCDC.h:113:72: warning: unused parameter 'stop' [-Wunused-parameter]
+     virtual void lineCodingChanged(int baud, int bits, int parity, int stop) {};
+                                                                        ^~~~
+arm-none-eabi-g++ -Os -mcpu=cortex-m4 -mthumb -mfpu=fpv4-sp-d16 -mfloat-abi=softfp  -c -g -fno-common -fmessage-length=0 -Wall -Wextra -fno-exceptions -ffunction-sections -fdata-sections -fomit-frame-pointer -MMD -MP -DTARGET_STM -DTARGET_BYZANCE_IODAG3E -DTARGET_STM32F4 -DTARGET_STM32F437II -DDEVICE_ERROR_RED=1 -DDEVICE_INTERRUPTIN=1 -DDEVICE_RTC=1 -DDEVICE_SERIAL=1 -DDEVICE_SERIAL_ASYNCH=1 -DDEVICE_SERIAL_FC=1 -DDEVICE_SPI=1 -DDEVICE_SPI_ASYNCH=1 -DDEVICE_STDIO_MESSAGES=1 -DBYZANCE_BOOTLOADER=1 -DMBED_CONF_PLATFORM_STDIO_CONVERT_NEWLINES=0 -DMBED_CONF_PLATFORM_STDIO_FLUSH_AT_EXIT=1 -DMBED_CONF_PLATFORM_STDIO_BAUD_RATE=9600 -DMBED_CONF_PLATFORM_DEFAULT_SERIAL_BAUD_RATE=9600 -DBYZANCE_SUPPORTS_6LOWPAN=0 -DBYZANCE_SUPPORTS_WIFI=0 -DBYZANCE_SUPPORTS_ETHERNET=0 -D__BUILD_ID__=RND_BUILD_ID_288 -DBYZANCE_SUPPORTS_USB=1 -DTARGET_FF_ARDUINO -DTOOLCHAIN_GCC_ARM -D__CORTEX_M4 -DTARGET_LIKE_MBED -DTARGET_CORTEX_M -D__FPU_PRESENT=1 -DTARGET_LIKE_CORTEX_M4 -DTARGET_M4 -D__MBED__=1 -DTARGET_FF_MORPHO -DTOOLCHAIN_GCC -DARM_MATH_CM4  -D__BUILD_TARGET__=BYZANCE_IODAG3E_BOOTLOADER -std=gnu++11 -fno-rtti -I. -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/cmsis -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/cmsis/TARGET_CORTEX_M -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/cmsis/TARGET_CORTEX_M/TOOLCHAIN_GCC -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/drivers -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/hal -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/hal/storage_abstraction -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/platform -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/targets -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/targets/TARGET_STM -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/targets/TARGET_STM/TARGET_STM32F4 -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/targets/TARGET_STM/TARGET_STM32F4/device -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/targets/TARGET_STM/TARGET_STM32F4/TARGET_STM32F437xI -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/targets/TARGET_STM/TARGET_STM32F4/TARGET_STM32F437xI/device -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/targets/TARGET_STM/TARGET_STM32F4/TARGET_STM32F437xI/device/TOOLCHAIN_GCC_ARM -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/targets/TARGET_STM/TARGET_STM32F4/TARGET_STM32F437xI/TARGET_BYZANCE_IODAG3E_BOOTLOADER -I./_libs_/usb -I./_libs_/usb/targets/TARGET_STM -I./_libs_/usb/USBDevice -I./_libs_/usb/USBSerial -I./_libs_/usb/USBMSD -I./_libs_/usb/mass -I./_libs_/byzance_drivers -I./bootloaders/bootloader_ioda -o _libs_/usb/USBSerial/USBSerial.BYZANCE_IODAG3E_BOOTLOADER.o _libs_/usb/USBSerial/USBSerial.cpp
+In file included from ./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/platform/FileLike.h:21:0,
+                 from ./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/platform/Stream.h:20,
+                 from ./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/drivers/Serial.h:23,
+                 from ./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/mbed.h:81,
+                 from ./_libs_/usb/USBDevice/USBDevice.h:22,
+                 from _libs_/usb/USBSerial/USBCDC.h:27,
+                 from _libs_/usb/USBSerial/USBSerial.h:22,
+                 from _libs_/usb/USBSerial/USBSerial.cpp:20:
+./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/platform/FileHandle.h: In member function 'virtual int mbed::FileHandle::set_blocking(bool)':
+./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/platform/FileHandle.h:179:35: warning: unused parameter 'blocking' [-Wunused-parameter]
+     virtual int set_blocking(bool blocking)
+                                   ^~~~~~~~
+./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/platform/FileHandle.h: In member function 'virtual short int mbed::FileHandle::poll(short int) const':
+./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/platform/FileHandle.h:194:30: warning: unused parameter 'events' [-Wunused-parameter]
+     virtual short poll(short events) const
+                              ^~~~~~
+./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/platform/FileHandle.h: In member function 'virtual void mbed::FileHandle::sigio(mbed::Callback<void()>)':
+./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/platform/FileHandle.h:239:41: warning: unused parameter 'func' [-Wunused-parameter]
+     virtual void sigio(Callback<void()> func)
+                                         ^~~~
+In file included from ./_libs_/usb/USBDevice/USBDevice.h:24:0,
+                 from _libs_/usb/USBSerial/USBCDC.h:27,
+                 from _libs_/usb/USBSerial/USBSerial.h:22,
+                 from _libs_/usb/USBSerial/USBSerial.cpp:20:
+./_libs_/usb/USBDevice/USBHAL.h: In member function 'virtual void USBHAL::connectStateChanged(unsigned int)':
+./_libs_/usb/USBDevice/USBHAL.h:67:51: warning: unused parameter 'connected' [-Wunused-parameter]
+     virtual void connectStateChanged(unsigned int connected){};
+                                                   ^~~~~~~~~
+./_libs_/usb/USBDevice/USBHAL.h: In member function 'virtual void USBHAL::suspendStateChanged(unsigned int)':
+./_libs_/usb/USBDevice/USBHAL.h:68:51: warning: unused parameter 'suspended' [-Wunused-parameter]
+     virtual void suspendStateChanged(unsigned int suspended){};
+                                                   ^~~~~~~~~
+./_libs_/usb/USBDevice/USBHAL.h: In member function 'virtual void USBHAL::SOF(int)':
+./_libs_/usb/USBDevice/USBHAL.h:69:26: warning: unused parameter 'frameNumber' [-Wunused-parameter]
+     virtual void SOF(int frameNumber){};
+                          ^~~~~~~~~~~
+In file included from _libs_/usb/USBSerial/USBCDC.h:27:0,
+                 from _libs_/usb/USBSerial/USBSerial.h:22,
+                 from _libs_/usb/USBSerial/USBSerial.cpp:20:
+./_libs_/usb/USBDevice/USBDevice.h: In member function 'virtual void USBDevice::USBCallback_requestCompleted(uint8_t*, uint32_t)':
+./_libs_/usb/USBDevice/USBDevice.h:148:57: warning: unused parameter 'buf' [-Wunused-parameter]
+     virtual void USBCallback_requestCompleted(uint8_t * buf, uint32_t length) {};
+                                                         ^~~
+./_libs_/usb/USBDevice/USBDevice.h:148:71: warning: unused parameter 'length' [-Wunused-parameter]
+     virtual void USBCallback_requestCompleted(uint8_t * buf, uint32_t length) {};
+                                                                       ^~~~~~
+./_libs_/usb/USBDevice/USBDevice.h: In member function 'virtual bool USBDevice::USBCallback_setConfiguration(uint8_t)':
+./_libs_/usb/USBDevice/USBDevice.h:156:55: warning: unused parameter 'configuration' [-Wunused-parameter]
+     virtual bool USBCallback_setConfiguration(uint8_t configuration) { return false; };
+                                                       ^~~~~~~~~~~~~
+./_libs_/usb/USBDevice/USBDevice.h: In member function 'virtual bool USBDevice::USBCallback_setInterface(uint16_t, uint8_t)':
+./_libs_/usb/USBDevice/USBDevice.h:165:52: warning: unused parameter 'interface' [-Wunused-parameter]
+     virtual bool USBCallback_setInterface(uint16_t interface, uint8_t alternate) { return false; };
+                                                    ^~~~~~~~~
+./_libs_/usb/USBDevice/USBDevice.h:165:71: warning: unused parameter 'alternate' [-Wunused-parameter]
+     virtual bool USBCallback_setInterface(uint16_t interface, uint8_t alternate) { return false; };
+                                                                       ^~~~~~~~~
+In file included from _libs_/usb/USBSerial/USBSerial.h:22:0,
+                 from _libs_/usb/USBSerial/USBSerial.cpp:20:
+_libs_/usb/USBSerial/USBCDC.h: In member function 'virtual void USBCDC::lineCodingChanged(int, int, int, int)':
+_libs_/usb/USBSerial/USBCDC.h:113:40: warning: unused parameter 'baud' [-Wunused-parameter]
+     virtual void lineCodingChanged(int baud, int bits, int parity, int stop) {};
+                                        ^~~~
+_libs_/usb/USBSerial/USBCDC.h:113:50: warning: unused parameter 'bits' [-Wunused-parameter]
+     virtual void lineCodingChanged(int baud, int bits, int parity, int stop) {};
+                                                  ^~~~
+_libs_/usb/USBSerial/USBCDC.h:113:60: warning: unused parameter 'parity' [-Wunused-parameter]
+     virtual void lineCodingChanged(int baud, int bits, int parity, int stop) {};
+                                                            ^~~~~~
+_libs_/usb/USBSerial/USBCDC.h:113:72: warning: unused parameter 'stop' [-Wunused-parameter]
+     virtual void lineCodingChanged(int baud, int bits, int parity, int stop) {};
+                                                                        ^~~~
+In file included from _libs_/usb/USBSerial/USBSerial.cpp:20:0:
+_libs_/usb/USBSerial/USBSerial.h: In member function 'void USBSerial::attach(void (*)())':
+_libs_/usb/USBSerial/USBSerial.h:141:27: warning: 'void mbed::Callback<R()>::attach(R (*)()) [with R = void]' is deprecated: Replaced by simple assignment 'Callback cb = func [since mbed-os-5.4] [-Wdeprecated-declarations]
+             rx.attach(fptr);
+                           ^
+In file included from ./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/platform/FileHandle.h:22:0,
+                 from ./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/platform/FileLike.h:21,
+                 from ./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/platform/Stream.h:20,
+                 from ./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/drivers/Serial.h:23,
+                 from ./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/mbed.h:81,
+                 from ./_libs_/usb/USBDevice/USBDevice.h:22,
+                 from _libs_/usb/USBSerial/USBCDC.h:27,
+                 from _libs_/usb/USBSerial/USBSerial.h:22,
+                 from _libs_/usb/USBSerial/USBSerial.cpp:20:
+./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/platform/Callback.h:271:10: note: declared here
+     void attach(R (*func)()) {
+          ^~~~~~
+arm-none-eabi-g++ -Os -mcpu=cortex-m4 -mthumb -mfpu=fpv4-sp-d16 -mfloat-abi=softfp  -c -g -fno-common -fmessage-length=0 -Wall -Wextra -fno-exceptions -ffunction-sections -fdata-sections -fomit-frame-pointer -MMD -MP -DTARGET_STM -DTARGET_BYZANCE_IODAG3E -DTARGET_STM32F4 -DTARGET_STM32F437II -DDEVICE_ERROR_RED=1 -DDEVICE_INTERRUPTIN=1 -DDEVICE_RTC=1 -DDEVICE_SERIAL=1 -DDEVICE_SERIAL_ASYNCH=1 -DDEVICE_SERIAL_FC=1 -DDEVICE_SPI=1 -DDEVICE_SPI_ASYNCH=1 -DDEVICE_STDIO_MESSAGES=1 -DBYZANCE_BOOTLOADER=1 -DMBED_CONF_PLATFORM_STDIO_CONVERT_NEWLINES=0 -DMBED_CONF_PLATFORM_STDIO_FLUSH_AT_EXIT=1 -DMBED_CONF_PLATFORM_STDIO_BAUD_RATE=9600 -DMBED_CONF_PLATFORM_DEFAULT_SERIAL_BAUD_RATE=9600 -DBYZANCE_SUPPORTS_6LOWPAN=0 -DBYZANCE_SUPPORTS_WIFI=0 -DBYZANCE_SUPPORTS_ETHERNET=0 -D__BUILD_ID__=RND_BUILD_ID_288 -DBYZANCE_SUPPORTS_USB=1 -DTARGET_FF_ARDUINO -DTOOLCHAIN_GCC_ARM -D__CORTEX_M4 -DTARGET_LIKE_MBED -DTARGET_CORTEX_M -D__FPU_PRESENT=1 -DTARGET_LIKE_CORTEX_M4 -DTARGET_M4 -D__MBED__=1 -DTARGET_FF_MORPHO -DTOOLCHAIN_GCC -DARM_MATH_CM4  -D__BUILD_TARGET__=BYZANCE_IODAG3E_BOOTLOADER -std=gnu++11 -fno-rtti -I. -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/cmsis -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/cmsis/TARGET_CORTEX_M -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/cmsis/TARGET_CORTEX_M/TOOLCHAIN_GCC -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/drivers -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/hal -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/hal/storage_abstraction -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/platform -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/targets -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/targets/TARGET_STM -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/targets/TARGET_STM/TARGET_STM32F4 -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/targets/TARGET_STM/TARGET_STM32F4/device -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/targets/TARGET_STM/TARGET_STM32F4/TARGET_STM32F437xI -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/targets/TARGET_STM/TARGET_STM32F4/TARGET_STM32F437xI/device -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/targets/TARGET_STM/TARGET_STM32F4/TARGET_STM32F437xI/device/TOOLCHAIN_GCC_ARM -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/targets/TARGET_STM/TARGET_STM32F4/TARGET_STM32F437xI/TARGET_BYZANCE_IODAG3E_BOOTLOADER -I./_libs_/usb -I./_libs_/usb/targets/TARGET_STM -I./_libs_/usb/USBDevice -I./_libs_/usb/USBSerial -I./_libs_/usb/USBMSD -I./_libs_/usb/mass -I./_libs_/byzance_drivers -I./bootloaders/bootloader_ioda -o _libs_/usb/USBMSD/USBMSD.BYZANCE_IODAG3E_BOOTLOADER.o _libs_/usb/USBMSD/USBMSD.cpp
+In file included from ./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/platform/FileLike.h:21:0,
+                 from ./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/platform/Stream.h:20,
+                 from ./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/drivers/Serial.h:23,
+                 from ./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/mbed.h:81,
+                 from ./_libs_/usb/USBDevice/USBDevice.h:22,
+                 from _libs_/usb/USBMSD/USBMSD.h:28,
+                 from _libs_/usb/USBMSD/USBMSD.cpp:20:
+./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/platform/FileHandle.h: In member function 'virtual int mbed::FileHandle::set_blocking(bool)':
+./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/platform/FileHandle.h:179:35: warning: unused parameter 'blocking' [-Wunused-parameter]
+     virtual int set_blocking(bool blocking)
+                                   ^~~~~~~~
+./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/platform/FileHandle.h: In member function 'virtual short int mbed::FileHandle::poll(short int) const':
+./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/platform/FileHandle.h:194:30: warning: unused parameter 'events' [-Wunused-parameter]
+     virtual short poll(short events) const
+                              ^~~~~~
+./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/platform/FileHandle.h: In member function 'virtual void mbed::FileHandle::sigio(mbed::Callback<void()>)':
+./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/platform/FileHandle.h:239:41: warning: unused parameter 'func' [-Wunused-parameter]
+     virtual void sigio(Callback<void()> func)
+                                         ^~~~
+In file included from ./_libs_/usb/USBDevice/USBDevice.h:24:0,
+                 from _libs_/usb/USBMSD/USBMSD.h:28,
+                 from _libs_/usb/USBMSD/USBMSD.cpp:20:
+./_libs_/usb/USBDevice/USBHAL.h: In member function 'virtual void USBHAL::connectStateChanged(unsigned int)':
+./_libs_/usb/USBDevice/USBHAL.h:67:51: warning: unused parameter 'connected' [-Wunused-parameter]
+     virtual void connectStateChanged(unsigned int connected){};
+                                                   ^~~~~~~~~
+./_libs_/usb/USBDevice/USBHAL.h: In member function 'virtual void USBHAL::suspendStateChanged(unsigned int)':
+./_libs_/usb/USBDevice/USBHAL.h:68:51: warning: unused parameter 'suspended' [-Wunused-parameter]
+     virtual void suspendStateChanged(unsigned int suspended){};
+                                                   ^~~~~~~~~
+./_libs_/usb/USBDevice/USBHAL.h: In member function 'virtual void USBHAL::SOF(int)':
+./_libs_/usb/USBDevice/USBHAL.h:69:26: warning: unused parameter 'frameNumber' [-Wunused-parameter]
+     virtual void SOF(int frameNumber){};
+                          ^~~~~~~~~~~
+In file included from _libs_/usb/USBMSD/USBMSD.h:28:0,
+                 from _libs_/usb/USBMSD/USBMSD.cpp:20:
+./_libs_/usb/USBDevice/USBDevice.h: In member function 'virtual void USBDevice::USBCallback_requestCompleted(uint8_t*, uint32_t)':
+./_libs_/usb/USBDevice/USBDevice.h:148:57: warning: unused parameter 'buf' [-Wunused-parameter]
+     virtual void USBCallback_requestCompleted(uint8_t * buf, uint32_t length) {};
+                                                         ^~~
+./_libs_/usb/USBDevice/USBDevice.h:148:71: warning: unused parameter 'length' [-Wunused-parameter]
+     virtual void USBCallback_requestCompleted(uint8_t * buf, uint32_t length) {};
+                                                                       ^~~~~~
+./_libs_/usb/USBDevice/USBDevice.h: In member function 'virtual bool USBDevice::USBCallback_setConfiguration(uint8_t)':
+./_libs_/usb/USBDevice/USBDevice.h:156:55: warning: unused parameter 'configuration' [-Wunused-parameter]
+     virtual bool USBCallback_setConfiguration(uint8_t configuration) { return false; };
+                                                       ^~~~~~~~~~~~~
+./_libs_/usb/USBDevice/USBDevice.h: In member function 'virtual bool USBDevice::USBCallback_setInterface(uint16_t, uint8_t)':
+./_libs_/usb/USBDevice/USBDevice.h:165:52: warning: unused parameter 'interface' [-Wunused-parameter]
+     virtual bool USBCallback_setInterface(uint16_t interface, uint8_t alternate) { return false; };
+                                                    ^~~~~~~~~
+./_libs_/usb/USBDevice/USBDevice.h:165:71: warning: unused parameter 'alternate' [-Wunused-parameter]
+     virtual bool USBCallback_setInterface(uint16_t interface, uint8_t alternate) { return false; };
+                                                                       ^~~~~~~~~
+arm-none-eabi-g++ -Os -mcpu=cortex-m4 -mthumb -mfpu=fpv4-sp-d16 -mfloat-abi=softfp  -c -g -fno-common -fmessage-length=0 -Wall -Wextra -fno-exceptions -ffunction-sections -fdata-sections -fomit-frame-pointer -MMD -MP -DTARGET_STM -DTARGET_BYZANCE_IODAG3E -DTARGET_STM32F4 -DTARGET_STM32F437II -DDEVICE_ERROR_RED=1 -DDEVICE_INTERRUPTIN=1 -DDEVICE_RTC=1 -DDEVICE_SERIAL=1 -DDEVICE_SERIAL_ASYNCH=1 -DDEVICE_SERIAL_FC=1 -DDEVICE_SPI=1 -DDEVICE_SPI_ASYNCH=1 -DDEVICE_STDIO_MESSAGES=1 -DBYZANCE_BOOTLOADER=1 -DMBED_CONF_PLATFORM_STDIO_CONVERT_NEWLINES=0 -DMBED_CONF_PLATFORM_STDIO_FLUSH_AT_EXIT=1 -DMBED_CONF_PLATFORM_STDIO_BAUD_RATE=9600 -DMBED_CONF_PLATFORM_DEFAULT_SERIAL_BAUD_RATE=9600 -DBYZANCE_SUPPORTS_6LOWPAN=0 -DBYZANCE_SUPPORTS_WIFI=0 -DBYZANCE_SUPPORTS_ETHERNET=0 -D__BUILD_ID__=RND_BUILD_ID_288 -DBYZANCE_SUPPORTS_USB=1 -DTARGET_FF_ARDUINO -DTOOLCHAIN_GCC_ARM -D__CORTEX_M4 -DTARGET_LIKE_MBED -DTARGET_CORTEX_M -D__FPU_PRESENT=1 -DTARGET_LIKE_CORTEX_M4 -DTARGET_M4 -D__MBED__=1 -DTARGET_FF_MORPHO -DTOOLCHAIN_GCC -DARM_MATH_CM4  -D__BUILD_TARGET__=BYZANCE_IODAG3E_BOOTLOADER -std=gnu++11 -fno-rtti -I. -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/cmsis -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/cmsis/TARGET_CORTEX_M -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/cmsis/TARGET_CORTEX_M/TOOLCHAIN_GCC -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/drivers -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/hal -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/hal/storage_abstraction -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/platform -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/targets -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/targets/TARGET_STM -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/targets/TARGET_STM/TARGET_STM32F4 -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/targets/TARGET_STM/TARGET_STM32F4/device -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/targets/TARGET_STM/TARGET_STM32F4/TARGET_STM32F437xI -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/targets/TARGET_STM/TARGET_STM32F4/TARGET_STM32F437xI/device -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/targets/TARGET_STM/TARGET_STM32F4/TARGET_STM32F437xI/device/TOOLCHAIN_GCC_ARM -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/targets/TARGET_STM/TARGET_STM32F4/TARGET_STM32F437xI/TARGET_BYZANCE_IODAG3E_BOOTLOADER -I./_libs_/usb -I./_libs_/usb/targets/TARGET_STM -I./_libs_/usb/USBDevice -I./_libs_/usb/USBSerial -I./_libs_/usb/USBMSD -I./_libs_/usb/mass -I./_libs_/byzance_drivers -I./bootloaders/bootloader_ioda -o _libs_/usb/mass/ByzMass.BYZANCE_IODAG3E_BOOTLOADER.o _libs_/usb/mass/ByzMass.cpp
+In file included from ./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/platform/FileLike.h:21:0,
+                 from ./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/platform/Stream.h:20,
+                 from ./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/drivers/Serial.h:23,
+                 from ./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/mbed.h:81,
+                 from _libs_/usb/mass/ByzMass.h:4,
+                 from _libs_/usb/mass/ByzMass.cpp:1:
+./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/platform/FileHandle.h: In member function 'virtual int mbed::FileHandle::set_blocking(bool)':
+./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/platform/FileHandle.h:179:35: warning: unused parameter 'blocking' [-Wunused-parameter]
+     virtual int set_blocking(bool blocking)
+                                   ^~~~~~~~
+./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/platform/FileHandle.h: In member function 'virtual short int mbed::FileHandle::poll(short int) const':
+./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/platform/FileHandle.h:194:30: warning: unused parameter 'events' [-Wunused-parameter]
+     virtual short poll(short events) const
+                              ^~~~~~
+./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/platform/FileHandle.h: In member function 'virtual void mbed::FileHandle::sigio(mbed::Callback<void()>)':
+./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/platform/FileHandle.h:239:41: warning: unused parameter 'func' [-Wunused-parameter]
+     virtual void sigio(Callback<void()> func)
+                                         ^~~~
+In file included from ./_libs_/usb/USBDevice/USBDevice.h:24:0,
+                 from ./_libs_/usb/USBMSD/USBMSD.h:28,
+                 from _libs_/usb/mass/ByzMass.h:5,
+                 from _libs_/usb/mass/ByzMass.cpp:1:
+./_libs_/usb/USBDevice/USBHAL.h: In member function 'virtual void USBHAL::connectStateChanged(unsigned int)':
+./_libs_/usb/USBDevice/USBHAL.h:67:51: warning: unused parameter 'connected' [-Wunused-parameter]
+     virtual void connectStateChanged(unsigned int connected){};
+                                                   ^~~~~~~~~
+./_libs_/usb/USBDevice/USBHAL.h: In member function 'virtual void USBHAL::suspendStateChanged(unsigned int)':
+./_libs_/usb/USBDevice/USBHAL.h:68:51: warning: unused parameter 'suspended' [-Wunused-parameter]
+     virtual void suspendStateChanged(unsigned int suspended){};
+                                                   ^~~~~~~~~
+./_libs_/usb/USBDevice/USBHAL.h: In member function 'virtual void USBHAL::SOF(int)':
+./_libs_/usb/USBDevice/USBHAL.h:69:26: warning: unused parameter 'frameNumber' [-Wunused-parameter]
+     virtual void SOF(int frameNumber){};
+                          ^~~~~~~~~~~
+In file included from ./_libs_/usb/USBMSD/USBMSD.h:28:0,
+                 from _libs_/usb/mass/ByzMass.h:5,
+                 from _libs_/usb/mass/ByzMass.cpp:1:
+./_libs_/usb/USBDevice/USBDevice.h: In member function 'virtual void USBDevice::USBCallback_requestCompleted(uint8_t*, uint32_t)':
+./_libs_/usb/USBDevice/USBDevice.h:148:57: warning: unused parameter 'buf' [-Wunused-parameter]
+     virtual void USBCallback_requestCompleted(uint8_t * buf, uint32_t length) {};
+                                                         ^~~
+./_libs_/usb/USBDevice/USBDevice.h:148:71: warning: unused parameter 'length' [-Wunused-parameter]
+     virtual void USBCallback_requestCompleted(uint8_t * buf, uint32_t length) {};
+                                                                       ^~~~~~
+./_libs_/usb/USBDevice/USBDevice.h: In member function 'virtual bool USBDevice::USBCallback_setConfiguration(uint8_t)':
+./_libs_/usb/USBDevice/USBDevice.h:156:55: warning: unused parameter 'configuration' [-Wunused-parameter]
+     virtual bool USBCallback_setConfiguration(uint8_t configuration) { return false; };
+                                                       ^~~~~~~~~~~~~
+./_libs_/usb/USBDevice/USBDevice.h: In member function 'virtual bool USBDevice::USBCallback_setInterface(uint16_t, uint8_t)':
+./_libs_/usb/USBDevice/USBDevice.h:165:52: warning: unused parameter 'interface' [-Wunused-parameter]
+     virtual bool USBCallback_setInterface(uint16_t interface, uint8_t alternate) { return false; };
+                                                    ^~~~~~~~~
+./_libs_/usb/USBDevice/USBDevice.h:165:71: warning: unused parameter 'alternate' [-Wunused-parameter]
+     virtual bool USBCallback_setInterface(uint16_t interface, uint8_t alternate) { return false; };
+                                                                       ^~~~~~~~~
+_libs_/usb/mass/ByzMass.cpp: In member function 'virtual int ByzMass::disk_read(uint8_t*, uint64_t, uint8_t)':
+_libs_/usb/mass/ByzMass.cpp:11:33: warning: unused parameter 'data' [-Wunused-parameter]
+ int ByzMass::disk_read(uint8_t* data, uint64_t block, uint8_t count){
+                                 ^~~~
+_libs_/usb/mass/ByzMass.cpp:11:48: warning: unused parameter 'block' [-Wunused-parameter]
+ int ByzMass::disk_read(uint8_t* data, uint64_t block, uint8_t count){
+                                                ^~~~~
+_libs_/usb/mass/ByzMass.cpp:11:63: warning: unused parameter 'count' [-Wunused-parameter]
+ int ByzMass::disk_read(uint8_t* data, uint64_t block, uint8_t count){
+                                                               ^~~~~
+_libs_/usb/mass/ByzMass.cpp: In member function 'virtual int ByzMass::disk_write(const uint8_t*, uint64_t, uint8_t)':
+_libs_/usb/mass/ByzMass.cpp:16:40: warning: unused parameter 'data' [-Wunused-parameter]
+ int ByzMass::disk_write(const uint8_t* data, uint64_t block, uint8_t count){
+                                        ^~~~
+_libs_/usb/mass/ByzMass.cpp:16:55: warning: unused parameter 'block' [-Wunused-parameter]
+ int ByzMass::disk_write(const uint8_t* data, uint64_t block, uint8_t count){
+                                                       ^~~~~
+_libs_/usb/mass/ByzMass.cpp:16:70: warning: unused parameter 'count' [-Wunused-parameter]
+ int ByzMass::disk_write(const uint8_t* data, uint64_t block, uint8_t count){
+                                                                      ^~~~~
+arm-none-eabi-g++ -Os -mcpu=cortex-m4 -mthumb -mfpu=fpv4-sp-d16 -mfloat-abi=softfp  -c -g -fno-common -fmessage-length=0 -Wall -Wextra -fno-exceptions -ffunction-sections -fdata-sections -fomit-frame-pointer -MMD -MP -DTARGET_STM -DTARGET_BYZANCE_IODAG3E -DTARGET_STM32F4 -DTARGET_STM32F437II -DDEVICE_ERROR_RED=1 -DDEVICE_INTERRUPTIN=1 -DDEVICE_RTC=1 -DDEVICE_SERIAL=1 -DDEVICE_SERIAL_ASYNCH=1 -DDEVICE_SERIAL_FC=1 -DDEVICE_SPI=1 -DDEVICE_SPI_ASYNCH=1 -DDEVICE_STDIO_MESSAGES=1 -DBYZANCE_BOOTLOADER=1 -DMBED_CONF_PLATFORM_STDIO_CONVERT_NEWLINES=0 -DMBED_CONF_PLATFORM_STDIO_FLUSH_AT_EXIT=1 -DMBED_CONF_PLATFORM_STDIO_BAUD_RATE=9600 -DMBED_CONF_PLATFORM_DEFAULT_SERIAL_BAUD_RATE=9600 -DBYZANCE_SUPPORTS_6LOWPAN=0 -DBYZANCE_SUPPORTS_WIFI=0 -DBYZANCE_SUPPORTS_ETHERNET=0 -D__BUILD_ID__=RND_BUILD_ID_288 -DBYZANCE_SUPPORTS_USB=1 -DTARGET_FF_ARDUINO -DTOOLCHAIN_GCC_ARM -D__CORTEX_M4 -DTARGET_LIKE_MBED -DTARGET_CORTEX_M -D__FPU_PRESENT=1 -DTARGET_LIKE_CORTEX_M4 -DTARGET_M4 -D__MBED__=1 -DTARGET_FF_MORPHO -DTOOLCHAIN_GCC -DARM_MATH_CM4  -D__BUILD_TARGET__=BYZANCE_IODAG3E_BOOTLOADER -std=gnu++11 -fno-rtti -I. -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/cmsis -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/cmsis/TARGET_CORTEX_M -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/cmsis/TARGET_CORTEX_M/TOOLCHAIN_GCC -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/drivers -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/hal -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/hal/storage_abstraction -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/platform -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/targets -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/targets/TARGET_STM -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/targets/TARGET_STM/TARGET_STM32F4 -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/targets/TARGET_STM/TARGET_STM32F4/device -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/targets/TARGET_STM/TARGET_STM32F4/TARGET_STM32F437xI -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/targets/TARGET_STM/TARGET_STM32F4/TARGET_STM32F437xI/device -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/targets/TARGET_STM/TARGET_STM32F4/TARGET_STM32F437xI/device/TOOLCHAIN_GCC_ARM -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/targets/TARGET_STM/TARGET_STM32F4/TARGET_STM32F437xI/TARGET_BYZANCE_IODAG3E_BOOTLOADER -I./_libs_/usb -I./_libs_/usb/targets/TARGET_STM -I./_libs_/usb/USBDevice -I./_libs_/usb/USBSerial -I./_libs_/usb/USBMSD -I./_libs_/usb/mass -I./_libs_/byzance_drivers -I./bootloaders/bootloader_ioda -o _libs_/byzance_drivers/SpiFlash.BYZANCE_IODAG3E_BOOTLOADER.o _libs_/byzance_drivers/SpiFlash.cpp
+In file included from ./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/platform/FileLike.h:21:0,
+                 from ./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/platform/Stream.h:20,
+                 from ./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/drivers/Serial.h:23,
+                 from ./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/mbed.h:81,
+                 from _libs_/byzance_drivers/SpiFlash.h:4,
+                 from _libs_/byzance_drivers/SpiFlash.cpp:1:
+./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/platform/FileHandle.h: In member function 'virtual int mbed::FileHandle::set_blocking(bool)':
+./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/platform/FileHandle.h:179:35: warning: unused parameter 'blocking' [-Wunused-parameter]
+     virtual int set_blocking(bool blocking)
+                                   ^~~~~~~~
+./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/platform/FileHandle.h: In member function 'virtual short int mbed::FileHandle::poll(short int) const':
+./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/platform/FileHandle.h:194:30: warning: unused parameter 'events' [-Wunused-parameter]
+     virtual short poll(short events) const
+                              ^~~~~~
+./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/platform/FileHandle.h: In member function 'virtual void mbed::FileHandle::sigio(mbed::Callback<void()>)':
+./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/platform/FileHandle.h:239:41: warning: unused parameter 'func' [-Wunused-parameter]
+     virtual void sigio(Callback<void()> func)
+                                         ^~~~
+In file included from ./_libs_/usb/USBDevice/USBDevice.h:24:0,
+                 from ./_libs_/usb/USBSerial/USBCDC.h:27,
+                 from ./_libs_/usb/USBSerial/USBSerial.h:22,
+                 from _libs_/byzance_drivers/ByzanceLogger.h:7,
+                 from _libs_/byzance_drivers/byzance_debug.h:4,
+                 from _libs_/byzance_drivers/SpiFlash.h:7,
+                 from _libs_/byzance_drivers/SpiFlash.cpp:1:
+./_libs_/usb/USBDevice/USBHAL.h: In member function 'virtual void USBHAL::connectStateChanged(unsigned int)':
+./_libs_/usb/USBDevice/USBHAL.h:67:51: warning: unused parameter 'connected' [-Wunused-parameter]
+     virtual void connectStateChanged(unsigned int connected){};
+                                                   ^~~~~~~~~
+./_libs_/usb/USBDevice/USBHAL.h: In member function 'virtual void USBHAL::suspendStateChanged(unsigned int)':
+./_libs_/usb/USBDevice/USBHAL.h:68:51: warning: unused parameter 'suspended' [-Wunused-parameter]
+     virtual void suspendStateChanged(unsigned int suspended){};
+                                                   ^~~~~~~~~
+./_libs_/usb/USBDevice/USBHAL.h: In member function 'virtual void USBHAL::SOF(int)':
+./_libs_/usb/USBDevice/USBHAL.h:69:26: warning: unused parameter 'frameNumber' [-Wunused-parameter]
+     virtual void SOF(int frameNumber){};
+                          ^~~~~~~~~~~
+In file included from ./_libs_/usb/USBSerial/USBCDC.h:27:0,
+                 from ./_libs_/usb/USBSerial/USBSerial.h:22,
+                 from _libs_/byzance_drivers/ByzanceLogger.h:7,
+                 from _libs_/byzance_drivers/byzance_debug.h:4,
+                 from _libs_/byzance_drivers/SpiFlash.h:7,
+                 from _libs_/byzance_drivers/SpiFlash.cpp:1:
+./_libs_/usb/USBDevice/USBDevice.h: In member function 'virtual void USBDevice::USBCallback_requestCompleted(uint8_t*, uint32_t)':
+./_libs_/usb/USBDevice/USBDevice.h:148:57: warning: unused parameter 'buf' [-Wunused-parameter]
+     virtual void USBCallback_requestCompleted(uint8_t * buf, uint32_t length) {};
+                                                         ^~~
+./_libs_/usb/USBDevice/USBDevice.h:148:71: warning: unused parameter 'length' [-Wunused-parameter]
+     virtual void USBCallback_requestCompleted(uint8_t * buf, uint32_t length) {};
+                                                                       ^~~~~~
+./_libs_/usb/USBDevice/USBDevice.h: In member function 'virtual bool USBDevice::USBCallback_setConfiguration(uint8_t)':
+./_libs_/usb/USBDevice/USBDevice.h:156:55: warning: unused parameter 'configuration' [-Wunused-parameter]
+     virtual bool USBCallback_setConfiguration(uint8_t configuration) { return false; };
+                                                       ^~~~~~~~~~~~~
+./_libs_/usb/USBDevice/USBDevice.h: In member function 'virtual bool USBDevice::USBCallback_setInterface(uint16_t, uint8_t)':
+./_libs_/usb/USBDevice/USBDevice.h:165:52: warning: unused parameter 'interface' [-Wunused-parameter]
+     virtual bool USBCallback_setInterface(uint16_t interface, uint8_t alternate) { return false; };
+                                                    ^~~~~~~~~
+./_libs_/usb/USBDevice/USBDevice.h:165:71: warning: unused parameter 'alternate' [-Wunused-parameter]
+     virtual bool USBCallback_setInterface(uint16_t interface, uint8_t alternate) { return false; };
+                                                                       ^~~~~~~~~
+In file included from ./_libs_/usb/USBSerial/USBSerial.h:22:0,
+                 from _libs_/byzance_drivers/ByzanceLogger.h:7,
+                 from _libs_/byzance_drivers/byzance_debug.h:4,
+                 from _libs_/byzance_drivers/SpiFlash.h:7,
+                 from _libs_/byzance_drivers/SpiFlash.cpp:1:
+./_libs_/usb/USBSerial/USBCDC.h: In member function 'virtual void USBCDC::lineCodingChanged(int, int, int, int)':
+./_libs_/usb/USBSerial/USBCDC.h:113:40: warning: unused parameter 'baud' [-Wunused-parameter]
+     virtual void lineCodingChanged(int baud, int bits, int parity, int stop) {};
+                                        ^~~~
+./_libs_/usb/USBSerial/USBCDC.h:113:50: warning: unused parameter 'bits' [-Wunused-parameter]
+     virtual void lineCodingChanged(int baud, int bits, int parity, int stop) {};
+                                                  ^~~~
+./_libs_/usb/USBSerial/USBCDC.h:113:60: warning: unused parameter 'parity' [-Wunused-parameter]
+     virtual void lineCodingChanged(int baud, int bits, int parity, int stop) {};
+                                                            ^~~~~~
+./_libs_/usb/USBSerial/USBCDC.h:113:72: warning: unused parameter 'stop' [-Wunused-parameter]
+     virtual void lineCodingChanged(int baud, int bits, int parity, int stop) {};
+                                                                        ^~~~
+In file included from _libs_/byzance_drivers/ByzanceLogger.h:7:0,
+                 from _libs_/byzance_drivers/byzance_debug.h:4,
+                 from _libs_/byzance_drivers/SpiFlash.h:7,
+                 from _libs_/byzance_drivers/SpiFlash.cpp:1:
+./_libs_/usb/USBSerial/USBSerial.h: In member function 'void USBSerial::attach(void (*)())':
+./_libs_/usb/USBSerial/USBSerial.h:141:27: warning: 'void mbed::Callback<R()>::attach(R (*)()) [with R = void]' is deprecated: Replaced by simple assignment 'Callback cb = func [since mbed-os-5.4] [-Wdeprecated-declarations]
+             rx.attach(fptr);
+                           ^
+In file included from ./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/platform/FileHandle.h:22:0,
+                 from ./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/platform/FileLike.h:21,
+                 from ./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/platform/Stream.h:20,
+                 from ./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/drivers/Serial.h:23,
+                 from ./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/mbed.h:81,
+                 from _libs_/byzance_drivers/SpiFlash.h:4,
+                 from _libs_/byzance_drivers/SpiFlash.cpp:1:
+./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/platform/Callback.h:271:10: note: declared here
+     void attach(R (*func)()) {
+          ^~~~~~
+arm-none-eabi-g++ -Os -mcpu=cortex-m4 -mthumb -mfpu=fpv4-sp-d16 -mfloat-abi=softfp  -c -g -fno-common -fmessage-length=0 -Wall -Wextra -fno-exceptions -ffunction-sections -fdata-sections -fomit-frame-pointer -MMD -MP -DTARGET_STM -DTARGET_BYZANCE_IODAG3E -DTARGET_STM32F4 -DTARGET_STM32F437II -DDEVICE_ERROR_RED=1 -DDEVICE_INTERRUPTIN=1 -DDEVICE_RTC=1 -DDEVICE_SERIAL=1 -DDEVICE_SERIAL_ASYNCH=1 -DDEVICE_SERIAL_FC=1 -DDEVICE_SPI=1 -DDEVICE_SPI_ASYNCH=1 -DDEVICE_STDIO_MESSAGES=1 -DBYZANCE_BOOTLOADER=1 -DMBED_CONF_PLATFORM_STDIO_CONVERT_NEWLINES=0 -DMBED_CONF_PLATFORM_STDIO_FLUSH_AT_EXIT=1 -DMBED_CONF_PLATFORM_STDIO_BAUD_RATE=9600 -DMBED_CONF_PLATFORM_DEFAULT_SERIAL_BAUD_RATE=9600 -DBYZANCE_SUPPORTS_6LOWPAN=0 -DBYZANCE_SUPPORTS_WIFI=0 -DBYZANCE_SUPPORTS_ETHERNET=0 -D__BUILD_ID__=RND_BUILD_ID_288 -DBYZANCE_SUPPORTS_USB=1 -DTARGET_FF_ARDUINO -DTOOLCHAIN_GCC_ARM -D__CORTEX_M4 -DTARGET_LIKE_MBED -DTARGET_CORTEX_M -D__FPU_PRESENT=1 -DTARGET_LIKE_CORTEX_M4 -DTARGET_M4 -D__MBED__=1 -DTARGET_FF_MORPHO -DTOOLCHAIN_GCC -DARM_MATH_CM4  -D__BUILD_TARGET__=BYZANCE_IODAG3E_BOOTLOADER -std=gnu++11 -fno-rtti -I. -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/cmsis -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/cmsis/TARGET_CORTEX_M -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/cmsis/TARGET_CORTEX_M/TOOLCHAIN_GCC -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/drivers -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/hal -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/hal/storage_abstraction -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/platform -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/targets -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/targets/TARGET_STM -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/targets/TARGET_STM/TARGET_STM32F4 -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/targets/TARGET_STM/TARGET_STM32F4/device -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/targets/TARGET_STM/TARGET_STM32F4/TARGET_STM32F437xI -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/targets/TARGET_STM/TARGET_STM32F4/TARGET_STM32F437xI/device -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/targets/TARGET_STM/TARGET_STM32F4/TARGET_STM32F437xI/device/TOOLCHAIN_GCC_ARM -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/targets/TARGET_STM/TARGET_STM32F4/TARGET_STM32F437xI/TARGET_BYZANCE_IODAG3E_BOOTLOADER -I./_libs_/usb -I./_libs_/usb/targets/TARGET_STM -I./_libs_/usb/USBDevice -I./_libs_/usb/USBSerial -I./_libs_/usb/USBMSD -I./_libs_/usb/mass -I./_libs_/byzance_drivers -I./bootloaders/bootloader_ioda -o _libs_/byzance_drivers/ExtMem.BYZANCE_IODAG3E_BOOTLOADER.o _libs_/byzance_drivers/ExtMem.cpp
+In file included from ./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/platform/FileLike.h:21:0,
+                 from ./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/platform/Stream.h:20,
+                 from ./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/drivers/Serial.h:23,
+                 from ./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/mbed.h:81,
+                 from _libs_/byzance_drivers/ExtMem.h:4,
+                 from _libs_/byzance_drivers/ExtMem.cpp:1:
+./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/platform/FileHandle.h: In member function 'virtual int mbed::FileHandle::set_blocking(bool)':
+./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/platform/FileHandle.h:179:35: warning: unused parameter 'blocking' [-Wunused-parameter]
+     virtual int set_blocking(bool blocking)
+                                   ^~~~~~~~
+./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/platform/FileHandle.h: In member function 'virtual short int mbed::FileHandle::poll(short int) const':
+./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/platform/FileHandle.h:194:30: warning: unused parameter 'events' [-Wunused-parameter]
+     virtual short poll(short events) const
+                              ^~~~~~
+./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/platform/FileHandle.h: In member function 'virtual void mbed::FileHandle::sigio(mbed::Callback<void()>)':
+./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/platform/FileHandle.h:239:41: warning: unused parameter 'func' [-Wunused-parameter]
+     virtual void sigio(Callback<void()> func)
+                                         ^~~~
+In file included from ./_libs_/usb/USBDevice/USBDevice.h:24:0,
+                 from ./_libs_/usb/USBSerial/USBCDC.h:27,
+                 from ./_libs_/usb/USBSerial/USBSerial.h:22,
+                 from _libs_/byzance_drivers/ByzanceLogger.h:7,
+                 from _libs_/byzance_drivers/byzance_debug.h:4,
+                 from _libs_/byzance_drivers/SpiFlash.h:7,
+                 from _libs_/byzance_drivers/ExtMem.h:5,
+                 from _libs_/byzance_drivers/ExtMem.cpp:1:
+./_libs_/usb/USBDevice/USBHAL.h: In member function 'virtual void USBHAL::connectStateChanged(unsigned int)':
+./_libs_/usb/USBDevice/USBHAL.h:67:51: warning: unused parameter 'connected' [-Wunused-parameter]
+     virtual void connectStateChanged(unsigned int connected){};
+                                                   ^~~~~~~~~
+./_libs_/usb/USBDevice/USBHAL.h: In member function 'virtual void USBHAL::suspendStateChanged(unsigned int)':
+./_libs_/usb/USBDevice/USBHAL.h:68:51: warning: unused parameter 'suspended' [-Wunused-parameter]
+     virtual void suspendStateChanged(unsigned int suspended){};
+                                                   ^~~~~~~~~
+./_libs_/usb/USBDevice/USBHAL.h: In member function 'virtual void USBHAL::SOF(int)':
+./_libs_/usb/USBDevice/USBHAL.h:69:26: warning: unused parameter 'frameNumber' [-Wunused-parameter]
+     virtual void SOF(int frameNumber){};
+                          ^~~~~~~~~~~
+In file included from ./_libs_/usb/USBSerial/USBCDC.h:27:0,
+                 from ./_libs_/usb/USBSerial/USBSerial.h:22,
+                 from _libs_/byzance_drivers/ByzanceLogger.h:7,
+                 from _libs_/byzance_drivers/byzance_debug.h:4,
+                 from _libs_/byzance_drivers/SpiFlash.h:7,
+                 from _libs_/byzance_drivers/ExtMem.h:5,
+                 from _libs_/byzance_drivers/ExtMem.cpp:1:
+./_libs_/usb/USBDevice/USBDevice.h: In member function 'virtual void USBDevice::USBCallback_requestCompleted(uint8_t*, uint32_t)':
+./_libs_/usb/USBDevice/USBDevice.h:148:57: warning: unused parameter 'buf' [-Wunused-parameter]
+     virtual void USBCallback_requestCompleted(uint8_t * buf, uint32_t length) {};
+                                                         ^~~
+./_libs_/usb/USBDevice/USBDevice.h:148:71: warning: unused parameter 'length' [-Wunused-parameter]
+     virtual void USBCallback_requestCompleted(uint8_t * buf, uint32_t length) {};
+                                                                       ^~~~~~
+./_libs_/usb/USBDevice/USBDevice.h: In member function 'virtual bool USBDevice::USBCallback_setConfiguration(uint8_t)':
+./_libs_/usb/USBDevice/USBDevice.h:156:55: warning: unused parameter 'configuration' [-Wunused-parameter]
+     virtual bool USBCallback_setConfiguration(uint8_t configuration) { return false; };
+                                                       ^~~~~~~~~~~~~
+./_libs_/usb/USBDevice/USBDevice.h: In member function 'virtual bool USBDevice::USBCallback_setInterface(uint16_t, uint8_t)':
+./_libs_/usb/USBDevice/USBDevice.h:165:52: warning: unused parameter 'interface' [-Wunused-parameter]
+     virtual bool USBCallback_setInterface(uint16_t interface, uint8_t alternate) { return false; };
+                                                    ^~~~~~~~~
+./_libs_/usb/USBDevice/USBDevice.h:165:71: warning: unused parameter 'alternate' [-Wunused-parameter]
+     virtual bool USBCallback_setInterface(uint16_t interface, uint8_t alternate) { return false; };
+                                                                       ^~~~~~~~~
+In file included from ./_libs_/usb/USBSerial/USBSerial.h:22:0,
+                 from _libs_/byzance_drivers/ByzanceLogger.h:7,
+                 from _libs_/byzance_drivers/byzance_debug.h:4,
+                 from _libs_/byzance_drivers/SpiFlash.h:7,
+                 from _libs_/byzance_drivers/ExtMem.h:5,
+                 from _libs_/byzance_drivers/ExtMem.cpp:1:
+./_libs_/usb/USBSerial/USBCDC.h: In member function 'virtual void USBCDC::lineCodingChanged(int, int, int, int)':
+./_libs_/usb/USBSerial/USBCDC.h:113:40: warning: unused parameter 'baud' [-Wunused-parameter]
+     virtual void lineCodingChanged(int baud, int bits, int parity, int stop) {};
+                                        ^~~~
+./_libs_/usb/USBSerial/USBCDC.h:113:50: warning: unused parameter 'bits' [-Wunused-parameter]
+     virtual void lineCodingChanged(int baud, int bits, int parity, int stop) {};
+                                                  ^~~~
+./_libs_/usb/USBSerial/USBCDC.h:113:60: warning: unused parameter 'parity' [-Wunused-parameter]
+     virtual void lineCodingChanged(int baud, int bits, int parity, int stop) {};
+                                                            ^~~~~~
+./_libs_/usb/USBSerial/USBCDC.h:113:72: warning: unused parameter 'stop' [-Wunused-parameter]
+     virtual void lineCodingChanged(int baud, int bits, int parity, int stop) {};
+                                                                        ^~~~
+In file included from _libs_/byzance_drivers/ByzanceLogger.h:7:0,
+                 from _libs_/byzance_drivers/byzance_debug.h:4,
+                 from _libs_/byzance_drivers/SpiFlash.h:7,
+                 from _libs_/byzance_drivers/ExtMem.h:5,
+                 from _libs_/byzance_drivers/ExtMem.cpp:1:
+./_libs_/usb/USBSerial/USBSerial.h: In member function 'void USBSerial::attach(void (*)())':
+./_libs_/usb/USBSerial/USBSerial.h:141:27: warning: 'void mbed::Callback<R()>::attach(R (*)()) [with R = void]' is deprecated: Replaced by simple assignment 'Callback cb = func [since mbed-os-5.4] [-Wdeprecated-declarations]
+             rx.attach(fptr);
+                           ^
+In file included from ./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/platform/FileHandle.h:22:0,
+                 from ./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/platform/FileLike.h:21,
+                 from ./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/platform/Stream.h:20,
+                 from ./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/drivers/Serial.h:23,
+                 from ./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/mbed.h:81,
+                 from _libs_/byzance_drivers/ExtMem.h:4,
+                 from _libs_/byzance_drivers/ExtMem.cpp:1:
+./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/platform/Callback.h:271:10: note: declared here
+     void attach(R (*func)()) {
+          ^~~~~~
+arm-none-eabi-g++ -Os -mcpu=cortex-m4 -mthumb -mfpu=fpv4-sp-d16 -mfloat-abi=softfp  -c -g -fno-common -fmessage-length=0 -Wall -Wextra -fno-exceptions -ffunction-sections -fdata-sections -fomit-frame-pointer -MMD -MP -DTARGET_STM -DTARGET_BYZANCE_IODAG3E -DTARGET_STM32F4 -DTARGET_STM32F437II -DDEVICE_ERROR_RED=1 -DDEVICE_INTERRUPTIN=1 -DDEVICE_RTC=1 -DDEVICE_SERIAL=1 -DDEVICE_SERIAL_ASYNCH=1 -DDEVICE_SERIAL_FC=1 -DDEVICE_SPI=1 -DDEVICE_SPI_ASYNCH=1 -DDEVICE_STDIO_MESSAGES=1 -DBYZANCE_BOOTLOADER=1 -DMBED_CONF_PLATFORM_STDIO_CONVERT_NEWLINES=0 -DMBED_CONF_PLATFORM_STDIO_FLUSH_AT_EXIT=1 -DMBED_CONF_PLATFORM_STDIO_BAUD_RATE=9600 -DMBED_CONF_PLATFORM_DEFAULT_SERIAL_BAUD_RATE=9600 -DBYZANCE_SUPPORTS_6LOWPAN=0 -DBYZANCE_SUPPORTS_WIFI=0 -DBYZANCE_SUPPORTS_ETHERNET=0 -D__BUILD_ID__=RND_BUILD_ID_288 -DBYZANCE_SUPPORTS_USB=1 -DTARGET_FF_ARDUINO -DTOOLCHAIN_GCC_ARM -D__CORTEX_M4 -DTARGET_LIKE_MBED -DTARGET_CORTEX_M -D__FPU_PRESENT=1 -DTARGET_LIKE_CORTEX_M4 -DTARGET_M4 -D__MBED__=1 -DTARGET_FF_MORPHO -DTOOLCHAIN_GCC -DARM_MATH_CM4  -D__BUILD_TARGET__=BYZANCE_IODAG3E_BOOTLOADER -std=gnu++11 -fno-rtti -I. -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/cmsis -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/cmsis/TARGET_CORTEX_M -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/cmsis/TARGET_CORTEX_M/TOOLCHAIN_GCC -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/drivers -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/hal -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/hal/storage_abstraction -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/platform -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/targets -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/targets/TARGET_STM -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/targets/TARGET_STM/TARGET_STM32F4 -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/targets/TARGET_STM/TARGET_STM32F4/device -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/targets/TARGET_STM/TARGET_STM32F4/TARGET_STM32F437xI -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/targets/TARGET_STM/TARGET_STM32F4/TARGET_STM32F437xI/device -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/targets/TARGET_STM/TARGET_STM32F4/TARGET_STM32F437xI/device/TOOLCHAIN_GCC_ARM -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/targets/TARGET_STM/TARGET_STM32F4/TARGET_STM32F437xI/TARGET_BYZANCE_IODAG3E_BOOTLOADER -I./_libs_/usb -I./_libs_/usb/targets/TARGET_STM -I./_libs_/usb/USBDevice -I./_libs_/usb/USBSerial -I./_libs_/usb/USBMSD -I./_libs_/usb/mass -I./_libs_/byzance_drivers -I./bootloaders/bootloader_ioda -o _libs_/byzance_drivers/IntMem.BYZANCE_IODAG3E_BOOTLOADER.o _libs_/byzance_drivers/IntMem.cpp
+_libs_/byzance_drivers/IntMem.cpp:137:2: warning: #warning "Mod automazani zatim neni pro IODAG2 implementovany." [-Wcpp]
+ #warning "Mod automazani zatim neni pro IODAG2 implementovany."
+  ^~~~~~~
+In file included from ./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/platform/FileLike.h:21:0,
+                 from ./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/platform/Stream.h:20,
+                 from ./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/drivers/Serial.h:23,
+                 from ./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/mbed.h:81,
+                 from _libs_/byzance_drivers/IntMem.h:11,
+                 from _libs_/byzance_drivers/IntMem.cpp:1:
+./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/platform/FileHandle.h: In member function 'virtual int mbed::FileHandle::set_blocking(bool)':
+./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/platform/FileHandle.h:179:35: warning: unused parameter 'blocking' [-Wunused-parameter]
+     virtual int set_blocking(bool blocking)
+                                   ^~~~~~~~
+./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/platform/FileHandle.h: In member function 'virtual short int mbed::FileHandle::poll(short int) const':
+./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/platform/FileHandle.h:194:30: warning: unused parameter 'events' [-Wunused-parameter]
+     virtual short poll(short events) const
+                              ^~~~~~
+./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/platform/FileHandle.h: In member function 'virtual void mbed::FileHandle::sigio(mbed::Callback<void()>)':
+./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/platform/FileHandle.h:239:41: warning: unused parameter 'func' [-Wunused-parameter]
+     virtual void sigio(Callback<void()> func)
+                                         ^~~~
+In file included from ./_libs_/usb/USBDevice/USBDevice.h:24:0,
+                 from ./_libs_/usb/USBSerial/USBCDC.h:27,
+                 from ./_libs_/usb/USBSerial/USBSerial.h:22,
+                 from _libs_/byzance_drivers/ByzanceLogger.h:7,
+                 from _libs_/byzance_drivers/byzance_debug.h:4,
+                 from _libs_/byzance_drivers/IntMem.h:12,
+                 from _libs_/byzance_drivers/IntMem.cpp:1:
+./_libs_/usb/USBDevice/USBHAL.h: In member function 'virtual void USBHAL::connectStateChanged(unsigned int)':
+./_libs_/usb/USBDevice/USBHAL.h:67:51: warning: unused parameter 'connected' [-Wunused-parameter]
+     virtual void connectStateChanged(unsigned int connected){};
+                                                   ^~~~~~~~~
+./_libs_/usb/USBDevice/USBHAL.h: In member function 'virtual void USBHAL::suspendStateChanged(unsigned int)':
+./_libs_/usb/USBDevice/USBHAL.h:68:51: warning: unused parameter 'suspended' [-Wunused-parameter]
+     virtual void suspendStateChanged(unsigned int suspended){};
+                                                   ^~~~~~~~~
+./_libs_/usb/USBDevice/USBHAL.h: In member function 'virtual void USBHAL::SOF(int)':
+./_libs_/usb/USBDevice/USBHAL.h:69:26: warning: unused parameter 'frameNumber' [-Wunused-parameter]
+     virtual void SOF(int frameNumber){};
+                          ^~~~~~~~~~~
+In file included from ./_libs_/usb/USBSerial/USBCDC.h:27:0,
+                 from ./_libs_/usb/USBSerial/USBSerial.h:22,
+                 from _libs_/byzance_drivers/ByzanceLogger.h:7,
+                 from _libs_/byzance_drivers/byzance_debug.h:4,
+                 from _libs_/byzance_drivers/IntMem.h:12,
+                 from _libs_/byzance_drivers/IntMem.cpp:1:
+./_libs_/usb/USBDevice/USBDevice.h: In member function 'virtual void USBDevice::USBCallback_requestCompleted(uint8_t*, uint32_t)':
+./_libs_/usb/USBDevice/USBDevice.h:148:57: warning: unused parameter 'buf' [-Wunused-parameter]
+     virtual void USBCallback_requestCompleted(uint8_t * buf, uint32_t length) {};
+                                                         ^~~
+./_libs_/usb/USBDevice/USBDevice.h:148:71: warning: unused parameter 'length' [-Wunused-parameter]
+     virtual void USBCallback_requestCompleted(uint8_t * buf, uint32_t length) {};
+                                                                       ^~~~~~
+./_libs_/usb/USBDevice/USBDevice.h: In member function 'virtual bool USBDevice::USBCallback_setConfiguration(uint8_t)':
+./_libs_/usb/USBDevice/USBDevice.h:156:55: warning: unused parameter 'configuration' [-Wunused-parameter]
+     virtual bool USBCallback_setConfiguration(uint8_t configuration) { return false; };
+                                                       ^~~~~~~~~~~~~
+./_libs_/usb/USBDevice/USBDevice.h: In member function 'virtual bool USBDevice::USBCallback_setInterface(uint16_t, uint8_t)':
+./_libs_/usb/USBDevice/USBDevice.h:165:52: warning: unused parameter 'interface' [-Wunused-parameter]
+     virtual bool USBCallback_setInterface(uint16_t interface, uint8_t alternate) { return false; };
+                                                    ^~~~~~~~~
+./_libs_/usb/USBDevice/USBDevice.h:165:71: warning: unused parameter 'alternate' [-Wunused-parameter]
+     virtual bool USBCallback_setInterface(uint16_t interface, uint8_t alternate) { return false; };
+                                                                       ^~~~~~~~~
+In file included from ./_libs_/usb/USBSerial/USBSerial.h:22:0,
+                 from _libs_/byzance_drivers/ByzanceLogger.h:7,
+                 from _libs_/byzance_drivers/byzance_debug.h:4,
+                 from _libs_/byzance_drivers/IntMem.h:12,
+                 from _libs_/byzance_drivers/IntMem.cpp:1:
+./_libs_/usb/USBSerial/USBCDC.h: In member function 'virtual void USBCDC::lineCodingChanged(int, int, int, int)':
+./_libs_/usb/USBSerial/USBCDC.h:113:40: warning: unused parameter 'baud' [-Wunused-parameter]
+     virtual void lineCodingChanged(int baud, int bits, int parity, int stop) {};
+                                        ^~~~
+./_libs_/usb/USBSerial/USBCDC.h:113:50: warning: unused parameter 'bits' [-Wunused-parameter]
+     virtual void lineCodingChanged(int baud, int bits, int parity, int stop) {};
+                                                  ^~~~
+./_libs_/usb/USBSerial/USBCDC.h:113:60: warning: unused parameter 'parity' [-Wunused-parameter]
+     virtual void lineCodingChanged(int baud, int bits, int parity, int stop) {};
+                                                            ^~~~~~
+./_libs_/usb/USBSerial/USBCDC.h:113:72: warning: unused parameter 'stop' [-Wunused-parameter]
+     virtual void lineCodingChanged(int baud, int bits, int parity, int stop) {};
+                                                                        ^~~~
+In file included from _libs_/byzance_drivers/ByzanceLogger.h:7:0,
+                 from _libs_/byzance_drivers/byzance_debug.h:4,
+                 from _libs_/byzance_drivers/IntMem.h:12,
+                 from _libs_/byzance_drivers/IntMem.cpp:1:
+./_libs_/usb/USBSerial/USBSerial.h: In member function 'void USBSerial::attach(void (*)())':
+./_libs_/usb/USBSerial/USBSerial.h:141:27: warning: 'void mbed::Callback<R()>::attach(R (*)()) [with R = void]' is deprecated: Replaced by simple assignment 'Callback cb = func [since mbed-os-5.4] [-Wdeprecated-declarations]
+             rx.attach(fptr);
+                           ^
+In file included from ./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/platform/FileHandle.h:22:0,
+                 from ./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/platform/FileLike.h:21,
+                 from ./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/platform/Stream.h:20,
+                 from ./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/drivers/Serial.h:23,
+                 from ./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/mbed.h:81,
+                 from _libs_/byzance_drivers/IntMem.h:11,
+                 from _libs_/byzance_drivers/IntMem.cpp:1:
+./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/platform/Callback.h:271:10: note: declared here
+     void attach(R (*func)()) {
+          ^~~~~~
+_libs_/byzance_drivers/IntMem.cpp: In static member function 'static IntMem_t IntMem::write_data(uint32_t, uint32_t, const void*, uint32_t, bool)':
+_libs_/byzance_drivers/IntMem.cpp:103:32: warning: unused variable 'EraseInitStruct' [-Wunused-variable]
+  static FLASH_EraseInitTypeDef EraseInitStruct;
+                                ^~~~~~~~~~~~~~~
+_libs_/byzance_drivers/IntMem.cpp:99:126: warning: unused parameter 'erase' [-Wunused-parameter]
+ IntMem_t IntMem::write_data(const uint32_t address, const uint32_t offset, const void *data, const uint32_t size, const bool erase){
+                                                                                                                              ^~~~~
+_libs_/byzance_drivers/IntMem.cpp: At global scope:
+_libs_/byzance_drivers/IntMem.cpp:103:32: warning: 'EraseInitStruct' defined but not used [-Wunused-variable]
+  static FLASH_EraseInitTypeDef EraseInitStruct;
+                                ^~~~~~~~~~~~~~~
+arm-none-eabi-g++ -Os -mcpu=cortex-m4 -mthumb -mfpu=fpv4-sp-d16 -mfloat-abi=softfp  -c -g -fno-common -fmessage-length=0 -Wall -Wextra -fno-exceptions -ffunction-sections -fdata-sections -fomit-frame-pointer -MMD -MP -DTARGET_STM -DTARGET_BYZANCE_IODAG3E -DTARGET_STM32F4 -DTARGET_STM32F437II -DDEVICE_ERROR_RED=1 -DDEVICE_INTERRUPTIN=1 -DDEVICE_RTC=1 -DDEVICE_SERIAL=1 -DDEVICE_SERIAL_ASYNCH=1 -DDEVICE_SERIAL_FC=1 -DDEVICE_SPI=1 -DDEVICE_SPI_ASYNCH=1 -DDEVICE_STDIO_MESSAGES=1 -DBYZANCE_BOOTLOADER=1 -DMBED_CONF_PLATFORM_STDIO_CONVERT_NEWLINES=0 -DMBED_CONF_PLATFORM_STDIO_FLUSH_AT_EXIT=1 -DMBED_CONF_PLATFORM_STDIO_BAUD_RATE=9600 -DMBED_CONF_PLATFORM_DEFAULT_SERIAL_BAUD_RATE=9600 -DBYZANCE_SUPPORTS_6LOWPAN=0 -DBYZANCE_SUPPORTS_WIFI=0 -DBYZANCE_SUPPORTS_ETHERNET=0 -D__BUILD_ID__=RND_BUILD_ID_288 -DBYZANCE_SUPPORTS_USB=1 -DTARGET_FF_ARDUINO -DTOOLCHAIN_GCC_ARM -D__CORTEX_M4 -DTARGET_LIKE_MBED -DTARGET_CORTEX_M -D__FPU_PRESENT=1 -DTARGET_LIKE_CORTEX_M4 -DTARGET_M4 -D__MBED__=1 -DTARGET_FF_MORPHO -DTOOLCHAIN_GCC -DARM_MATH_CM4  -D__BUILD_TARGET__=BYZANCE_IODAG3E_BOOTLOADER -std=gnu++11 -fno-rtti -I. -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/cmsis -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/cmsis/TARGET_CORTEX_M -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/cmsis/TARGET_CORTEX_M/TOOLCHAIN_GCC -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/drivers -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/hal -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/hal/storage_abstraction -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/platform -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/targets -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/targets/TARGET_STM -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/targets/TARGET_STM/TARGET_STM32F4 -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/targets/TARGET_STM/TARGET_STM32F4/device -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/targets/TARGET_STM/TARGET_STM32F4/TARGET_STM32F437xI -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/targets/TARGET_STM/TARGET_STM32F4/TARGET_STM32F437xI/device -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/targets/TARGET_STM/TARGET_STM32F4/TARGET_STM32F437xI/device/TOOLCHAIN_GCC_ARM -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/targets/TARGET_STM/TARGET_STM32F4/TARGET_STM32F437xI/TARGET_BYZANCE_IODAG3E_BOOTLOADER -I./_libs_/usb -I./_libs_/usb/targets/TARGET_STM -I./_libs_/usb/USBDevice -I./_libs_/usb/USBSerial -I./_libs_/usb/USBMSD -I./_libs_/usb/mass -I./_libs_/byzance_drivers -I./bootloaders/bootloader_ioda -o _libs_/byzance_drivers/support_functions.BYZANCE_IODAG3E_BOOTLOADER.o _libs_/byzance_drivers/support_functions.cpp
+In file included from ./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/platform/FileLike.h:21:0,
+                 from ./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/platform/Stream.h:20,
+                 from ./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/drivers/Serial.h:23,
+                 from ./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/mbed.h:81,
+                 from _libs_/byzance_drivers/support_functions.h:4,
+                 from _libs_/byzance_drivers/support_functions.cpp:1:
+./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/platform/FileHandle.h: In member function 'virtual int mbed::FileHandle::set_blocking(bool)':
+./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/platform/FileHandle.h:179:35: warning: unused parameter 'blocking' [-Wunused-parameter]
+     virtual int set_blocking(bool blocking)
+                                   ^~~~~~~~
+./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/platform/FileHandle.h: In member function 'virtual short int mbed::FileHandle::poll(short int) const':
+./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/platform/FileHandle.h:194:30: warning: unused parameter 'events' [-Wunused-parameter]
+     virtual short poll(short events) const
+                              ^~~~~~
+./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/platform/FileHandle.h: In member function 'virtual void mbed::FileHandle::sigio(mbed::Callback<void()>)':
+./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/platform/FileHandle.h:239:41: warning: unused parameter 'func' [-Wunused-parameter]
+     virtual void sigio(Callback<void()> func)
+                                         ^~~~
+In file included from _libs_/byzance_drivers/support_functions.cpp:2:0:
+_libs_/byzance_drivers/otp.h: In static member function 'static OTPResult_t OTP::blockLock(uint8_t)':
+_libs_/byzance_drivers/otp.h:72:42: warning: unused parameter 'block' [-Wunused-parameter]
+     static OTPResult_t blockLock(uint8_t block) {
+                                          ^~~~~
+arm-none-eabi-g++ -Os -mcpu=cortex-m4 -mthumb -mfpu=fpv4-sp-d16 -mfloat-abi=softfp  -c -g -fno-common -fmessage-length=0 -Wall -Wextra -fno-exceptions -ffunction-sections -fdata-sections -fomit-frame-pointer -MMD -MP -DTARGET_STM -DTARGET_BYZANCE_IODAG3E -DTARGET_STM32F4 -DTARGET_STM32F437II -DDEVICE_ERROR_RED=1 -DDEVICE_INTERRUPTIN=1 -DDEVICE_RTC=1 -DDEVICE_SERIAL=1 -DDEVICE_SERIAL_ASYNCH=1 -DDEVICE_SERIAL_FC=1 -DDEVICE_SPI=1 -DDEVICE_SPI_ASYNCH=1 -DDEVICE_STDIO_MESSAGES=1 -DBYZANCE_BOOTLOADER=1 -DMBED_CONF_PLATFORM_STDIO_CONVERT_NEWLINES=0 -DMBED_CONF_PLATFORM_STDIO_FLUSH_AT_EXIT=1 -DMBED_CONF_PLATFORM_STDIO_BAUD_RATE=9600 -DMBED_CONF_PLATFORM_DEFAULT_SERIAL_BAUD_RATE=9600 -DBYZANCE_SUPPORTS_6LOWPAN=0 -DBYZANCE_SUPPORTS_WIFI=0 -DBYZANCE_SUPPORTS_ETHERNET=0 -D__BUILD_ID__=RND_BUILD_ID_288 -DBYZANCE_SUPPORTS_USB=1 -DTARGET_FF_ARDUINO -DTOOLCHAIN_GCC_ARM -D__CORTEX_M4 -DTARGET_LIKE_MBED -DTARGET_CORTEX_M -D__FPU_PRESENT=1 -DTARGET_LIKE_CORTEX_M4 -DTARGET_M4 -D__MBED__=1 -DTARGET_FF_MORPHO -DTOOLCHAIN_GCC -DARM_MATH_CM4  -D__BUILD_TARGET__=BYZANCE_IODAG3E_BOOTLOADER -std=gnu++11 -fno-rtti -I. -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/cmsis -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/cmsis/TARGET_CORTEX_M -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/cmsis/TARGET_CORTEX_M/TOOLCHAIN_GCC -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/drivers -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/hal -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/hal/storage_abstraction -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/platform -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/targets -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/targets/TARGET_STM -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/targets/TARGET_STM/TARGET_STM32F4 -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/targets/TARGET_STM/TARGET_STM32F4/device -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/targets/TARGET_STM/TARGET_STM32F4/TARGET_STM32F437xI -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/targets/TARGET_STM/TARGET_STM32F4/TARGET_STM32F437xI/device -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/targets/TARGET_STM/TARGET_STM32F4/TARGET_STM32F437xI/device/TOOLCHAIN_GCC_ARM -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/targets/TARGET_STM/TARGET_STM32F4/TARGET_STM32F437xI/TARGET_BYZANCE_IODAG3E_BOOTLOADER -I./_libs_/usb -I./_libs_/usb/targets/TARGET_STM -I./_libs_/usb/USBDevice -I./_libs_/usb/USBSerial -I./_libs_/usb/USBMSD -I./_libs_/usb/mass -I./_libs_/byzance_drivers -I./bootloaders/bootloader_ioda -o _libs_/byzance_drivers/Watchdog.BYZANCE_IODAG3E_BOOTLOADER.o _libs_/byzance_drivers/Watchdog.cpp
+In file included from ./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/platform/FileLike.h:21:0,
+                 from ./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/platform/Stream.h:20,
+                 from ./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/drivers/Serial.h:23,
+                 from ./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/mbed.h:81,
+                 from _libs_/byzance_drivers/Watchdog.h:11,
+                 from _libs_/byzance_drivers/Watchdog.cpp:1:
+./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/platform/FileHandle.h: In member function 'virtual int mbed::FileHandle::set_blocking(bool)':
+./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/platform/FileHandle.h:179:35: warning: unused parameter 'blocking' [-Wunused-parameter]
+     virtual int set_blocking(bool blocking)
+                                   ^~~~~~~~
+./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/platform/FileHandle.h: In member function 'virtual short int mbed::FileHandle::poll(short int) const':
+./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/platform/FileHandle.h:194:30: warning: unused parameter 'events' [-Wunused-parameter]
+     virtual short poll(short events) const
+                              ^~~~~~
+./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/platform/FileHandle.h: In member function 'virtual void mbed::FileHandle::sigio(mbed::Callback<void()>)':
+./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/platform/FileHandle.h:239:41: warning: unused parameter 'func' [-Wunused-parameter]
+     virtual void sigio(Callback<void()> func)
+                                         ^~~~
+In file included from ./_libs_/usb/USBDevice/USBDevice.h:24:0,
+                 from ./_libs_/usb/USBSerial/USBCDC.h:27,
+                 from ./_libs_/usb/USBSerial/USBSerial.h:22,
+                 from _libs_/byzance_drivers/ByzanceLogger.h:7,
+                 from _libs_/byzance_drivers/byzance_debug.h:4,
+                 from _libs_/byzance_drivers/Watchdog.h:12,
+                 from _libs_/byzance_drivers/Watchdog.cpp:1:
+./_libs_/usb/USBDevice/USBHAL.h: In member function 'virtual void USBHAL::connectStateChanged(unsigned int)':
+./_libs_/usb/USBDevice/USBHAL.h:67:51: warning: unused parameter 'connected' [-Wunused-parameter]
+     virtual void connectStateChanged(unsigned int connected){};
+                                                   ^~~~~~~~~
+./_libs_/usb/USBDevice/USBHAL.h: In member function 'virtual void USBHAL::suspendStateChanged(unsigned int)':
+./_libs_/usb/USBDevice/USBHAL.h:68:51: warning: unused parameter 'suspended' [-Wunused-parameter]
+     virtual void suspendStateChanged(unsigned int suspended){};
+                                                   ^~~~~~~~~
+./_libs_/usb/USBDevice/USBHAL.h: In member function 'virtual void USBHAL::SOF(int)':
+./_libs_/usb/USBDevice/USBHAL.h:69:26: warning: unused parameter 'frameNumber' [-Wunused-parameter]
+     virtual void SOF(int frameNumber){};
+                          ^~~~~~~~~~~
+In file included from ./_libs_/usb/USBSerial/USBCDC.h:27:0,
+                 from ./_libs_/usb/USBSerial/USBSerial.h:22,
+                 from _libs_/byzance_drivers/ByzanceLogger.h:7,
+                 from _libs_/byzance_drivers/byzance_debug.h:4,
+                 from _libs_/byzance_drivers/Watchdog.h:12,
+                 from _libs_/byzance_drivers/Watchdog.cpp:1:
+./_libs_/usb/USBDevice/USBDevice.h: In member function 'virtual void USBDevice::USBCallback_requestCompleted(uint8_t*, uint32_t)':
+./_libs_/usb/USBDevice/USBDevice.h:148:57: warning: unused parameter 'buf' [-Wunused-parameter]
+     virtual void USBCallback_requestCompleted(uint8_t * buf, uint32_t length) {};
+                                                         ^~~
+./_libs_/usb/USBDevice/USBDevice.h:148:71: warning: unused parameter 'length' [-Wunused-parameter]
+     virtual void USBCallback_requestCompleted(uint8_t * buf, uint32_t length) {};
+                                                                       ^~~~~~
+./_libs_/usb/USBDevice/USBDevice.h: In member function 'virtual bool USBDevice::USBCallback_setConfiguration(uint8_t)':
+./_libs_/usb/USBDevice/USBDevice.h:156:55: warning: unused parameter 'configuration' [-Wunused-parameter]
+     virtual bool USBCallback_setConfiguration(uint8_t configuration) { return false; };
+                                                       ^~~~~~~~~~~~~
+./_libs_/usb/USBDevice/USBDevice.h: In member function 'virtual bool USBDevice::USBCallback_setInterface(uint16_t, uint8_t)':
+./_libs_/usb/USBDevice/USBDevice.h:165:52: warning: unused parameter 'interface' [-Wunused-parameter]
+     virtual bool USBCallback_setInterface(uint16_t interface, uint8_t alternate) { return false; };
+                                                    ^~~~~~~~~
+./_libs_/usb/USBDevice/USBDevice.h:165:71: warning: unused parameter 'alternate' [-Wunused-parameter]
+     virtual bool USBCallback_setInterface(uint16_t interface, uint8_t alternate) { return false; };
+                                                                       ^~~~~~~~~
+In file included from ./_libs_/usb/USBSerial/USBSerial.h:22:0,
+                 from _libs_/byzance_drivers/ByzanceLogger.h:7,
+                 from _libs_/byzance_drivers/byzance_debug.h:4,
+                 from _libs_/byzance_drivers/Watchdog.h:12,
+                 from _libs_/byzance_drivers/Watchdog.cpp:1:
+./_libs_/usb/USBSerial/USBCDC.h: In member function 'virtual void USBCDC::lineCodingChanged(int, int, int, int)':
+./_libs_/usb/USBSerial/USBCDC.h:113:40: warning: unused parameter 'baud' [-Wunused-parameter]
+     virtual void lineCodingChanged(int baud, int bits, int parity, int stop) {};
+                                        ^~~~
+./_libs_/usb/USBSerial/USBCDC.h:113:50: warning: unused parameter 'bits' [-Wunused-parameter]
+     virtual void lineCodingChanged(int baud, int bits, int parity, int stop) {};
+                                                  ^~~~
+./_libs_/usb/USBSerial/USBCDC.h:113:60: warning: unused parameter 'parity' [-Wunused-parameter]
+     virtual void lineCodingChanged(int baud, int bits, int parity, int stop) {};
+                                                            ^~~~~~
+./_libs_/usb/USBSerial/USBCDC.h:113:72: warning: unused parameter 'stop' [-Wunused-parameter]
+     virtual void lineCodingChanged(int baud, int bits, int parity, int stop) {};
+                                                                        ^~~~
+In file included from _libs_/byzance_drivers/ByzanceLogger.h:7:0,
+                 from _libs_/byzance_drivers/byzance_debug.h:4,
+                 from _libs_/byzance_drivers/Watchdog.h:12,
+                 from _libs_/byzance_drivers/Watchdog.cpp:1:
+./_libs_/usb/USBSerial/USBSerial.h: In member function 'void USBSerial::attach(void (*)())':
+./_libs_/usb/USBSerial/USBSerial.h:141:27: warning: 'void mbed::Callback<R()>::attach(R (*)()) [with R = void]' is deprecated: Replaced by simple assignment 'Callback cb = func [since mbed-os-5.4] [-Wdeprecated-declarations]
+             rx.attach(fptr);
+                           ^
+In file included from ./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/platform/FileHandle.h:22:0,
+                 from ./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/platform/FileLike.h:21,
+                 from ./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/platform/Stream.h:20,
+                 from ./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/drivers/Serial.h:23,
+                 from ./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/mbed.h:81,
+                 from _libs_/byzance_drivers/Watchdog.h:11,
+                 from _libs_/byzance_drivers/Watchdog.cpp:1:
+./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/platform/Callback.h:271:10: note: declared here
+     void attach(R (*func)()) {
+          ^~~~~~
+arm-none-eabi-g++ -Os -mcpu=cortex-m4 -mthumb -mfpu=fpv4-sp-d16 -mfloat-abi=softfp  -c -g -fno-common -fmessage-length=0 -Wall -Wextra -fno-exceptions -ffunction-sections -fdata-sections -fomit-frame-pointer -MMD -MP -DTARGET_STM -DTARGET_BYZANCE_IODAG3E -DTARGET_STM32F4 -DTARGET_STM32F437II -DDEVICE_ERROR_RED=1 -DDEVICE_INTERRUPTIN=1 -DDEVICE_RTC=1 -DDEVICE_SERIAL=1 -DDEVICE_SERIAL_ASYNCH=1 -DDEVICE_SERIAL_FC=1 -DDEVICE_SPI=1 -DDEVICE_SPI_ASYNCH=1 -DDEVICE_STDIO_MESSAGES=1 -DBYZANCE_BOOTLOADER=1 -DMBED_CONF_PLATFORM_STDIO_CONVERT_NEWLINES=0 -DMBED_CONF_PLATFORM_STDIO_FLUSH_AT_EXIT=1 -DMBED_CONF_PLATFORM_STDIO_BAUD_RATE=9600 -DMBED_CONF_PLATFORM_DEFAULT_SERIAL_BAUD_RATE=9600 -DBYZANCE_SUPPORTS_6LOWPAN=0 -DBYZANCE_SUPPORTS_WIFI=0 -DBYZANCE_SUPPORTS_ETHERNET=0 -D__BUILD_ID__=RND_BUILD_ID_288 -DBYZANCE_SUPPORTS_USB=1 -DTARGET_FF_ARDUINO -DTOOLCHAIN_GCC_ARM -D__CORTEX_M4 -DTARGET_LIKE_MBED -DTARGET_CORTEX_M -D__FPU_PRESENT=1 -DTARGET_LIKE_CORTEX_M4 -DTARGET_M4 -D__MBED__=1 -DTARGET_FF_MORPHO -DTOOLCHAIN_GCC -DARM_MATH_CM4  -D__BUILD_TARGET__=BYZANCE_IODAG3E_BOOTLOADER -std=gnu++11 -fno-rtti -I. -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/cmsis -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/cmsis/TARGET_CORTEX_M -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/cmsis/TARGET_CORTEX_M/TOOLCHAIN_GCC -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/drivers -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/hal -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/hal/storage_abstraction -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/platform -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/targets -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/targets/TARGET_STM -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/targets/TARGET_STM/TARGET_STM32F4 -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/targets/TARGET_STM/TARGET_STM32F4/device -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/targets/TARGET_STM/TARGET_STM32F4/TARGET_STM32F437xI -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/targets/TARGET_STM/TARGET_STM32F4/TARGET_STM32F437xI/device -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/targets/TARGET_STM/TARGET_STM32F4/TARGET_STM32F437xI/device/TOOLCHAIN_GCC_ARM -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/targets/TARGET_STM/TARGET_STM32F4/TARGET_STM32F437xI/TARGET_BYZANCE_IODAG3E_BOOTLOADER -I./_libs_/usb -I./_libs_/usb/targets/TARGET_STM -I./_libs_/usb/USBDevice -I./_libs_/usb/USBSerial -I./_libs_/usb/USBMSD -I./_libs_/usb/mass -I./_libs_/byzance_drivers -I./bootloaders/bootloader_ioda -o _libs_/byzance_drivers/ByzanceSpi.BYZANCE_IODAG3E_BOOTLOADER.o _libs_/byzance_drivers/ByzanceSpi.cpp
+In file included from ./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/platform/FileLike.h:21:0,
+                 from ./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/platform/Stream.h:20,
+                 from ./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/drivers/Serial.h:23,
+                 from ./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/mbed.h:81,
+                 from _libs_/byzance_drivers/ByzanceSpi.h:11,
+                 from _libs_/byzance_drivers/ByzanceSpi.cpp:1:
+./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/platform/FileHandle.h: In member function 'virtual int mbed::FileHandle::set_blocking(bool)':
+./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/platform/FileHandle.h:179:35: warning: unused parameter 'blocking' [-Wunused-parameter]
+     virtual int set_blocking(bool blocking)
+                                   ^~~~~~~~
+./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/platform/FileHandle.h: In member function 'virtual short int mbed::FileHandle::poll(short int) const':
+./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/platform/FileHandle.h:194:30: warning: unused parameter 'events' [-Wunused-parameter]
+     virtual short poll(short events) const
+                              ^~~~~~
+./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/platform/FileHandle.h: In member function 'virtual void mbed::FileHandle::sigio(mbed::Callback<void()>)':
+./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/platform/FileHandle.h:239:41: warning: unused parameter 'func' [-Wunused-parameter]
+     virtual void sigio(Callback<void()> func)
+                                         ^~~~
+arm-none-eabi-g++ -Os -mcpu=cortex-m4 -mthumb -mfpu=fpv4-sp-d16 -mfloat-abi=softfp  -c -g -fno-common -fmessage-length=0 -Wall -Wextra -fno-exceptions -ffunction-sections -fdata-sections -fomit-frame-pointer -MMD -MP -DTARGET_STM -DTARGET_BYZANCE_IODAG3E -DTARGET_STM32F4 -DTARGET_STM32F437II -DDEVICE_ERROR_RED=1 -DDEVICE_INTERRUPTIN=1 -DDEVICE_RTC=1 -DDEVICE_SERIAL=1 -DDEVICE_SERIAL_ASYNCH=1 -DDEVICE_SERIAL_FC=1 -DDEVICE_SPI=1 -DDEVICE_SPI_ASYNCH=1 -DDEVICE_STDIO_MESSAGES=1 -DBYZANCE_BOOTLOADER=1 -DMBED_CONF_PLATFORM_STDIO_CONVERT_NEWLINES=0 -DMBED_CONF_PLATFORM_STDIO_FLUSH_AT_EXIT=1 -DMBED_CONF_PLATFORM_STDIO_BAUD_RATE=9600 -DMBED_CONF_PLATFORM_DEFAULT_SERIAL_BAUD_RATE=9600 -DBYZANCE_SUPPORTS_6LOWPAN=0 -DBYZANCE_SUPPORTS_WIFI=0 -DBYZANCE_SUPPORTS_ETHERNET=0 -D__BUILD_ID__=RND_BUILD_ID_288 -DBYZANCE_SUPPORTS_USB=1 -DTARGET_FF_ARDUINO -DTOOLCHAIN_GCC_ARM -D__CORTEX_M4 -DTARGET_LIKE_MBED -DTARGET_CORTEX_M -D__FPU_PRESENT=1 -DTARGET_LIKE_CORTEX_M4 -DTARGET_M4 -D__MBED__=1 -DTARGET_FF_MORPHO -DTOOLCHAIN_GCC -DARM_MATH_CM4  -D__BUILD_TARGET__=BYZANCE_IODAG3E_BOOTLOADER -std=gnu++11 -fno-rtti -I. -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/cmsis -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/cmsis/TARGET_CORTEX_M -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/cmsis/TARGET_CORTEX_M/TOOLCHAIN_GCC -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/drivers -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/hal -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/hal/storage_abstraction -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/platform -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/targets -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/targets/TARGET_STM -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/targets/TARGET_STM/TARGET_STM32F4 -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/targets/TARGET_STM/TARGET_STM32F4/device -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/targets/TARGET_STM/TARGET_STM32F4/TARGET_STM32F437xI -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/targets/TARGET_STM/TARGET_STM32F4/TARGET_STM32F437xI/device -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/targets/TARGET_STM/TARGET_STM32F4/TARGET_STM32F437xI/device/TOOLCHAIN_GCC_ARM -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/targets/TARGET_STM/TARGET_STM32F4/TARGET_STM32F437xI/TARGET_BYZANCE_IODAG3E_BOOTLOADER -I./_libs_/usb -I./_libs_/usb/targets/TARGET_STM -I./_libs_/usb/USBDevice -I./_libs_/usb/USBSerial -I./_libs_/usb/USBMSD -I./_libs_/usb/mass -I./_libs_/byzance_drivers -I./bootloaders/bootloader_ioda -o _libs_/byzance_drivers/StructRoutines.BYZANCE_IODAG3E_BOOTLOADER.o _libs_/byzance_drivers/StructRoutines.cpp
+arm-none-eabi-g++ -Os -mcpu=cortex-m4 -mthumb -mfpu=fpv4-sp-d16 -mfloat-abi=softfp  -c -g -fno-common -fmessage-length=0 -Wall -Wextra -fno-exceptions -ffunction-sections -fdata-sections -fomit-frame-pointer -MMD -MP -DTARGET_STM -DTARGET_BYZANCE_IODAG3E -DTARGET_STM32F4 -DTARGET_STM32F437II -DDEVICE_ERROR_RED=1 -DDEVICE_INTERRUPTIN=1 -DDEVICE_RTC=1 -DDEVICE_SERIAL=1 -DDEVICE_SERIAL_ASYNCH=1 -DDEVICE_SERIAL_FC=1 -DDEVICE_SPI=1 -DDEVICE_SPI_ASYNCH=1 -DDEVICE_STDIO_MESSAGES=1 -DBYZANCE_BOOTLOADER=1 -DMBED_CONF_PLATFORM_STDIO_CONVERT_NEWLINES=0 -DMBED_CONF_PLATFORM_STDIO_FLUSH_AT_EXIT=1 -DMBED_CONF_PLATFORM_STDIO_BAUD_RATE=9600 -DMBED_CONF_PLATFORM_DEFAULT_SERIAL_BAUD_RATE=9600 -DBYZANCE_SUPPORTS_6LOWPAN=0 -DBYZANCE_SUPPORTS_WIFI=0 -DBYZANCE_SUPPORTS_ETHERNET=0 -D__BUILD_ID__=RND_BUILD_ID_288 -DBYZANCE_SUPPORTS_USB=1 -DTARGET_FF_ARDUINO -DTOOLCHAIN_GCC_ARM -D__CORTEX_M4 -DTARGET_LIKE_MBED -DTARGET_CORTEX_M -D__FPU_PRESENT=1 -DTARGET_LIKE_CORTEX_M4 -DTARGET_M4 -D__MBED__=1 -DTARGET_FF_MORPHO -DTOOLCHAIN_GCC -DARM_MATH_CM4  -D__BUILD_TARGET__=BYZANCE_IODAG3E_BOOTLOADER -std=gnu++11 -fno-rtti -I. -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/cmsis -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/cmsis/TARGET_CORTEX_M -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/cmsis/TARGET_CORTEX_M/TOOLCHAIN_GCC -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/drivers -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/hal -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/hal/storage_abstraction -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/platform -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/targets -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/targets/TARGET_STM -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/targets/TARGET_STM/TARGET_STM32F4 -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/targets/TARGET_STM/TARGET_STM32F4/device -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/targets/TARGET_STM/TARGET_STM32F4/TARGET_STM32F437xI -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/targets/TARGET_STM/TARGET_STM32F4/TARGET_STM32F437xI/device -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/targets/TARGET_STM/TARGET_STM32F4/TARGET_STM32F437xI/device/TOOLCHAIN_GCC_ARM -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/targets/TARGET_STM/TARGET_STM32F4/TARGET_STM32F437xI/TARGET_BYZANCE_IODAG3E_BOOTLOADER -I./_libs_/usb -I./_libs_/usb/targets/TARGET_STM -I./_libs_/usb/USBDevice -I./_libs_/usb/USBSerial -I./_libs_/usb/USBMSD -I./_libs_/usb/mass -I./_libs_/byzance_drivers -I./bootloaders/bootloader_ioda -o _libs_/byzance_drivers/ByzanceLogger.BYZANCE_IODAG3E_BOOTLOADER.o _libs_/byzance_drivers/ByzanceLogger.cpp
+In file included from ./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/platform/FileLike.h:21:0,
+                 from ./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/platform/Stream.h:20,
+                 from ./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/drivers/Serial.h:23,
+                 from ./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/mbed.h:81,
+                 from _libs_/byzance_drivers/ByzanceLogger.h:4,
+                 from _libs_/byzance_drivers/ByzanceLogger.cpp:1:
+./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/platform/FileHandle.h: In member function 'virtual int mbed::FileHandle::set_blocking(bool)':
+./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/platform/FileHandle.h:179:35: warning: unused parameter 'blocking' [-Wunused-parameter]
+     virtual int set_blocking(bool blocking)
+                                   ^~~~~~~~
+./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/platform/FileHandle.h: In member function 'virtual short int mbed::FileHandle::poll(short int) const':
+./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/platform/FileHandle.h:194:30: warning: unused parameter 'events' [-Wunused-parameter]
+     virtual short poll(short events) const
+                              ^~~~~~
+./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/platform/FileHandle.h: In member function 'virtual void mbed::FileHandle::sigio(mbed::Callback<void()>)':
+./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/platform/FileHandle.h:239:41: warning: unused parameter 'func' [-Wunused-parameter]
+     virtual void sigio(Callback<void()> func)
+                                         ^~~~
+In file included from ./_libs_/usb/USBDevice/USBDevice.h:24:0,
+                 from ./_libs_/usb/USBSerial/USBCDC.h:27,
+                 from ./_libs_/usb/USBSerial/USBSerial.h:22,
+                 from _libs_/byzance_drivers/ByzanceLogger.h:7,
+                 from _libs_/byzance_drivers/ByzanceLogger.cpp:1:
+./_libs_/usb/USBDevice/USBHAL.h: In member function 'virtual void USBHAL::connectStateChanged(unsigned int)':
+./_libs_/usb/USBDevice/USBHAL.h:67:51: warning: unused parameter 'connected' [-Wunused-parameter]
+     virtual void connectStateChanged(unsigned int connected){};
+                                                   ^~~~~~~~~
+./_libs_/usb/USBDevice/USBHAL.h: In member function 'virtual void USBHAL::suspendStateChanged(unsigned int)':
+./_libs_/usb/USBDevice/USBHAL.h:68:51: warning: unused parameter 'suspended' [-Wunused-parameter]
+     virtual void suspendStateChanged(unsigned int suspended){};
+                                                   ^~~~~~~~~
+./_libs_/usb/USBDevice/USBHAL.h: In member function 'virtual void USBHAL::SOF(int)':
+./_libs_/usb/USBDevice/USBHAL.h:69:26: warning: unused parameter 'frameNumber' [-Wunused-parameter]
+     virtual void SOF(int frameNumber){};
+                          ^~~~~~~~~~~
+In file included from ./_libs_/usb/USBSerial/USBCDC.h:27:0,
+                 from ./_libs_/usb/USBSerial/USBSerial.h:22,
+                 from _libs_/byzance_drivers/ByzanceLogger.h:7,
+                 from _libs_/byzance_drivers/ByzanceLogger.cpp:1:
+./_libs_/usb/USBDevice/USBDevice.h: In member function 'virtual void USBDevice::USBCallback_requestCompleted(uint8_t*, uint32_t)':
+./_libs_/usb/USBDevice/USBDevice.h:148:57: warning: unused parameter 'buf' [-Wunused-parameter]
+     virtual void USBCallback_requestCompleted(uint8_t * buf, uint32_t length) {};
+                                                         ^~~
+./_libs_/usb/USBDevice/USBDevice.h:148:71: warning: unused parameter 'length' [-Wunused-parameter]
+     virtual void USBCallback_requestCompleted(uint8_t * buf, uint32_t length) {};
+                                                                       ^~~~~~
+./_libs_/usb/USBDevice/USBDevice.h: In member function 'virtual bool USBDevice::USBCallback_setConfiguration(uint8_t)':
+./_libs_/usb/USBDevice/USBDevice.h:156:55: warning: unused parameter 'configuration' [-Wunused-parameter]
+     virtual bool USBCallback_setConfiguration(uint8_t configuration) { return false; };
+                                                       ^~~~~~~~~~~~~
+./_libs_/usb/USBDevice/USBDevice.h: In member function 'virtual bool USBDevice::USBCallback_setInterface(uint16_t, uint8_t)':
+./_libs_/usb/USBDevice/USBDevice.h:165:52: warning: unused parameter 'interface' [-Wunused-parameter]
+     virtual bool USBCallback_setInterface(uint16_t interface, uint8_t alternate) { return false; };
+                                                    ^~~~~~~~~
+./_libs_/usb/USBDevice/USBDevice.h:165:71: warning: unused parameter 'alternate' [-Wunused-parameter]
+     virtual bool USBCallback_setInterface(uint16_t interface, uint8_t alternate) { return false; };
+                                                                       ^~~~~~~~~
+In file included from ./_libs_/usb/USBSerial/USBSerial.h:22:0,
+                 from _libs_/byzance_drivers/ByzanceLogger.h:7,
+                 from _libs_/byzance_drivers/ByzanceLogger.cpp:1:
+./_libs_/usb/USBSerial/USBCDC.h: In member function 'virtual void USBCDC::lineCodingChanged(int, int, int, int)':
+./_libs_/usb/USBSerial/USBCDC.h:113:40: warning: unused parameter 'baud' [-Wunused-parameter]
+     virtual void lineCodingChanged(int baud, int bits, int parity, int stop) {};
+                                        ^~~~
+./_libs_/usb/USBSerial/USBCDC.h:113:50: warning: unused parameter 'bits' [-Wunused-parameter]
+     virtual void lineCodingChanged(int baud, int bits, int parity, int stop) {};
+                                                  ^~~~
+./_libs_/usb/USBSerial/USBCDC.h:113:60: warning: unused parameter 'parity' [-Wunused-parameter]
+     virtual void lineCodingChanged(int baud, int bits, int parity, int stop) {};
+                                                            ^~~~~~
+./_libs_/usb/USBSerial/USBCDC.h:113:72: warning: unused parameter 'stop' [-Wunused-parameter]
+     virtual void lineCodingChanged(int baud, int bits, int parity, int stop) {};
+                                                                        ^~~~
+In file included from _libs_/byzance_drivers/ByzanceLogger.h:7:0,
+                 from _libs_/byzance_drivers/ByzanceLogger.cpp:1:
+./_libs_/usb/USBSerial/USBSerial.h: In member function 'void USBSerial::attach(void (*)())':
+./_libs_/usb/USBSerial/USBSerial.h:141:27: warning: 'void mbed::Callback<R()>::attach(R (*)()) [with R = void]' is deprecated: Replaced by simple assignment 'Callback cb = func [since mbed-os-5.4] [-Wdeprecated-declarations]
+             rx.attach(fptr);
+                           ^
+In file included from ./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/platform/FileHandle.h:22:0,
+                 from ./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/platform/FileLike.h:21,
+                 from ./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/platform/Stream.h:20,
+                 from ./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/drivers/Serial.h:23,
+                 from ./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/mbed.h:81,
+                 from _libs_/byzance_drivers/ByzanceLogger.h:4,
+                 from _libs_/byzance_drivers/ByzanceLogger.cpp:1:
+./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/platform/Callback.h:271:10: note: declared here
+     void attach(R (*func)()) {
+          ^~~~~~
+arm-none-eabi-g++ -Os -mcpu=cortex-m4 -mthumb -mfpu=fpv4-sp-d16 -mfloat-abi=softfp  -c -g -fno-common -fmessage-length=0 -Wall -Wextra -fno-exceptions -ffunction-sections -fdata-sections -fomit-frame-pointer -MMD -MP -DTARGET_STM -DTARGET_BYZANCE_IODAG3E -DTARGET_STM32F4 -DTARGET_STM32F437II -DDEVICE_ERROR_RED=1 -DDEVICE_INTERRUPTIN=1 -DDEVICE_RTC=1 -DDEVICE_SERIAL=1 -DDEVICE_SERIAL_ASYNCH=1 -DDEVICE_SERIAL_FC=1 -DDEVICE_SPI=1 -DDEVICE_SPI_ASYNCH=1 -DDEVICE_STDIO_MESSAGES=1 -DBYZANCE_BOOTLOADER=1 -DMBED_CONF_PLATFORM_STDIO_CONVERT_NEWLINES=0 -DMBED_CONF_PLATFORM_STDIO_FLUSH_AT_EXIT=1 -DMBED_CONF_PLATFORM_STDIO_BAUD_RATE=9600 -DMBED_CONF_PLATFORM_DEFAULT_SERIAL_BAUD_RATE=9600 -DBYZANCE_SUPPORTS_6LOWPAN=0 -DBYZANCE_SUPPORTS_WIFI=0 -DBYZANCE_SUPPORTS_ETHERNET=0 -D__BUILD_ID__=RND_BUILD_ID_288 -DBYZANCE_SUPPORTS_USB=1 -DTARGET_FF_ARDUINO -DTOOLCHAIN_GCC_ARM -D__CORTEX_M4 -DTARGET_LIKE_MBED -DTARGET_CORTEX_M -D__FPU_PRESENT=1 -DTARGET_LIKE_CORTEX_M4 -DTARGET_M4 -D__MBED__=1 -DTARGET_FF_MORPHO -DTOOLCHAIN_GCC -DARM_MATH_CM4  -D__BUILD_TARGET__=BYZANCE_IODAG3E_BOOTLOADER -std=gnu++11 -fno-rtti -I. -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/cmsis -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/cmsis/TARGET_CORTEX_M -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/cmsis/TARGET_CORTEX_M/TOOLCHAIN_GCC -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/drivers -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/hal -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/hal/storage_abstraction -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/platform -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/targets -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/targets/TARGET_STM -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/targets/TARGET_STM/TARGET_STM32F4 -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/targets/TARGET_STM/TARGET_STM32F4/device -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/targets/TARGET_STM/TARGET_STM32F4/TARGET_STM32F437xI -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/targets/TARGET_STM/TARGET_STM32F4/TARGET_STM32F437xI/device -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/targets/TARGET_STM/TARGET_STM32F4/TARGET_STM32F437xI/device/TOOLCHAIN_GCC_ARM -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/targets/TARGET_STM/TARGET_STM32F4/TARGET_STM32F437xI/TARGET_BYZANCE_IODAG3E_BOOTLOADER -I./_libs_/usb -I./_libs_/usb/targets/TARGET_STM -I./_libs_/usb/USBDevice -I./_libs_/usb/USBSerial -I./_libs_/usb/USBMSD -I./_libs_/usb/mass -I./_libs_/byzance_drivers -I./bootloaders/bootloader_ioda -o _libs_/byzance_drivers/memory_map.BYZANCE_IODAG3E_BOOTLOADER.o _libs_/byzance_drivers/memory_map.cpp
+arm-none-eabi-g++ -Os -mcpu=cortex-m4 -mthumb -mfpu=fpv4-sp-d16 -mfloat-abi=softfp  -c -g -fno-common -fmessage-length=0 -Wall -Wextra -fno-exceptions -ffunction-sections -fdata-sections -fomit-frame-pointer -MMD -MP -DTARGET_STM -DTARGET_BYZANCE_IODAG3E -DTARGET_STM32F4 -DTARGET_STM32F437II -DDEVICE_ERROR_RED=1 -DDEVICE_INTERRUPTIN=1 -DDEVICE_RTC=1 -DDEVICE_SERIAL=1 -DDEVICE_SERIAL_ASYNCH=1 -DDEVICE_SERIAL_FC=1 -DDEVICE_SPI=1 -DDEVICE_SPI_ASYNCH=1 -DDEVICE_STDIO_MESSAGES=1 -DBYZANCE_BOOTLOADER=1 -DMBED_CONF_PLATFORM_STDIO_CONVERT_NEWLINES=0 -DMBED_CONF_PLATFORM_STDIO_FLUSH_AT_EXIT=1 -DMBED_CONF_PLATFORM_STDIO_BAUD_RATE=9600 -DMBED_CONF_PLATFORM_DEFAULT_SERIAL_BAUD_RATE=9600 -DBYZANCE_SUPPORTS_6LOWPAN=0 -DBYZANCE_SUPPORTS_WIFI=0 -DBYZANCE_SUPPORTS_ETHERNET=0 -D__BUILD_ID__=RND_BUILD_ID_288 -DBYZANCE_SUPPORTS_USB=1 -DTARGET_FF_ARDUINO -DTOOLCHAIN_GCC_ARM -D__CORTEX_M4 -DTARGET_LIKE_MBED -DTARGET_CORTEX_M -D__FPU_PRESENT=1 -DTARGET_LIKE_CORTEX_M4 -DTARGET_M4 -D__MBED__=1 -DTARGET_FF_MORPHO -DTOOLCHAIN_GCC -DARM_MATH_CM4  -D__BUILD_TARGET__=BYZANCE_IODAG3E_BOOTLOADER -std=gnu++11 -fno-rtti -I. -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/cmsis -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/cmsis/TARGET_CORTEX_M -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/cmsis/TARGET_CORTEX_M/TOOLCHAIN_GCC -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/drivers -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/hal -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/hal/storage_abstraction -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/platform -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/targets -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/targets/TARGET_STM -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/targets/TARGET_STM/TARGET_STM32F4 -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/targets/TARGET_STM/TARGET_STM32F4/device -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/targets/TARGET_STM/TARGET_STM32F4/TARGET_STM32F437xI -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/targets/TARGET_STM/TARGET_STM32F4/TARGET_STM32F437xI/device -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/targets/TARGET_STM/TARGET_STM32F4/TARGET_STM32F437xI/device/TOOLCHAIN_GCC_ARM -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/targets/TARGET_STM/TARGET_STM32F4/TARGET_STM32F437xI/TARGET_BYZANCE_IODAG3E_BOOTLOADER -I./_libs_/usb -I./_libs_/usb/targets/TARGET_STM -I./_libs_/usb/USBDevice -I./_libs_/usb/USBSerial -I./_libs_/usb/USBMSD -I./_libs_/usb/mass -I./_libs_/byzance_drivers -I./bootloaders/bootloader_ioda -o _libs_/byzance_drivers/BootloaderCommander.BYZANCE_IODAG3E_BOOTLOADER.o _libs_/byzance_drivers/BootloaderCommander.cpp
+In file included from ./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/platform/FileLike.h:21:0,
+                 from ./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/platform/Stream.h:20,
+                 from ./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/drivers/Serial.h:23,
+                 from ./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/mbed.h:81,
+                 from _libs_/byzance_drivers/BootloaderCommander.h:6,
+                 from _libs_/byzance_drivers/BootloaderCommander.cpp:3:
+./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/platform/FileHandle.h: In member function 'virtual int mbed::FileHandle::set_blocking(bool)':
+./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/platform/FileHandle.h:179:35: warning: unused parameter 'blocking' [-Wunused-parameter]
+     virtual int set_blocking(bool blocking)
+                                   ^~~~~~~~
+./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/platform/FileHandle.h: In member function 'virtual short int mbed::FileHandle::poll(short int) const':
+./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/platform/FileHandle.h:194:30: warning: unused parameter 'events' [-Wunused-parameter]
+     virtual short poll(short events) const
+                              ^~~~~~
+./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/platform/FileHandle.h: In member function 'virtual void mbed::FileHandle::sigio(mbed::Callback<void()>)':
+./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/platform/FileHandle.h:239:41: warning: unused parameter 'func' [-Wunused-parameter]
+     virtual void sigio(Callback<void()> func)
+                                         ^~~~
+In file included from ./_libs_/usb/USBDevice/USBDevice.h:24:0,
+                 from ./_libs_/usb/USBSerial/USBCDC.h:27,
+                 from ./_libs_/usb/USBSerial/USBSerial.h:22,
+                 from _libs_/byzance_drivers/ByzanceLogger.h:7,
+                 from _libs_/byzance_drivers/byzance_debug.h:4,
+                 from _libs_/byzance_drivers/SpiFlash.h:7,
+                 from _libs_/byzance_drivers/ExtMem.h:5,
+                 from _libs_/byzance_drivers/BootloaderCommander.h:9,
+                 from _libs_/byzance_drivers/BootloaderCommander.cpp:3:
+./_libs_/usb/USBDevice/USBHAL.h: In member function 'virtual void USBHAL::connectStateChanged(unsigned int)':
+./_libs_/usb/USBDevice/USBHAL.h:67:51: warning: unused parameter 'connected' [-Wunused-parameter]
+     virtual void connectStateChanged(unsigned int connected){};
+                                                   ^~~~~~~~~
+./_libs_/usb/USBDevice/USBHAL.h: In member function 'virtual void USBHAL::suspendStateChanged(unsigned int)':
+./_libs_/usb/USBDevice/USBHAL.h:68:51: warning: unused parameter 'suspended' [-Wunused-parameter]
+     virtual void suspendStateChanged(unsigned int suspended){};
+                                                   ^~~~~~~~~
+./_libs_/usb/USBDevice/USBHAL.h: In member function 'virtual void USBHAL::SOF(int)':
+./_libs_/usb/USBDevice/USBHAL.h:69:26: warning: unused parameter 'frameNumber' [-Wunused-parameter]
+     virtual void SOF(int frameNumber){};
+                          ^~~~~~~~~~~
+In file included from ./_libs_/usb/USBSerial/USBCDC.h:27:0,
+                 from ./_libs_/usb/USBSerial/USBSerial.h:22,
+                 from _libs_/byzance_drivers/ByzanceLogger.h:7,
+                 from _libs_/byzance_drivers/byzance_debug.h:4,
+                 from _libs_/byzance_drivers/SpiFlash.h:7,
+                 from _libs_/byzance_drivers/ExtMem.h:5,
+                 from _libs_/byzance_drivers/BootloaderCommander.h:9,
+                 from _libs_/byzance_drivers/BootloaderCommander.cpp:3:
+./_libs_/usb/USBDevice/USBDevice.h: In member function 'virtual void USBDevice::USBCallback_requestCompleted(uint8_t*, uint32_t)':
+./_libs_/usb/USBDevice/USBDevice.h:148:57: warning: unused parameter 'buf' [-Wunused-parameter]
+     virtual void USBCallback_requestCompleted(uint8_t * buf, uint32_t length) {};
+                                                         ^~~
+./_libs_/usb/USBDevice/USBDevice.h:148:71: warning: unused parameter 'length' [-Wunused-parameter]
+     virtual void USBCallback_requestCompleted(uint8_t * buf, uint32_t length) {};
+                                                                       ^~~~~~
+./_libs_/usb/USBDevice/USBDevice.h: In member function 'virtual bool USBDevice::USBCallback_setConfiguration(uint8_t)':
+./_libs_/usb/USBDevice/USBDevice.h:156:55: warning: unused parameter 'configuration' [-Wunused-parameter]
+     virtual bool USBCallback_setConfiguration(uint8_t configuration) { return false; };
+                                                       ^~~~~~~~~~~~~
+./_libs_/usb/USBDevice/USBDevice.h: In member function 'virtual bool USBDevice::USBCallback_setInterface(uint16_t, uint8_t)':
+./_libs_/usb/USBDevice/USBDevice.h:165:52: warning: unused parameter 'interface' [-Wunused-parameter]
+     virtual bool USBCallback_setInterface(uint16_t interface, uint8_t alternate) { return false; };
+                                                    ^~~~~~~~~
+./_libs_/usb/USBDevice/USBDevice.h:165:71: warning: unused parameter 'alternate' [-Wunused-parameter]
+     virtual bool USBCallback_setInterface(uint16_t interface, uint8_t alternate) { return false; };
+                                                                       ^~~~~~~~~
+In file included from ./_libs_/usb/USBSerial/USBSerial.h:22:0,
+                 from _libs_/byzance_drivers/ByzanceLogger.h:7,
+                 from _libs_/byzance_drivers/byzance_debug.h:4,
+                 from _libs_/byzance_drivers/SpiFlash.h:7,
+                 from _libs_/byzance_drivers/ExtMem.h:5,
+                 from _libs_/byzance_drivers/BootloaderCommander.h:9,
+                 from _libs_/byzance_drivers/BootloaderCommander.cpp:3:
+./_libs_/usb/USBSerial/USBCDC.h: In member function 'virtual void USBCDC::lineCodingChanged(int, int, int, int)':
+./_libs_/usb/USBSerial/USBCDC.h:113:40: warning: unused parameter 'baud' [-Wunused-parameter]
+     virtual void lineCodingChanged(int baud, int bits, int parity, int stop) {};
+                                        ^~~~
+./_libs_/usb/USBSerial/USBCDC.h:113:50: warning: unused parameter 'bits' [-Wunused-parameter]
+     virtual void lineCodingChanged(int baud, int bits, int parity, int stop) {};
+                                                  ^~~~
+./_libs_/usb/USBSerial/USBCDC.h:113:60: warning: unused parameter 'parity' [-Wunused-parameter]
+     virtual void lineCodingChanged(int baud, int bits, int parity, int stop) {};
+                                                            ^~~~~~
+./_libs_/usb/USBSerial/USBCDC.h:113:72: warning: unused parameter 'stop' [-Wunused-parameter]
+     virtual void lineCodingChanged(int baud, int bits, int parity, int stop) {};
+                                                                        ^~~~
+In file included from _libs_/byzance_drivers/ByzanceLogger.h:7:0,
+                 from _libs_/byzance_drivers/byzance_debug.h:4,
+                 from _libs_/byzance_drivers/SpiFlash.h:7,
+                 from _libs_/byzance_drivers/ExtMem.h:5,
+                 from _libs_/byzance_drivers/BootloaderCommander.h:9,
+                 from _libs_/byzance_drivers/BootloaderCommander.cpp:3:
+./_libs_/usb/USBSerial/USBSerial.h: In member function 'void USBSerial::attach(void (*)())':
+./_libs_/usb/USBSerial/USBSerial.h:141:27: warning: 'void mbed::Callback<R()>::attach(R (*)()) [with R = void]' is deprecated: Replaced by simple assignment 'Callback cb = func [since mbed-os-5.4] [-Wdeprecated-declarations]
+             rx.attach(fptr);
+                           ^
+In file included from ./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/platform/FileHandle.h:22:0,
+                 from ./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/platform/FileLike.h:21,
+                 from ./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/platform/Stream.h:20,
+                 from ./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/drivers/Serial.h:23,
+                 from ./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/mbed.h:81,
+                 from _libs_/byzance_drivers/BootloaderCommander.h:6,
+                 from _libs_/byzance_drivers/BootloaderCommander.cpp:3:
+./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/platform/Callback.h:271:10: note: declared here
+     void attach(R (*func)()) {
+          ^~~~~~
+In file included from _libs_/byzance_drivers/BootloaderCommander.h:11:0,
+                 from _libs_/byzance_drivers/BootloaderCommander.cpp:3:
+_libs_/byzance_drivers/otp.h: In static member function 'static OTPResult_t OTP::blockLock(uint8_t)':
+_libs_/byzance_drivers/otp.h:72:42: warning: unused parameter 'block' [-Wunused-parameter]
+     static OTPResult_t blockLock(uint8_t block) {
+                                          ^~~~~
+_libs_/byzance_drivers/BootloaderCommander.cpp: In static member function 'static int BootloaderCommander::cmd_help(cmd_type_t, const char*, char*)':
+_libs_/byzance_drivers/BootloaderCommander.cpp:155:46: warning: unused parameter 'type' [-Wunused-parameter]
+ int BootloaderCommander::cmd_help(cmd_type_t type, const char* arg, char* resp){
+                                              ^~~~
+_libs_/byzance_drivers/BootloaderCommander.cpp: In static member function 'static int BootloaderCommander::cmd_mac(cmd_type_t, const char*, char*)':
+_libs_/byzance_drivers/BootloaderCommander.cpp:492:11: warning: unused variable 'tmp32' [-Wunused-variable]
+  uint32_t tmp32 = 0;
+           ^~~~~
+_libs_/byzance_drivers/BootloaderCommander.cpp: In static member function 'static int BootloaderCommander::cmd_revision(cmd_type_t, const char*, char*)':
+_libs_/byzance_drivers/BootloaderCommander.cpp:798:62: warning: format '%X' expects argument of type 'unsigned int', but argument 3 has type 'uint32_t {aka long unsigned int}' [-Wformat=]
+    sprintf(resp, "revision already set: %08X", get_revision());
+                                                ~~~~~~~~~~~~~~^
+_libs_/byzance_drivers/BootloaderCommander.cpp: In member function 'int BootloaderCommander::parse(char*, char*)':
+_libs_/byzance_drivers/BootloaderCommander.cpp:103:8: warning: 'arg' may be used uninitialized in this function [-Wmaybe-uninitialized]
+     rc = commands[i].fp(COMMAND_TYPE_PARAM, arg, response);
+     ~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+arm-none-eabi-g++ -Os -mcpu=cortex-m4 -mthumb -mfpu=fpv4-sp-d16 -mfloat-abi=softfp  -c -g -fno-common -fmessage-length=0 -Wall -Wextra -fno-exceptions -ffunction-sections -fdata-sections -fomit-frame-pointer -MMD -MP -DTARGET_STM -DTARGET_BYZANCE_IODAG3E -DTARGET_STM32F4 -DTARGET_STM32F437II -DDEVICE_ERROR_RED=1 -DDEVICE_INTERRUPTIN=1 -DDEVICE_RTC=1 -DDEVICE_SERIAL=1 -DDEVICE_SERIAL_ASYNCH=1 -DDEVICE_SERIAL_FC=1 -DDEVICE_SPI=1 -DDEVICE_SPI_ASYNCH=1 -DDEVICE_STDIO_MESSAGES=1 -DBYZANCE_BOOTLOADER=1 -DMBED_CONF_PLATFORM_STDIO_CONVERT_NEWLINES=0 -DMBED_CONF_PLATFORM_STDIO_FLUSH_AT_EXIT=1 -DMBED_CONF_PLATFORM_STDIO_BAUD_RATE=9600 -DMBED_CONF_PLATFORM_DEFAULT_SERIAL_BAUD_RATE=9600 -DBYZANCE_SUPPORTS_6LOWPAN=0 -DBYZANCE_SUPPORTS_WIFI=0 -DBYZANCE_SUPPORTS_ETHERNET=0 -D__BUILD_ID__=RND_BUILD_ID_288 -DBYZANCE_SUPPORTS_USB=1 -DTARGET_FF_ARDUINO -DTOOLCHAIN_GCC_ARM -D__CORTEX_M4 -DTARGET_LIKE_MBED -DTARGET_CORTEX_M -D__FPU_PRESENT=1 -DTARGET_LIKE_CORTEX_M4 -DTARGET_M4 -D__MBED__=1 -DTARGET_FF_MORPHO -DTOOLCHAIN_GCC -DARM_MATH_CM4  -D__BUILD_TARGET__=BYZANCE_IODAG3E_BOOTLOADER -std=gnu++11 -fno-rtti -I. -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/cmsis -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/cmsis/TARGET_CORTEX_M -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/cmsis/TARGET_CORTEX_M/TOOLCHAIN_GCC -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/drivers -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/hal -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/hal/storage_abstraction -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/platform -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/targets -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/targets/TARGET_STM -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/targets/TARGET_STM/TARGET_STM32F4 -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/targets/TARGET_STM/TARGET_STM32F4/device -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/targets/TARGET_STM/TARGET_STM32F4/TARGET_STM32F437xI -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/targets/TARGET_STM/TARGET_STM32F4/TARGET_STM32F437xI/device -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/targets/TARGET_STM/TARGET_STM32F4/TARGET_STM32F437xI/device/TOOLCHAIN_GCC_ARM -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/targets/TARGET_STM/TARGET_STM32F4/TARGET_STM32F437xI/TARGET_BYZANCE_IODAG3E_BOOTLOADER -I./_libs_/usb -I./_libs_/usb/targets/TARGET_STM -I./_libs_/usb/USBDevice -I./_libs_/usb/USBSerial -I./_libs_/usb/USBMSD -I./_libs_/usb/mass -I./_libs_/byzance_drivers -I./bootloaders/bootloader_ioda -o _libs_/byzance_drivers/BinManager.BYZANCE_IODAG3E_BOOTLOADER.o _libs_/byzance_drivers/BinManager.cpp
+In file included from ./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/platform/FileLike.h:21:0,
+                 from ./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/platform/Stream.h:20,
+                 from ./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/drivers/Serial.h:23,
+                 from ./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/mbed.h:81,
+                 from _libs_/byzance_drivers/BinManager.h:4,
+                 from _libs_/byzance_drivers/BinManager.cpp:1:
+./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/platform/FileHandle.h: In member function 'virtual int mbed::FileHandle::set_blocking(bool)':
+./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/platform/FileHandle.h:179:35: warning: unused parameter 'blocking' [-Wunused-parameter]
+     virtual int set_blocking(bool blocking)
+                                   ^~~~~~~~
+./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/platform/FileHandle.h: In member function 'virtual short int mbed::FileHandle::poll(short int) const':
+./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/platform/FileHandle.h:194:30: warning: unused parameter 'events' [-Wunused-parameter]
+     virtual short poll(short events) const
+                              ^~~~~~
+./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/platform/FileHandle.h: In member function 'virtual void mbed::FileHandle::sigio(mbed::Callback<void()>)':
+./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/platform/FileHandle.h:239:41: warning: unused parameter 'func' [-Wunused-parameter]
+     virtual void sigio(Callback<void()> func)
+                                         ^~~~
+In file included from ./_libs_/usb/USBDevice/USBDevice.h:24:0,
+                 from ./_libs_/usb/USBSerial/USBCDC.h:27,
+                 from ./_libs_/usb/USBSerial/USBSerial.h:22,
+                 from _libs_/byzance_drivers/ByzanceLogger.h:7,
+                 from _libs_/byzance_drivers/byzance_debug.h:4,
+                 from _libs_/byzance_drivers/SpiFlash.h:7,
+                 from _libs_/byzance_drivers/ExtMem.h:5,
+                 from _libs_/byzance_drivers/BinManager.h:6,
+                 from _libs_/byzance_drivers/BinManager.cpp:1:
+./_libs_/usb/USBDevice/USBHAL.h: In member function 'virtual void USBHAL::connectStateChanged(unsigned int)':
+./_libs_/usb/USBDevice/USBHAL.h:67:51: warning: unused parameter 'connected' [-Wunused-parameter]
+     virtual void connectStateChanged(unsigned int connected){};
+                                                   ^~~~~~~~~
+./_libs_/usb/USBDevice/USBHAL.h: In member function 'virtual void USBHAL::suspendStateChanged(unsigned int)':
+./_libs_/usb/USBDevice/USBHAL.h:68:51: warning: unused parameter 'suspended' [-Wunused-parameter]
+     virtual void suspendStateChanged(unsigned int suspended){};
+                                                   ^~~~~~~~~
+./_libs_/usb/USBDevice/USBHAL.h: In member function 'virtual void USBHAL::SOF(int)':
+./_libs_/usb/USBDevice/USBHAL.h:69:26: warning: unused parameter 'frameNumber' [-Wunused-parameter]
+     virtual void SOF(int frameNumber){};
+                          ^~~~~~~~~~~
+In file included from ./_libs_/usb/USBSerial/USBCDC.h:27:0,
+                 from ./_libs_/usb/USBSerial/USBSerial.h:22,
+                 from _libs_/byzance_drivers/ByzanceLogger.h:7,
+                 from _libs_/byzance_drivers/byzance_debug.h:4,
+                 from _libs_/byzance_drivers/SpiFlash.h:7,
+                 from _libs_/byzance_drivers/ExtMem.h:5,
+                 from _libs_/byzance_drivers/BinManager.h:6,
+                 from _libs_/byzance_drivers/BinManager.cpp:1:
+./_libs_/usb/USBDevice/USBDevice.h: In member function 'virtual void USBDevice::USBCallback_requestCompleted(uint8_t*, uint32_t)':
+./_libs_/usb/USBDevice/USBDevice.h:148:57: warning: unused parameter 'buf' [-Wunused-parameter]
+     virtual void USBCallback_requestCompleted(uint8_t * buf, uint32_t length) {};
+                                                         ^~~
+./_libs_/usb/USBDevice/USBDevice.h:148:71: warning: unused parameter 'length' [-Wunused-parameter]
+     virtual void USBCallback_requestCompleted(uint8_t * buf, uint32_t length) {};
+                                                                       ^~~~~~
+./_libs_/usb/USBDevice/USBDevice.h: In member function 'virtual bool USBDevice::USBCallback_setConfiguration(uint8_t)':
+./_libs_/usb/USBDevice/USBDevice.h:156:55: warning: unused parameter 'configuration' [-Wunused-parameter]
+     virtual bool USBCallback_setConfiguration(uint8_t configuration) { return false; };
+                                                       ^~~~~~~~~~~~~
+./_libs_/usb/USBDevice/USBDevice.h: In member function 'virtual bool USBDevice::USBCallback_setInterface(uint16_t, uint8_t)':
+./_libs_/usb/USBDevice/USBDevice.h:165:52: warning: unused parameter 'interface' [-Wunused-parameter]
+     virtual bool USBCallback_setInterface(uint16_t interface, uint8_t alternate) { return false; };
+                                                    ^~~~~~~~~
+./_libs_/usb/USBDevice/USBDevice.h:165:71: warning: unused parameter 'alternate' [-Wunused-parameter]
+     virtual bool USBCallback_setInterface(uint16_t interface, uint8_t alternate) { return false; };
+                                                                       ^~~~~~~~~
+In file included from ./_libs_/usb/USBSerial/USBSerial.h:22:0,
+                 from _libs_/byzance_drivers/ByzanceLogger.h:7,
+                 from _libs_/byzance_drivers/byzance_debug.h:4,
+                 from _libs_/byzance_drivers/SpiFlash.h:7,
+                 from _libs_/byzance_drivers/ExtMem.h:5,
+                 from _libs_/byzance_drivers/BinManager.h:6,
+                 from _libs_/byzance_drivers/BinManager.cpp:1:
+./_libs_/usb/USBSerial/USBCDC.h: In member function 'virtual void USBCDC::lineCodingChanged(int, int, int, int)':
+./_libs_/usb/USBSerial/USBCDC.h:113:40: warning: unused parameter 'baud' [-Wunused-parameter]
+     virtual void lineCodingChanged(int baud, int bits, int parity, int stop) {};
+                                        ^~~~
+./_libs_/usb/USBSerial/USBCDC.h:113:50: warning: unused parameter 'bits' [-Wunused-parameter]
+     virtual void lineCodingChanged(int baud, int bits, int parity, int stop) {};
+                                                  ^~~~
+./_libs_/usb/USBSerial/USBCDC.h:113:60: warning: unused parameter 'parity' [-Wunused-parameter]
+     virtual void lineCodingChanged(int baud, int bits, int parity, int stop) {};
+                                                            ^~~~~~
+./_libs_/usb/USBSerial/USBCDC.h:113:72: warning: unused parameter 'stop' [-Wunused-parameter]
+     virtual void lineCodingChanged(int baud, int bits, int parity, int stop) {};
+                                                                        ^~~~
+In file included from _libs_/byzance_drivers/ByzanceLogger.h:7:0,
+                 from _libs_/byzance_drivers/byzance_debug.h:4,
+                 from _libs_/byzance_drivers/SpiFlash.h:7,
+                 from _libs_/byzance_drivers/ExtMem.h:5,
+                 from _libs_/byzance_drivers/BinManager.h:6,
+                 from _libs_/byzance_drivers/BinManager.cpp:1:
+./_libs_/usb/USBSerial/USBSerial.h: In member function 'void USBSerial::attach(void (*)())':
+./_libs_/usb/USBSerial/USBSerial.h:141:27: warning: 'void mbed::Callback<R()>::attach(R (*)()) [with R = void]' is deprecated: Replaced by simple assignment 'Callback cb = func [since mbed-os-5.4] [-Wdeprecated-declarations]
+             rx.attach(fptr);
+                           ^
+In file included from ./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/platform/FileHandle.h:22:0,
+                 from ./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/platform/FileLike.h:21,
+                 from ./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/platform/Stream.h:20,
+                 from ./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/drivers/Serial.h:23,
+                 from ./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/mbed.h:81,
+                 from _libs_/byzance_drivers/BinManager.h:4,
+                 from _libs_/byzance_drivers/BinManager.cpp:1:
+./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/platform/Callback.h:271:10: note: declared here
+     void attach(R (*func)()) {
+          ^~~~~~
+_libs_/byzance_drivers/BinManager.cpp: In static member function 'static int BinManager::fix_bootloader(const char*)':
+_libs_/byzance_drivers/BinManager.cpp:640:7: warning: unused variable 'bootloader_changed' [-Wunused-variable]
+  bool bootloader_changed = 0;
+       ^~~~~~~~~~~~~~~~~~
+In file included from _libs_/byzance_drivers/BinManager.cpp:1:0:
+_libs_/byzance_drivers/BinManager.cpp: In static member function 'static bool BinManager::is_busy(bin_component_t)':
+_libs_/byzance_drivers/BinManager.h:83:10: warning: enum constant in boolean context [-Wint-in-bool-context]
+   return BINMGR_ERROR_UNINITIALIZED;\
+          ^
+_libs_/byzance_drivers/BinManager.cpp:1144:2: note: in expansion of macro 'BINMANAGER_INIT_CHECK'
+  BINMANAGER_INIT_CHECK;
+  ^~~~~~~~~~~~~~~~~~~~~
+_libs_/byzance_drivers/BinManager.cpp: In static member function 'static bool BinManager::set_busy(bin_component_t, bool)':
+_libs_/byzance_drivers/BinManager.h:83:10: warning: enum constant in boolean context [-Wint-in-bool-context]
+   return BINMGR_ERROR_UNINITIALIZED;\
+          ^
+_libs_/byzance_drivers/BinManager.cpp:1173:2: note: in expansion of macro 'BINMANAGER_INIT_CHECK'
+  BINMANAGER_INIT_CHECK;
+  ^~~~~~~~~~~~~~~~~~~~~
+_libs_/byzance_drivers/BinManager.cpp: In static member function 'static bool BinManager::get_progress(bin_component_t, uint8_t*)':
+_libs_/byzance_drivers/BinManager.h:83:10: warning: enum constant in boolean context [-Wint-in-bool-context]
+   return BINMGR_ERROR_UNINITIALIZED;\
+          ^
+_libs_/byzance_drivers/BinManager.cpp:1182:2: note: in expansion of macro 'BINMANAGER_INIT_CHECK'
+  BINMANAGER_INIT_CHECK;
+  ^~~~~~~~~~~~~~~~~~~~~
+_libs_/byzance_drivers/BinManager.cpp: In static member function 'static bool BinManager::set_progress(bin_component_t, uint8_t)':
+_libs_/byzance_drivers/BinManager.h:83:10: warning: enum constant in boolean context [-Wint-in-bool-context]
+   return BINMGR_ERROR_UNINITIALIZED;\
+          ^
+_libs_/byzance_drivers/BinManager.cpp:1192:2: note: in expansion of macro 'BINMANAGER_INIT_CHECK'
+  BINMANAGER_INIT_CHECK;
+  ^~~~~~~~~~~~~~~~~~~~~
+_libs_/byzance_drivers/BinManager.cpp: In static member function 'static bool BinManager::get_bin_info(bin_component_t, struct_binary*)':
+_libs_/byzance_drivers/BinManager.h:83:10: warning: enum constant in boolean context [-Wint-in-bool-context]
+   return BINMGR_ERROR_UNINITIALIZED;\
+          ^
+_libs_/byzance_drivers/BinManager.cpp:1201:2: note: in expansion of macro 'BINMANAGER_INIT_CHECK'
+  BINMANAGER_INIT_CHECK;
+  ^~~~~~~~~~~~~~~~~~~~~
+arm-none-eabi-g++ -Os -mcpu=cortex-m4 -mthumb -mfpu=fpv4-sp-d16 -mfloat-abi=softfp  -c -g -fno-common -fmessage-length=0 -Wall -Wextra -fno-exceptions -ffunction-sections -fdata-sections -fomit-frame-pointer -MMD -MP -DTARGET_STM -DTARGET_BYZANCE_IODAG3E -DTARGET_STM32F4 -DTARGET_STM32F437II -DDEVICE_ERROR_RED=1 -DDEVICE_INTERRUPTIN=1 -DDEVICE_RTC=1 -DDEVICE_SERIAL=1 -DDEVICE_SERIAL_ASYNCH=1 -DDEVICE_SERIAL_FC=1 -DDEVICE_SPI=1 -DDEVICE_SPI_ASYNCH=1 -DDEVICE_STDIO_MESSAGES=1 -DBYZANCE_BOOTLOADER=1 -DMBED_CONF_PLATFORM_STDIO_CONVERT_NEWLINES=0 -DMBED_CONF_PLATFORM_STDIO_FLUSH_AT_EXIT=1 -DMBED_CONF_PLATFORM_STDIO_BAUD_RATE=9600 -DMBED_CONF_PLATFORM_DEFAULT_SERIAL_BAUD_RATE=9600 -DBYZANCE_SUPPORTS_6LOWPAN=0 -DBYZANCE_SUPPORTS_WIFI=0 -DBYZANCE_SUPPORTS_ETHERNET=0 -D__BUILD_ID__=RND_BUILD_ID_288 -DBYZANCE_SUPPORTS_USB=1 -DTARGET_FF_ARDUINO -DTOOLCHAIN_GCC_ARM -D__CORTEX_M4 -DTARGET_LIKE_MBED -DTARGET_CORTEX_M -D__FPU_PRESENT=1 -DTARGET_LIKE_CORTEX_M4 -DTARGET_M4 -D__MBED__=1 -DTARGET_FF_MORPHO -DTOOLCHAIN_GCC -DARM_MATH_CM4  -D__BUILD_TARGET__=BYZANCE_IODAG3E_BOOTLOADER -std=gnu++11 -fno-rtti -I. -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/cmsis -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/cmsis/TARGET_CORTEX_M -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/cmsis/TARGET_CORTEX_M/TOOLCHAIN_GCC -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/drivers -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/hal -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/hal/storage_abstraction -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/platform -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/targets -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/targets/TARGET_STM -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/targets/TARGET_STM/TARGET_STM32F4 -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/targets/TARGET_STM/TARGET_STM32F4/device -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/targets/TARGET_STM/TARGET_STM32F4/TARGET_STM32F437xI -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/targets/TARGET_STM/TARGET_STM32F4/TARGET_STM32F437xI/device -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/targets/TARGET_STM/TARGET_STM32F4/TARGET_STM32F437xI/device/TOOLCHAIN_GCC_ARM -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/targets/TARGET_STM/TARGET_STM32F4/TARGET_STM32F437xI/TARGET_BYZANCE_IODAG3E_BOOTLOADER -I./_libs_/usb -I./_libs_/usb/targets/TARGET_STM -I./_libs_/usb/USBDevice -I./_libs_/usb/USBSerial -I./_libs_/usb/USBMSD -I./_libs_/usb/mass -I./_libs_/byzance_drivers -I./bootloaders/bootloader_ioda -o _libs_/byzance_drivers/MqttManager.BYZANCE_IODAG3E_BOOTLOADER.o _libs_/byzance_drivers/MqttManager.cpp
+In file included from ./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/platform/FileLike.h:21:0,
+                 from ./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/platform/Stream.h:20,
+                 from ./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/drivers/Serial.h:23,
+                 from ./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/mbed.h:81,
+                 from _libs_/byzance_drivers/MqttManager.h:4,
+                 from _libs_/byzance_drivers/MqttManager.cpp:1:
+./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/platform/FileHandle.h: In member function 'virtual int mbed::FileHandle::set_blocking(bool)':
+./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/platform/FileHandle.h:179:35: warning: unused parameter 'blocking' [-Wunused-parameter]
+     virtual int set_blocking(bool blocking)
+                                   ^~~~~~~~
+./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/platform/FileHandle.h: In member function 'virtual short int mbed::FileHandle::poll(short int) const':
+./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/platform/FileHandle.h:194:30: warning: unused parameter 'events' [-Wunused-parameter]
+     virtual short poll(short events) const
+                              ^~~~~~
+./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/platform/FileHandle.h: In member function 'virtual void mbed::FileHandle::sigio(mbed::Callback<void()>)':
+./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/platform/FileHandle.h:239:41: warning: unused parameter 'func' [-Wunused-parameter]
+     virtual void sigio(Callback<void()> func)
+                                         ^~~~
+In file included from ./_libs_/usb/USBDevice/USBDevice.h:24:0,
+                 from ./_libs_/usb/USBSerial/USBCDC.h:27,
+                 from ./_libs_/usb/USBSerial/USBSerial.h:22,
+                 from _libs_/byzance_drivers/ByzanceLogger.h:7,
+                 from _libs_/byzance_drivers/byzance_debug.h:4,
+                 from _libs_/byzance_drivers/SpiFlash.h:7,
+                 from _libs_/byzance_drivers/ExtMem.h:5,
+                 from _libs_/byzance_drivers/MqttManager.h:6,
+                 from _libs_/byzance_drivers/MqttManager.cpp:1:
+./_libs_/usb/USBDevice/USBHAL.h: In member function 'virtual void USBHAL::connectStateChanged(unsigned int)':
+./_libs_/usb/USBDevice/USBHAL.h:67:51: warning: unused parameter 'connected' [-Wunused-parameter]
+     virtual void connectStateChanged(unsigned int connected){};
+                                                   ^~~~~~~~~
+./_libs_/usb/USBDevice/USBHAL.h: In member function 'virtual void USBHAL::suspendStateChanged(unsigned int)':
+./_libs_/usb/USBDevice/USBHAL.h:68:51: warning: unused parameter 'suspended' [-Wunused-parameter]
+     virtual void suspendStateChanged(unsigned int suspended){};
+                                                   ^~~~~~~~~
+./_libs_/usb/USBDevice/USBHAL.h: In member function 'virtual void USBHAL::SOF(int)':
+./_libs_/usb/USBDevice/USBHAL.h:69:26: warning: unused parameter 'frameNumber' [-Wunused-parameter]
+     virtual void SOF(int frameNumber){};
+                          ^~~~~~~~~~~
+In file included from ./_libs_/usb/USBSerial/USBCDC.h:27:0,
+                 from ./_libs_/usb/USBSerial/USBSerial.h:22,
+                 from _libs_/byzance_drivers/ByzanceLogger.h:7,
+                 from _libs_/byzance_drivers/byzance_debug.h:4,
+                 from _libs_/byzance_drivers/SpiFlash.h:7,
+                 from _libs_/byzance_drivers/ExtMem.h:5,
+                 from _libs_/byzance_drivers/MqttManager.h:6,
+                 from _libs_/byzance_drivers/MqttManager.cpp:1:
+./_libs_/usb/USBDevice/USBDevice.h: In member function 'virtual void USBDevice::USBCallback_requestCompleted(uint8_t*, uint32_t)':
+./_libs_/usb/USBDevice/USBDevice.h:148:57: warning: unused parameter 'buf' [-Wunused-parameter]
+     virtual void USBCallback_requestCompleted(uint8_t * buf, uint32_t length) {};
+                                                         ^~~
+./_libs_/usb/USBDevice/USBDevice.h:148:71: warning: unused parameter 'length' [-Wunused-parameter]
+     virtual void USBCallback_requestCompleted(uint8_t * buf, uint32_t length) {};
+                                                                       ^~~~~~
+./_libs_/usb/USBDevice/USBDevice.h: In member function 'virtual bool USBDevice::USBCallback_setConfiguration(uint8_t)':
+./_libs_/usb/USBDevice/USBDevice.h:156:55: warning: unused parameter 'configuration' [-Wunused-parameter]
+     virtual bool USBCallback_setConfiguration(uint8_t configuration) { return false; };
+                                                       ^~~~~~~~~~~~~
+./_libs_/usb/USBDevice/USBDevice.h: In member function 'virtual bool USBDevice::USBCallback_setInterface(uint16_t, uint8_t)':
+./_libs_/usb/USBDevice/USBDevice.h:165:52: warning: unused parameter 'interface' [-Wunused-parameter]
+     virtual bool USBCallback_setInterface(uint16_t interface, uint8_t alternate) { return false; };
+                                                    ^~~~~~~~~
+./_libs_/usb/USBDevice/USBDevice.h:165:71: warning: unused parameter 'alternate' [-Wunused-parameter]
+     virtual bool USBCallback_setInterface(uint16_t interface, uint8_t alternate) { return false; };
+                                                                       ^~~~~~~~~
+In file included from ./_libs_/usb/USBSerial/USBSerial.h:22:0,
+                 from _libs_/byzance_drivers/ByzanceLogger.h:7,
+                 from _libs_/byzance_drivers/byzance_debug.h:4,
+                 from _libs_/byzance_drivers/SpiFlash.h:7,
+                 from _libs_/byzance_drivers/ExtMem.h:5,
+                 from _libs_/byzance_drivers/MqttManager.h:6,
+                 from _libs_/byzance_drivers/MqttManager.cpp:1:
+./_libs_/usb/USBSerial/USBCDC.h: In member function 'virtual void USBCDC::lineCodingChanged(int, int, int, int)':
+./_libs_/usb/USBSerial/USBCDC.h:113:40: warning: unused parameter 'baud' [-Wunused-parameter]
+     virtual void lineCodingChanged(int baud, int bits, int parity, int stop) {};
+                                        ^~~~
+./_libs_/usb/USBSerial/USBCDC.h:113:50: warning: unused parameter 'bits' [-Wunused-parameter]
+     virtual void lineCodingChanged(int baud, int bits, int parity, int stop) {};
+                                                  ^~~~
+./_libs_/usb/USBSerial/USBCDC.h:113:60: warning: unused parameter 'parity' [-Wunused-parameter]
+     virtual void lineCodingChanged(int baud, int bits, int parity, int stop) {};
+                                                            ^~~~~~
+./_libs_/usb/USBSerial/USBCDC.h:113:72: warning: unused parameter 'stop' [-Wunused-parameter]
+     virtual void lineCodingChanged(int baud, int bits, int parity, int stop) {};
+                                                                        ^~~~
+In file included from _libs_/byzance_drivers/ByzanceLogger.h:7:0,
+                 from _libs_/byzance_drivers/byzance_debug.h:4,
+                 from _libs_/byzance_drivers/SpiFlash.h:7,
+                 from _libs_/byzance_drivers/ExtMem.h:5,
+                 from _libs_/byzance_drivers/MqttManager.h:6,
+                 from _libs_/byzance_drivers/MqttManager.cpp:1:
+./_libs_/usb/USBSerial/USBSerial.h: In member function 'void USBSerial::attach(void (*)())':
+./_libs_/usb/USBSerial/USBSerial.h:141:27: warning: 'void mbed::Callback<R()>::attach(R (*)()) [with R = void]' is deprecated: Replaced by simple assignment 'Callback cb = func [since mbed-os-5.4] [-Wdeprecated-declarations]
+             rx.attach(fptr);
+                           ^
+In file included from ./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/platform/FileHandle.h:22:0,
+                 from ./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/platform/FileLike.h:21,
+                 from ./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/platform/Stream.h:20,
+                 from ./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/drivers/Serial.h:23,
+                 from ./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/mbed.h:81,
+                 from _libs_/byzance_drivers/MqttManager.h:4,
+                 from _libs_/byzance_drivers/MqttManager.cpp:1:
+./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/platform/Callback.h:271:10: note: declared here
+     void attach(R (*func)()) {
+          ^~~~~~
+arm-none-eabi-g++ -Os -mcpu=cortex-m4 -mthumb -mfpu=fpv4-sp-d16 -mfloat-abi=softfp  -c -g -fno-common -fmessage-length=0 -Wall -Wextra -fno-exceptions -ffunction-sections -fdata-sections -fomit-frame-pointer -MMD -MP -DTARGET_STM -DTARGET_BYZANCE_IODAG3E -DTARGET_STM32F4 -DTARGET_STM32F437II -DDEVICE_ERROR_RED=1 -DDEVICE_INTERRUPTIN=1 -DDEVICE_RTC=1 -DDEVICE_SERIAL=1 -DDEVICE_SERIAL_ASYNCH=1 -DDEVICE_SERIAL_FC=1 -DDEVICE_SPI=1 -DDEVICE_SPI_ASYNCH=1 -DDEVICE_STDIO_MESSAGES=1 -DBYZANCE_BOOTLOADER=1 -DMBED_CONF_PLATFORM_STDIO_CONVERT_NEWLINES=0 -DMBED_CONF_PLATFORM_STDIO_FLUSH_AT_EXIT=1 -DMBED_CONF_PLATFORM_STDIO_BAUD_RATE=9600 -DMBED_CONF_PLATFORM_DEFAULT_SERIAL_BAUD_RATE=9600 -DBYZANCE_SUPPORTS_6LOWPAN=0 -DBYZANCE_SUPPORTS_WIFI=0 -DBYZANCE_SUPPORTS_ETHERNET=0 -D__BUILD_ID__=RND_BUILD_ID_288 -DBYZANCE_SUPPORTS_USB=1 -DTARGET_FF_ARDUINO -DTOOLCHAIN_GCC_ARM -D__CORTEX_M4 -DTARGET_LIKE_MBED -DTARGET_CORTEX_M -D__FPU_PRESENT=1 -DTARGET_LIKE_CORTEX_M4 -DTARGET_M4 -D__MBED__=1 -DTARGET_FF_MORPHO -DTOOLCHAIN_GCC -DARM_MATH_CM4  -D__BUILD_TARGET__=BYZANCE_IODAG3E_BOOTLOADER -std=gnu++11 -fno-rtti -I. -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/cmsis -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/cmsis/TARGET_CORTEX_M -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/cmsis/TARGET_CORTEX_M/TOOLCHAIN_GCC -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/drivers -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/hal -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/hal/storage_abstraction -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/platform -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/targets -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/targets/TARGET_STM -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/targets/TARGET_STM/TARGET_STM32F4 -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/targets/TARGET_STM/TARGET_STM32F4/device -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/targets/TARGET_STM/TARGET_STM32F4/TARGET_STM32F437xI -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/targets/TARGET_STM/TARGET_STM32F4/TARGET_STM32F437xI/device -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/targets/TARGET_STM/TARGET_STM32F4/TARGET_STM32F437xI/device/TOOLCHAIN_GCC_ARM -I./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/targets/TARGET_STM/TARGET_STM32F4/TARGET_STM32F437xI/TARGET_BYZANCE_IODAG3E_BOOTLOADER -I./_libs_/usb -I./_libs_/usb/targets/TARGET_STM -I./_libs_/usb/USBDevice -I./_libs_/usb/USBSerial -I./_libs_/usb/USBMSD -I./_libs_/usb/mass -I./_libs_/byzance_drivers -I./bootloaders/bootloader_ioda -o _libs_/byzance_drivers/Configurator.BYZANCE_IODAG3E_BOOTLOADER.o _libs_/byzance_drivers/Configurator.cpp
+In file included from ./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/platform/FileLike.h:21:0,
+                 from ./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/platform/Stream.h:20,
+                 from ./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/drivers/Serial.h:23,
+                 from ./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/mbed.h:81,
+                 from _libs_/byzance_drivers/Configurator.h:4,
+                 from _libs_/byzance_drivers/Configurator.cpp:1:
+./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/platform/FileHandle.h: In member function 'virtual int mbed::FileHandle::set_blocking(bool)':
+./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/platform/FileHandle.h:179:35: warning: unused parameter 'blocking' [-Wunused-parameter]
+     virtual int set_blocking(bool blocking)
+                                   ^~~~~~~~
+./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/platform/FileHandle.h: In member function 'virtual short int mbed::FileHandle::poll(short int) const':
+./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/platform/FileHandle.h:194:30: warning: unused parameter 'events' [-Wunused-parameter]
+     virtual short poll(short events) const
+                              ^~~~~~
+./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/platform/FileHandle.h: In member function 'virtual void mbed::FileHandle::sigio(mbed::Callback<void()>)':
+./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/platform/FileHandle.h:239:41: warning: unused parameter 'func' [-Wunused-parameter]
+     virtual void sigio(Callback<void()> func)
+                                         ^~~~
+In file included from ./_libs_/usb/USBDevice/USBDevice.h:24:0,
+                 from ./_libs_/usb/USBSerial/USBCDC.h:27,
+                 from ./_libs_/usb/USBSerial/USBSerial.h:22,
+                 from _libs_/byzance_drivers/ByzanceLogger.h:7,
+                 from _libs_/byzance_drivers/byzance_debug.h:4,
+                 from _libs_/byzance_drivers/SpiFlash.h:7,
+                 from _libs_/byzance_drivers/ExtMem.h:5,
+                 from _libs_/byzance_drivers/Configurator.h:6,
+                 from _libs_/byzance_drivers/Configurator.cpp:1:
+./_libs_/usb/USBDevice/USBHAL.h: In member function 'virtual void USBHAL::connectStateChanged(unsigned int)':
+./_libs_/usb/USBDevice/USBHAL.h:67:51: warning: unused parameter 'connected' [-Wunused-parameter]
+     virtual void connectStateChanged(unsigned int connected){};
+                                                   ^~~~~~~~~
+./_libs_/usb/USBDevice/USBHAL.h: In member function 'virtual void USBHAL::suspendStateChanged(unsigned int)':
+./_libs_/usb/USBDevice/USBHAL.h:68:51: warning: unused parameter 'suspended' [-Wunused-parameter]
+     virtual void suspendStateChanged(unsigned int suspended){};
+                                                   ^~~~~~~~~
+./_libs_/usb/USBDevice/USBHAL.h: In member function 'virtual void USBHAL::SOF(int)':
+./_libs_/usb/USBDevice/USBHAL.h:69:26: warning: unused parameter 'frameNumber' [-Wunused-parameter]
+     virtual void SOF(int frameNumber){};
+                          ^~~~~~~~~~~
+In file included from ./_libs_/usb/USBSerial/USBCDC.h:27:0,
+                 from ./_libs_/usb/USBSerial/USBSerial.h:22,
+                 from _libs_/byzance_drivers/ByzanceLogger.h:7,
+                 from _libs_/byzance_drivers/byzance_debug.h:4,
+                 from _libs_/byzance_drivers/SpiFlash.h:7,
+                 from _libs_/byzance_drivers/ExtMem.h:5,
+                 from _libs_/byzance_drivers/Configurator.h:6,
+                 from _libs_/byzance_drivers/Configurator.cpp:1:
+./_libs_/usb/USBDevice/USBDevice.h: In member function 'virtual void USBDevice::USBCallback_requestCompleted(uint8_t*, uint32_t)':
+./_libs_/usb/USBDevice/USBDevice.h:148:57: warning: unused parameter 'buf' [-Wunused-parameter]
+     virtual void USBCallback_requestCompleted(uint8_t * buf, uint32_t length) {};
+                                                         ^~~
+./_libs_/usb/USBDevice/USBDevice.h:148:71: warning: unused parameter 'length' [-Wunused-parameter]
+     virtual void USBCallback_requestCompleted(uint8_t * buf, uint32_t length) {};
+                                                                       ^~~~~~
+./_libs_/usb/USBDevice/USBDevice.h: In member function 'virtual bool USBDevice::USBCallback_setConfiguration(uint8_t)':
+./_libs_/usb/USBDevice/USBDevice.h:156:55: warning: unused parameter 'configuration' [-Wunused-parameter]
+     virtual bool USBCallback_setConfiguration(uint8_t configuration) { return false; };
+                                                       ^~~~~~~~~~~~~
+./_libs_/usb/USBDevice/USBDevice.h: In member function 'virtual bool USBDevice::USBCallback_setInterface(uint16_t, uint8_t)':
+./_libs_/usb/USBDevice/USBDevice.h:165:52: warning: unused parameter 'interface' [-Wunused-parameter]
+     virtual bool USBCallback_setInterface(uint16_t interface, uint8_t alternate) { return false; };
+                                                    ^~~~~~~~~
+./_libs_/usb/USBDevice/USBDevice.h:165:71: warning: unused parameter 'alternate' [-Wunused-parameter]
+     virtual bool USBCallback_setInterface(uint16_t interface, uint8_t alternate) { return false; };
+                                                                       ^~~~~~~~~
+In file included from ./_libs_/usb/USBSerial/USBSerial.h:22:0,
+                 from _libs_/byzance_drivers/ByzanceLogger.h:7,
+                 from _libs_/byzance_drivers/byzance_debug.h:4,
+                 from _libs_/byzance_drivers/SpiFlash.h:7,
+                 from _libs_/byzance_drivers/ExtMem.h:5,
+                 from _libs_/byzance_drivers/Configurator.h:6,
+                 from _libs_/byzance_drivers/Configurator.cpp:1:
+./_libs_/usb/USBSerial/USBCDC.h: In member function 'virtual void USBCDC::lineCodingChanged(int, int, int, int)':
+./_libs_/usb/USBSerial/USBCDC.h:113:40: warning: unused parameter 'baud' [-Wunused-parameter]
+     virtual void lineCodingChanged(int baud, int bits, int parity, int stop) {};
+                                        ^~~~
+./_libs_/usb/USBSerial/USBCDC.h:113:50: warning: unused parameter 'bits' [-Wunused-parameter]
+     virtual void lineCodingChanged(int baud, int bits, int parity, int stop) {};
+                                                  ^~~~
+./_libs_/usb/USBSerial/USBCDC.h:113:60: warning: unused parameter 'parity' [-Wunused-parameter]
+     virtual void lineCodingChanged(int baud, int bits, int parity, int stop) {};
+                                                            ^~~~~~
+./_libs_/usb/USBSerial/USBCDC.h:113:72: warning: unused parameter 'stop' [-Wunused-parameter]
+     virtual void lineCodingChanged(int baud, int bits, int parity, int stop) {};
+                                                                        ^~~~
+In file included from _libs_/byzance_drivers/ByzanceLogger.h:7:0,
+                 from _libs_/byzance_drivers/byzance_debug.h:4,
+                 from _libs_/byzance_drivers/SpiFlash.h:7,
+                 from _libs_/byzance_drivers/ExtMem.h:5,
+                 from _libs_/byzance_drivers/Configurator.h:6,
+                 from _libs_/byzance_drivers/Configurator.cpp:1:
+./_libs_/usb/USBSerial/USBSerial.h: In member function 'void USBSerial::attach(void (*)())':
+./_libs_/usb/USBSerial/USBSerial.h:141:27: warning: 'void mbed::Callback<R()>::attach(R (*)()) [with R = void]' is deprecated: Replaced by simple assignment 'Callback cb = func [since mbed-os-5.4] [-Wdeprecated-declarations]
+             rx.attach(fptr);
+                           ^
+In file included from ./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/platform/FileHandle.h:22:0,
+                 from ./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/platform/FileLike.h:21,
+                 from ./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/platform/Stream.h:20,
+                 from ./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/drivers/Serial.h:23,
+                 from ./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/mbed.h:81,
+                 from _libs_/byzance_drivers/Configurator.h:4,
+                 from _libs_/byzance_drivers/Configurator.cpp:1:
+./_libs_/mbed-os_BYZANCE_IODAG3E_BOOTLOADER/platform/Callback.h:271:10: note: declared here
+     void attach(R (*func)()) {
+          ^~~~~~
+_libs_/byzance_drivers/Configurator.cpp: In static member function 'static int Configurator::set_defaults(bool)':
+_libs_/byzance_drivers/Configurator.cpp:127:25: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+    if(_config.timeoffset==0xFFFFFFFF){
+       ~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~
+_libs_/byzance_drivers/Configurator.cpp: In static member function 'static int Configurator::set_timeoffset(uint32_t, bool, uint32_t)':
+_libs_/byzance_drivers/Configurator.cpp:726:8: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+  if(val!=_config.timeoffset){
+     ~~~^~~~~~~~~~~~~~~~~~~~
+arm-none-eabi-gcc @./.args.txt
+arm-none-eabi-objcopy -O binary bootloaders/bootloader_ioda/main.elf bootloaders/bootloader_ioda/main.bin
+arm-none-eabi-size bootloaders/bootloader_ioda/main.elf
+   text	   data	    bss	    dec	    hex	filename
+  51688	    728	   4628	  57044	   ded4	bootloaders/bootloader_ioda/main.elf
+Build done
+
+Compile process exited with code 0
