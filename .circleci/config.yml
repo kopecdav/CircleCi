@@ -19,5 +19,5 @@ jobs:
           command: | 
             set +e
             bash test_script.sh  
-      -run: 
+      - run: 
           command: cat _logs_/BUILD_FAILED.log
