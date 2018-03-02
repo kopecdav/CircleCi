@@ -1,0 +1,10 @@
+{
+  "name":"Blink",
+  "description":"This should be some long description of the example",
+  "version": "1.0.0",
+  "date": "1.1.2018",
+  "category": "examples",
+  "targets": [
+    "IODAG3E"
+  ]
+}

@@ -1,0 +1,14 @@
+#ifndef ENUM_NETSOURCE_H
+#define ENUM_NETSOURCE_H
+
+/*
+ * INTERNET SOURCE TYPEDEF
+ */
+typedef enum {
+	NETSOURCE_DISABLED	= (uint32_t)0x00,
+	NETSOURCE_ETHERNET	= (uint32_t)0x01,
+	NETSOURCE_WIFI		= (uint32_t)0x02,
+	NETSOURCE_6LOWPAN	= (uint32_t)0x03
+} Netsource_t;
+
+#endif /* ENUM_NETSOURCE_H */

@@ -1,0 +1,35 @@
+#include "memory_map.h"
+
+void get_map(uint32_t* map){
+
+#if defined(TARGET_BYZANCE_IODAG3E)
+// bank 1
+	map[0]	= ADDR_FLASH_SECTOR_0;
+	map[1]	= ADDR_FLASH_SECTOR_1;
+	map[2]	= ADDR_FLASH_SECTOR_2;
+	map[3]	= ADDR_FLASH_SECTOR_3;
+	map[4]	= ADDR_FLASH_SECTOR_4;
+	map[5]	= ADDR_FLASH_SECTOR_5;
+	map[6]	= ADDR_FLASH_SECTOR_6;
+	map[7]	= ADDR_FLASH_SECTOR_7;
+	map[8]	= ADDR_FLASH_SECTOR_8;
+	map[9]	= ADDR_FLASH_SECTOR_9;
+	map[10] = ADDR_FLASH_SECTOR_10;
+	map[11] = ADDR_FLASH_SECTOR_11;
+
+// bank 2
+	map[12] = ADDR_FLASH_SECTOR_12;
+	map[13] = ADDR_FLASH_SECTOR_13;
+	map[14] = ADDR_FLASH_SECTOR_14;
+	map[15] = ADDR_FLASH_SECTOR_15;
+	map[16] = ADDR_FLASH_SECTOR_16;
+	map[17] = ADDR_FLASH_SECTOR_17;
+	map[18] = ADDR_FLASH_SECTOR_18;
+	map[19] = ADDR_FLASH_SECTOR_19;
+	map[20] = ADDR_FLASH_SECTOR_20;
+	map[21] = ADDR_FLASH_SECTOR_21;
+	map[22] = ADDR_FLASH_SECTOR_22;
+	map[23] = ADDR_FLASH_SECTOR_23;
+#endif
+
+}

@@ -1,0 +1,2 @@
+_libs_/usb/targets/TARGET_STM/USBHAL_STM32.BYZANCE_IODAG3E_BOOTLOADER.o: \
+ _libs_/usb/targets/TARGET_STM/USBHAL_STM32.cpp
