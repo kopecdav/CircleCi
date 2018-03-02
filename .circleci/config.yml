@@ -16,7 +16,8 @@ jobs:
             sudo apt-get install gcc-arm-embedded
       - run:
           name: Build tests
-          command: |
-            bash test_script.sh 
-            cat _logs_/BUILD_FAILED.log 
-      
+          command: | 
+            set +e
+            bash test_script.sh  
+      -run: 
+          command: cat _logs_/BUILD_FAILED.log
